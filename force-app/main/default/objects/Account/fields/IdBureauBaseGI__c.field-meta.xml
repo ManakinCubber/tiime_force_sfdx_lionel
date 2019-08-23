@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IdBureauBaseGI__c</fullName>
+    <description>Le numéro du bureau associé à ce cabinet dans la Base GI. Ne doit pas servir pour les comptes de type Client.</description>
+    <externalId>false</externalId>
+    <label>Id Bureau BaseGI</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

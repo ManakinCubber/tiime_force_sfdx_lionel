@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__MoisAZeroOUSup12</fullName>
+    <active>true</active>
+    <description>Mois supérieur à &amp;é ou égal à 0</description>
+    <errorConditionFormula>OR( numm__Mois__c ==0,numm__Mois__c &gt;12)</errorConditionFormula>
+    <errorDisplayField>numm__Mois__c</errorDisplayField>
+    <errorMessage>Le mois doit être compris entre 1 et 12.</errorMessage>
+</ValidationRule>

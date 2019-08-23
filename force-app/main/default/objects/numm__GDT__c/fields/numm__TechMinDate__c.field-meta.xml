@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__TechMinDate__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>TechMinDate</label>
+    <summarizedField>numm__GDTItem__c.numm__Date__c</summarizedField>
+    <summaryForeignKey>numm__GDTItem__c.numm__GDTHeader__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

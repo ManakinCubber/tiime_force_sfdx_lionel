@@ -1,0 +1,159 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="AP05_AppointmentController">
+	
+	<aura:attribute name="simpleRecord" type="Transfert__c"/>
+	<aura:attribute name="record" type="Object"/>
+	
+	<aura:attribute name="appointmentType" type="String" default=""/>
+    <aura:attribute name="appointmentTypes" type="List" default="[{'label': 'Téléphonique', 'value': 'téléphonique'}, {'label': 'Physique', 'value': 'physique'}]"/>
+    <aura:attribute name="appointmentTypesOnline" type="List" default="[{'label': 'Téléphonique', 'value': 'téléphonique'}]"/>
+    <aura:attribute name="appointmentLocations" type="List" default="[{'label': 'Au bureau', 'value': 'au bureau'},{'label': 'Chez le client', 'value': 'chez le client'}]"/>
+    <aura:attribute name="appointmentLocation" type="String" default="au bureau"/>
+	<aura:attribute name="address" type="string" default="&lt;ADRESSE&gt;"/>
+	<aura:attribute name="formattedDate" type="string" default="&lt;DATE&gt;"/>
+    <aura:attribute name="formattedTime" type="string" default="&lt;HEURE&gt;" />
+    <aura:attribute name="signatureMail" type="string" default="&lt;SIGNATURE&gt;"/>
+    <aura:attribute name="contacts" type="List" />
+    <aura:attribute name="contactsList" type="List" />
+    <aura:attribute name="firms" type="List" />
+    <aura:attribute name="firmList" type="List" />
+    <aura:attribute name="selectedUserName" type="String" default="&lt;CONTACT&gt;"/>
+    <aura:attribute name="selectedUserPhone" type="String" default="&lt;TÉLÉPHONE&gt;"/>
+    <aura:attribute name="selectedFirmName" type="String" default="&lt;CABINET&gt;"/>
+    <aura:attribute name="selectedFirmFloor" type="String" default="&lt;ETAGE&gt;"/>
+    <aura:attribute name="selectedFirmAddress" type="String" default="&lt;ADRESSE_CABINET&gt;"/>
+	<aura:attribute name="TemplateTel" type="string" default="{!'Bonjour,\n\nSuite à notre conversation, nous vous confirmons votre rendez-vous téléphonique avec '+ v.selectedUserName +' - ' + v.selectedFirmName + ', le '+ v.formattedDate +' à '+ v.formattedTime +'.\nVous pouvez joindre '+ v.selectedUserName +' au '+ v.selectedUserPhone +'.\nNous restons à votre disposition pour toutes questions complémentaires.\n\nEn vous souhaitant un excellent échange téléphonique,\n'+ v.signatureMail +'.'}" />
+	<aura:attribute name="TemplateTelGroupe" type="string" default="{!'Bonjour,\n\nRavi(e) de vous rencontrer très bientôt !\n\nSuite à votre échange téléphonique, je vous confirme notre rendez-vous téléphonique fixé au '+ v.formattedDate +' à '+ v.formattedTime +'.\nVous pouvez me joindre au '+ v.selectedUserPhone +'.\nJe reste à votre disposition pour toutes questions complémentaires.\n\nA très vite !\n\n'+ v.selectedUserName + ' de la Team ' + v.selectedFirmName + '\n' + v.selectedUserPhone}" />
+	<aura:attribute name="TemplateTelAConfirmer" type="string" default="{!'Bonjour,\n\nSuite à notre conversation, nous vous confirmons votre rendez-vous téléphonique le '+ v.formattedDate +' à '+ v.formattedTime +'.\nNous restons à votre disposition pour toutes questions complémentaires.\n\nEn vous souhaitant un bon entretien.\n'+ v.signatureMail +'.'}" />
+	<aura:attribute name="TemplateClient" type="string" default="{!'Bonjour,\n\nSuite à notre conversation, nous vous confirmons votre rendez-vous au '+ v.address +' avec '+ v.selectedUserName +' le '+ v.formattedDate +' à '+ v.formattedTime +'.\nVous pouvez joindre '+ v.selectedUserName +' au '+ v.selectedUserPhone +'.\nNous restons à votre disposition pour toutes questions complémentaires.\n\nEn vous souhaitant une bonne rencontre,\n'+v.signatureMail+'.'}"/> 
+    <aura:attribute name="TemplateClientGroupe" type="string" default="{!'Bonjour,\n\nRavi(e) de vous rencontrer très bientôt !\n\nSuite à votre échange téléphonique, je vous confirme notre rendez-vous fixé au '+ v.formattedDate +' à '+ v.formattedTime +' dans vos locaux.\n\nA très vite !\n\n'+ v.selectedUserName + ' de la Team ' + v.selectedFirmName + '\n' + v.selectedUserPhone}" />
+    <aura:attribute name="TemplateBureau" type="string" default="{!'Bonjour,\n\nSuite à notre conversation, nous vous confirmons votre rendez-vous le '+ v.formattedDate+' à '+ v.formattedTime +' chez '+ v.selectedFirmName + ' au ' + v.selectedFirmAddress +'.\nVous rencontrerez '+ v.selectedUserName + ', joignable au '+ v.selectedUserPhone +'.\nNous restons à votre disposition pour toutes questions complémentaires.\n\nEn vous souhaitant une bonne rencontre,\n'+v.signatureMail+'.'}"/>
+	<aura:attribute name="TemplateBureauGroupe" type="string" default="{!'Bonjour,\n\nRavi(e) de vous rencontrer très bientôt !\n\nSuite à votre échange téléphonique, je vous confirme notre rendez-vous fixé au '+ v.formattedDate +' à '+ v.formattedTime +' dans nos locaux.\nNous sommes situés au '+ v.selectedFirmAddress +', ' + v.selectedFirmFloor +'.\n\nA très vite !\n\n'+ v.selectedUserName + ' de la Team ' + v.selectedFirmName + '\n' + v.selectedUserPhone}" />
+	<aura:attribute name="showError" type="Boolean" default="false"/>
+	<aura:attribute name="showTransfert" type="Boolean" default="false"/>
+	<aura:attribute name="showPhysique" type="Boolean" default="true"/>
+	<aura:attribute name="isOnline" type="Object"/>
+	<aura:attribute name="firmIsGroup" type="Boolean" default="false"/>
+	<aura:attribute name="rdvProgramme" type="Boolean" default="false"/>
+	
+	<aura:handler event="lightning:tabRefreshed" action="{!c.handleRecordUpdated}"/>
+    <aura:method name="recordUpdated" action="{!c.handleRecordUpdated}"></aura:method>
+	
+	<force:recordData aura:id="record"
+		recordId="{!v.recordId}"
+		fields="Lead__c,Partenaire__c,ContactPartenaire__c,Lead__r.MobilePhone,Lead__r.Email_Body__c,Lead__r.RDV_EC_confirmer__c,Lead__r.Name,Lead__r.Rendez_vous__c,Lead__r.Email,Lead__r.Branding__c"
+		mode="EDIT"
+		targetRecord="{!v.record}"
+		targetFields="{!v.simpleRecord}"
+        recordUpdated="{!c.handleRecordUpdated}"
+		/>
+	
+	<lightning:recordEditForm aura:id="LeadForm" recordId="{!v.simpleRecord.Lead__c}" objectApiName="Lead">  
+        
+		<div class="header slds-page-header" role="banner">
+			<h1 class="paddingTop slds-page-header__title slds-m-right_small slds-truncate slds-align-left ">
+				<lightning:icon iconName="standard:log_a_call"/>
+				Prendre rendez-vous avec {!v.simpleRecord.Lead__r.Name}
+			</h1>
+		</div>
+		
+		<lightning:spinner aura:id="spjSpinner" variant="brand" class="slds-hide"/>
+            <div class="slds-grid slds-gutters m-t-15">
+                <div class="slds-col slds-size_1-of-1 spacing">
+                    <aura:if isTrue="{!v.rdvProgramme == false}">
+                        <aura:if isTrue="{!and(v.simpleRecord.Partenaire__c != null, v.simpleRecord.Partenaire__c != '')}">
+                            <aura:if isTrue="{!v.contactsList.length > 1}">
+                                <div class="slds-grid">
+                                    <div class="slds-col">
+                                        <lightning:select aura:id="selectContact" name="{!'contact_' + v.recordId}" label="Contact" value="{!v.simpleRecord.ContactPartenaire__c}" onchange="{!c.updateMailBody}">
+                                            <option value="">-- Sélectionnez un Contact --</option>
+                                            <aura:iteration items="{!v.contactsList}" var="option" indexVar="key">
+                                                <option value="{!option.key}" selected="{!option.key == v.simpleRecord.ContactPartenaire__c ? 'selected' : ''}">{!option.value}</option>
+                                            </aura:iteration>
+                                        </lightning:select>
+                                    </div>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-grid slds-wrap slds-form-element slds-form-element_readonly slds-border_bottom slds-p-bottom_x-small">
+                                        <div class="slds-col  slds-size_1-of-2">
+                                            <span class="slds-form-element__label">Contact</span>
+                                            <div class="slds-grid  slds-wrap slds-p-bottom_large slds-form-element__control">
+                                                <div class="slds-col slds-text-heading_medium slds-form-element__static">{!v.selectedUserName}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                            
+                            <aura:if isTrue="{!and(v.simpleRecord.Partenaire__c != null, v.simpleRecord.Partenaire__c != '')}">	
+                                <div class="slds-grid slds-wrap slds-form-element slds-form-element_readonly slds-border_bottom slds-p-bottom_x-small">
+                                    <div class="slds-col  slds-size_1-of-2">
+                                        <span class="slds-form-element__label">Téléphone Contact Partenaire : {!v.selectedUserName}</span>
+                                        <div class="slds-grid  slds-wrap slds-p-bottom_large slds-form-element__control">
+                                            <div class="slds-col slds-text-heading_medium">
+                                                <p><lightning:clickToDial aura:id="airCallPhone" value="{!v.selectedUserPhone}"/></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </aura:if>
+                            
+                            <aura:if isTrue="{!v.showPhysique}">
+                                <lightning:radioGroup name="{!'appointmentType_' + v.recordId}" label="Choix du rendez-vous" options="{!v.appointmentTypes}" value="{!v.appointmentType}" onchange="{!c.updateMailBody}" type="button"/>
+                                <aura:set attribute="else">
+                                    <lightning:radioGroup name="{!'appointmentType_' + v.recordId}" label="Choix du rendez-vous" options="{!v.appointmentTypesOnline}" value="{!v.appointmentType}" onchange="{!c.updateMailBody}" type="button"/>
+                                </aura:set>
+                            </aura:if>
+                            <aura:if isTrue="{!v.appointmentType == 'physique'}">
+                                <lightning:radioGroup name="{!'appointmentLocation_' + v.recordId}" label="Lieu du rendez-vous" options="{!v.appointmentLocations}" value="{!v.appointmentLocation}" onchange="{!c.updateMailBody}" type="button"/>							
+                                <aura:set attribute="else">
+                                    <aura:if isTrue="{!v.appointmentType == 'téléphonique'}">
+                                        <lightning:input label="{!'Numero de téléphone de '+ v.simpleRecord.Lead__r.Name}" value="{!v.simpleRecord.Lead__r.MobilePhone}"/>
+                                        <lightning:input type="datetime-local" label="Horaire" name="{!'datetime_phone_' + v.recordId}" value="{!v.simpleRecord.Lead__r.Rendez_vous__c}" onchange="{!c.updateMailBody}"/>
+                                        <lightning:input type="text" label="Adresse mail" name="{!'email_phone_' + v.recordId}" value="{!v.simpleRecord.Lead__r.Email}" />
+                                        <lightning:textarea label="Corps du mail" value="{!v.simpleRecord.Lead__r.Email_Body__c}" />
+                                    </aura:if>
+                                </aura:set>
+                                <aura:if isTrue="{!v.ChoixLieuRdv == 'au bureau'}">
+                                    <lightning:input type="datetime" label="Horaire" name="{!'datetime_office_' + v.recordId}" value="{!v.simpleRecord.Lead__r.Rendez_vous__c}" onchange="{!c.updateMailBody}"/>
+                                    <lightning:input type="text" label="Adresse mail" name="{!'email_office_' + v.recordId}" value="{!v.simpleRecord.Lead__r.Email}" />
+                                    <lightning:textarea label="Corps du mail" value="{!v.simpleRecord.Lead__r.Email_Body__c}"/>
+        
+                                    <aura:set attribute="else">
+                                        <lightning:input type="datetime-local" label="Horaire" name="{!'datetime_' + v.recordId}" value="{!v.simpleRecord.Lead__r.Rendez_vous__c}" onchange="{!c.updateMailBody}"/>
+        
+                                        <lightning:input type="text" label="Adresse mail" name="{!'email_' + v.recordId}" value="{!v.simpleRecord.Lead__r.Email}" />
+                                        <lightning:textarea label="Corps du mail" value="{!v.simpleRecord.Lead__r.Email_Body__c}" />
+        
+                                    </aura:set>
+                                </aura:if>
+                            </aura:if>
+                            <div class="slds-grid">
+                                <div class="slds-col">
+                                    <lightning:button variant="brand" iconName="utility:check" aura:id="enregister" label="Prendre rendez-vous" onclick="{!c.sendEmail}" disabled="{!or(empty(v.simpleRecord.Lead__r.Rendez_vous__c), v.selectedUserName == '&lt;CONTACT&gt;')}" />
+                                </div>
+                                <div class="slds-col">
+                                    <aura:if isTrue="{!v.showError}">
+                                        <span class="slds-text-heading_small slds-text-color_error">Contact partenaire et/ou Branding manquants !</span>
+                                    </aura:if>
+                                </div>
+                            </div>
+                        </aura:if>
+                        
+                        <aura:set attribute="else">
+                            <p class="slds-text-color_error">Partenaire manquant.</p>
+                        </aura:set>
+                        <aura:set attribute="else">
+                            <div class="slds-grid">
+                                <p class="slds-text-heading_small slds-m-right_large slds-p-top_x-small">Rendez-vous programmé !</p>
+                                <lightning:button aura:id="NewTransfer" label="programmer un nouveau rendez-vous" iconName="standard:product_transfer" iconPosition="left"  variant="brand" onclick="{!c.newRDV}"/>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </div>
+            </div>
+	</lightning:recordEditForm>
+
+
+
+
+</aura:component>

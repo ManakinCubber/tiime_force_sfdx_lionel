@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Banque__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Banque</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>numm__ThirdPartyRule__c.numm__IdctrlAccounting__r.numm__TypeDeCollectif__c</field>
+            <operation>equals</operation>
+            <value>BAN</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>numm__ThirdPartyRule__c</referenceTo>
+    <relationshipLabel>Import Ecritures banques</relationshipLabel>
+    <relationshipName>Import_Ecritures_banques</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

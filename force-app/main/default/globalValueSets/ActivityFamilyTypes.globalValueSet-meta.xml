@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Agriculture</fullName>
+        <default>false</default>
+        <label>Agriculture</label>
+    </customValue>
+    <customValue>
+        <fullName>Artisan</fullName>
+        <default>false</default>
+        <label>Artisan</label>
+    </customValue>
+    <customValue>
+        <fullName>Artiste</fullName>
+        <default>false</default>
+        <label>Artiste</label>
+    </customValue>
+    <customValue>
+        <fullName>Association</fullName>
+        <default>false</default>
+        <label>Association</label>
+    </customValue>
+    <customValue>
+        <fullName>Autre</fullName>
+        <default>false</default>
+        <label>Autre</label>
+    </customValue>
+    <customValue>
+        <fullName>BTPConstruction</fullName>
+        <default>false</default>
+        <label>BTP / construction</label>
+    </customValue>
+    <customValue>
+        <fullName>CafeHotelRestaurant</fullName>
+        <default>false</default>
+        <label>Café / Hôtel / Restaurant</label>
+    </customValue>
+    <customValue>
+        <fullName>Commerce</fullName>
+        <default>false</default>
+        <label>Commerce</label>
+    </customValue>
+    <customValue>
+        <fullName>ConsultingCoach</fullName>
+        <default>false</default>
+        <label>Consulting/Coach (finance, rh, informatique, etc)</label>
+    </customValue>
+    <customValue>
+        <fullName>Freelance</fullName>
+        <default>false</default>
+        <label>Freelance</label>
+    </customValue>
+    <customValue>
+        <fullName>Graphiste</fullName>
+        <default>false</default>
+        <label>Graphiste</label>
+    </customValue>
+    <customValue>
+        <fullName>Immobilier</fullName>
+        <default>false</default>
+        <label>Immobilier</label>
+    </customValue>
+    <customValue>
+        <fullName>Photographe</fullName>
+        <default>false</default>
+        <label>Photographe</label>
+    </customValue>
+    <customValue>
+        <fullName>ProfessionnelsSante</fullName>
+        <default>false</default>
+        <label>Professionnels de Santé</label>
+    </customValue>
+    <customValue>
+        <fullName>ProfessionsLiberales</fullName>
+        <default>false</default>
+        <label>Professions libérales (avocat, architecte)</label>
+    </customValue>
+    <customValue>
+        <fullName>Securite</fullName>
+        <default>false</default>
+        <label>Sécurité</label>
+    </customValue>
+    <customValue>
+        <fullName>ServicesEntreprises</fullName>
+        <default>false</default>
+        <label>Services aux entreprises</label>
+    </customValue>
+    <customValue>
+        <fullName>ServicesParticuliers</fullName>
+        <default>false</default>
+        <label>Services aux Particuliers</label>
+    </customValue>
+    <customValue>
+        <fullName>SSII</fullName>
+        <default>false</default>
+        <label>SSII</label>
+    </customValue>
+    <customValue>
+        <fullName>Startup</fullName>
+        <default>false</default>
+        <label>Startup</label>
+    </customValue>
+    <customValue>
+        <fullName>TabacPresse</fullName>
+        <default>false</default>
+        <label>Tabac / Presse</label>
+    </customValue>
+    <customValue>
+        <fullName>Transport</fullName>
+        <default>false</default>
+        <label>Transport</label>
+    </customValue>
+    <customValue>
+        <fullName>VTC</fullName>
+        <default>false</default>
+        <label>VTC</label>
+    </customValue>
+    <masterLabel>Types de familles d&#39;activité</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__CoeffAmountFisc__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Coefficient appliqué au montant hors taxe afin de calculé la base d&#39;amortissement fiscale maximale conseillée. Base = Montant Hors Taxe  - (Montant Hors Taxe  x Coeff)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Coefficient appliqué au montant hors taxe afin de calculé la base d&#39;amortissement fiscale maximale conseillée. Base = Montant Hors Taxe  - (Montant Hors Taxe  x Coeff)</inlineHelpText>
+    <label>Coefficient appliqué au montant hors tax</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

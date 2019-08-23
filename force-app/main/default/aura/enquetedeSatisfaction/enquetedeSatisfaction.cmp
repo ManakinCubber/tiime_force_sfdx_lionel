@@ -1,0 +1,67 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="AP07_SatisfactionSurvey">
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+    <aura:attribute name="labels" type="Object"/>
+    
+    <!-- Note de Satisfaction Partenaire = notedeSatisfactionGlobale__c -->
+    <!-- Note Compétences du partenaire	= RepresentativeSkillsNotes__c -->
+    <!-- Note Réactivité du partenaire	= RepresentativeReactivityNote__c -->
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <force:recordData aura:id="recordHandler"
+                      recordId="{!v.recordId}"
+                      layoutType="FULL"
+                      mode="EDIT"
+                      fields="RepresentativeSkillsNotes__c,notedeSatisfactionGlobale__c,RepresentativeReactivityNote__c,StartSatisfactionNote__c"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simpleRecord}"
+                      targetError="{!v.recordError}"
+                      />
+    
+    <!-- Display Lightning Data Service errors, if any -->
+    <aura:if isTrue="{!not(empty(v.recordError))}">
+        <div class="recordError">
+            <ui:message title="Error" severity="error" closable="true">
+                {!v.recordError}
+            </ui:message>
+        </div>
+    </aura:if>
+    
+    <article class="slds-card">
+        <lightning:card class="slds-page-header__title slds-col slds-align_absolute-center" iconName="action:submit_for_approval" title="Notes"/>
+        
+        <div class="slds-scrollable_x">
+            <div class="slds-grid_vertical slds-wrap "><!-- 1 -->
+                
+                <c:enquetedeSatisfactionUnique note="{!v.simpleRecord.notedeSatisfactionGlobale__c}" 
+                                               title="{!v.labels.notedeSatisfactionGlobale__c}"
+                                               numero="{!v.recordId + '-1'}"
+                                               />
+                <c:enquetedeSatisfactionUnique note="{!v.simpleRecord.RepresentativeSkillsNotes__c}" 
+                                               title="{!v.labels.RepresentativeSkillsNotes__c}"
+                                               numero="{!v.recordId + '-2'}"
+                                               />
+                <c:enquetedeSatisfactionUnique note="{!v.simpleRecord.RepresentativeReactivityNote__c}" 
+                                               title="{!v.labels.RepresentativeReactivityNote__c}"
+                                               numero="{!v.recordId + '-3'}"
+                                               />
+                <c:enquetedeSatisfactionUnique note="{!v.simpleRecord.StartSatisfactionNote__c}" 
+                                               title="{!v.labels.StartSatisfactionNote__c}"
+                                               numero="{!v.recordId + '-4'}"
+                                               />
+                                                         
+            </div>
+        </div>
+        <div class="slds-align_absolute-center">
+            <button class="slds-button slds-button_brand slds-m-around_small slds-size--1-of-5" onclick="{!c.handleSaveRecord}">
+            Enregister
+        	</button>
+        </div>
+        
+     
+    </article>
+ 
+        
+</aura:component>

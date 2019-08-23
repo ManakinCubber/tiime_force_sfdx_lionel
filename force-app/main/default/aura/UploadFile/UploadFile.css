@@ -1,0 +1,3 @@
+.THIS .spaced-table tr:not(:first-child) td {
+	padding-top: 15px;
+}

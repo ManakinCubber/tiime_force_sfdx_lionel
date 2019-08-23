@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_leadsource_detailpayant</fullName>
+    <active>false</active>
+    <description>Si la catégorie de source est bien &quot;payante&quot;, merci de renseigner le détail de la source payante</description>
+    <errorConditionFormula>AND(
+$User.BypassValidationRules__c = false,
+(ISPICKVAL( LeadSource , &quot;Payant&quot;)  &amp;&amp;
+ISPICKVAL( SourceDetails__c, &quot;&quot; ))
+)</errorConditionFormula>
+    <errorDisplayField>SourceDetails__c</errorDisplayField>
+    <errorMessage>Si la catégorie de source est bien &quot;payante&quot;, merci de renseigner le détail de la source payante</errorMessage>
+</ValidationRule>

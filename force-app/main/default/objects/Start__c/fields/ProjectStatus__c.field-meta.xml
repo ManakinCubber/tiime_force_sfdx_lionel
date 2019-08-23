@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProjectStatus__c</fullName>
+    <externalId>false</externalId>
+    <label>Statut du projet</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Call conseil</fullName>
+                <default>true</default>
+                <label>Call conseil</label>
+            </value>
+            <value>
+                <fullName>Prise d&#39;informations</fullName>
+                <default>false</default>
+                <label>Prise d&#39;informations</label>
+            </value>
+            <value>
+                <fullName>Nurturing</fullName>
+                <default>false</default>
+                <label>Nurturing</label>
+            </value>
+            <value>
+                <fullName>Production</fullName>
+                <default>false</default>
+                <label>Production</label>
+            </value>
+            <value>
+                <fullName>Kbis reçu</fullName>
+                <default>false</default>
+                <label>Kbis reçu</label>
+            </value>
+            <value>
+                <fullName>Perdu</fullName>
+                <default>false</default>
+                <label>Perdu</label>
+            </value>
+            <value>
+                <fullName>Confirmation d&#39;informations</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Confirmation d&#39;informations</label>
+            </value>
+            <value>
+                <fullName>Prise de connaissance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Prise de connaissance</label>
+            </value>
+            <value>
+                <fullName>Stand-by</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stand-by</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

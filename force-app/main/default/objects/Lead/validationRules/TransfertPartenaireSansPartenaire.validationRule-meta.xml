@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TransfertPartenaireSansPartenaire</fullName>
+    <active>true</active>
+    <description>Il est obligatoire de renseigner le compte et le contact partenaires pour passer le statut en &quot;Transfert&quot;  et le suivi de transfert en &quot;Partenaire&quot;.</description>
+    <errorConditionFormula>AND(
+  NOT($User.BypassValidationRules__c),
+  OR(
+    ISBLANK( Contact_Partenaire__c ),
+    ISBLANK( Partenaire__c )
+  ),
+  ISPICKVAL( Status , &quot;Partenaire&quot;),
+  ISPICKVAL( TransferMonitoring__c , &quot;Partenaire&quot;)
+)</errorConditionFormula>
+    <errorMessage>Il est obligatoire de renseigner le compte et le contact partenaires pour passer le statut en &quot;Transfert Partenaire&quot;.</errorMessage>
+</ValidationRule>

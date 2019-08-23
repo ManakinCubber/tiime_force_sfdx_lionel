@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__TypeDeCollectif__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Les valeurs du collectif sont BAN pour Banque, CLI pour client et FOU pour Fournisseur</description>
+    <externalId>false</externalId>
+    <label>Type de collectif</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BAN</fullName>
+                <default>false</default>
+                <label>BAN</label>
+            </value>
+            <value>
+                <fullName>CLI</fullName>
+                <default>false</default>
+                <label>CLI</label>
+            </value>
+            <value>
+                <fullName>FOU</fullName>
+                <default>false</default>
+                <label>FOU</label>
+            </value>
+            <value>
+                <fullName>AUT</fullName>
+                <default>false</default>
+                <label>AUT</label>
+            </value>
+            <value>
+                <fullName>SAL</fullName>
+                <default>false</default>
+                <label>SAL</label>
+            </value>
+            <value>
+                <fullName>SUB</fullName>
+                <default>false</default>
+                <label>SUB</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Type_de_compteur__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>Définit le numéro de pièce : exemple : une pièce dont la date de pièce est le 01/01/2013 pourra être définie comme suit :
+Année : 2013000001 (1 étant un chrono)
+Période : 2013010001
+Global :  0000000001</inlineHelpText>
+    <label>Type de compteur</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Année</fullName>
+                <default>false</default>
+                <label>Année</label>
+            </value>
+            <value>
+                <fullName>Période</fullName>
+                <default>false</default>
+                <label>Période</label>
+            </value>
+            <value>
+                <fullName>Global</fullName>
+                <default>false</default>
+                <label>Global</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

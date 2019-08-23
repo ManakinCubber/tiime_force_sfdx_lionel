@@ -1,0 +1,37 @@
+.THIS .self-center {
+	align-self: center;
+}
+
+.THIS .detaillActivityClass .slds-textarea {
+    height:90px !important;
+}
+
+.THIS .activity-details-container {
+	min-width: 400px;
+	flex-grow: 1;
+}
+
+.THIS .address-container {
+	flex-basis: 500px;
+}
+
+.THIS .howKnowUsClass .slds-textarea {
+    height:50px !important;
+}
+.THIS .slds-form-element__label {
+	font-size: larger;
+}
+
+.THIS .field {
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.THIS .no-wrap {
+	white-space: nowrap;
+}
+
+.THIS .text-lg {
+	font-size: 1rem;
+	line-height: 2.1rem;
+}

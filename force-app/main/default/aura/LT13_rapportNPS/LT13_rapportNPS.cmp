@@ -1,0 +1,38 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="LTC13_rapportNPS">
+	
+		<aura:attribute name="recordId" type="String" />
+		<aura:attribute name="simpleRecord" type="Account" />
+		<aura:attribute name="AccRecord" type="Object" />
+		<aura:attribute name="AllEnquetes" type="List" />
+		<aura:attribute name="nbEnquetes" type="Integer" />
+		<aura:attribute name="NPS" type="List" />
+		<aura:attribute name="labels" type="Object"/>
+	
+		<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+		
+		<force:recordData aura:id="record"
+						recordId="{!v.recordId}"
+						fields="Id, Name"
+						mode="VIEW"
+						targetRecord="{!v.AccRecord}"
+						targetFields="{!v.simpleRecord}"
+						/> 
+						
+		<div class="slds-box">
+			<div class="slds-grid slds-grid_vertical slds-align_absolute-center slds-m-bottom_large">
+            	<span class="slds-col slds-text-heading_medium "><strong>NPS du cabinet</strong></span>
+				<span class="slds-col slds-text-heading_medium ">Sur {!v.nbEnquetes} enquêtes de satisfactions</span>
+            </div>
+			<div class="slds-grid slds-wrap slds-grid_align-space slds-p-bottom_x-small">
+				<aura:iteration items="{!v.NPS}" var="nps" indexVar="i">
+					<div class="slds-col slds-m-around_x-small">
+						<span class="slds-form-element__label">{!nps.label}</span>
+						<div class="slds-grid  slds-wrap slds-p-bottom_large slds-align_absolute-center">
+							<div class="slds-col slds-text-heading_medium">{!nps.value}</div>
+						</div>
+					</div>
+				</aura:iteration>
+			</div>
+		</div>
+	
+</aura:component>

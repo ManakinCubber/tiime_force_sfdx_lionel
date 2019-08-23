@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Filedattente_Lead</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>NextCallDate__c</columns>
+    <columns>LEAD.MOBILE_PHONE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.CITY</columns>
+    <columns>OrigineWebsite__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>UtmSource__c</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>1/16/2019 4:50 PM</value>
+    </filters>
+    <label>Leads en attente</label>
+    <queue>sales_tmc</queue>
+</ListView>

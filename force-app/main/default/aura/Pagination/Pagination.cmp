@@ -1,0 +1,25 @@
+<aura:component >
+    <aura:attribute name="currentPageNumber" type="Integer" required="true" />
+    <aura:attribute name="maxPageNumber" type="Integer" required="true" />
+    <aura:attribute name="nextBtnDisabled" type="Boolean"/>
+    <aura:registerEvent name="lockValidateBtn" type="c:evtLockValidButton"/>
+    <aura:method name="nextPage" action="{!c.nextPage}" />
+
+    <div class="slds-button-group" role="group">
+        <!-- <button onclick="{!c.firstPage}" class="slds-button slds-button_neutral">
+            First
+        </button> -->
+        <button onclick="{!c.prevPage}" class="slds-button slds-button_neutral" disabled="{!v.currentPageNumber == 1}">
+            Précédent
+        </button>
+        <button class="slds-button slds-button--neutral slds-m-left_none">
+            {!v.currentPageNumber} / {!v.maxPageNumber}
+        </button><!-- 
+        <button onclick="{!c.nextPage}" class="slds-button slds-button__neutral" disabled="{!v.nextBtnDisabled}">
+            Next
+        </button> -->
+        <!-- <button onclick="{!c.lastPage}" class="slds-button slds-button_neutral">
+            Last
+        </button> -->
+    </div>
+</aura:component>

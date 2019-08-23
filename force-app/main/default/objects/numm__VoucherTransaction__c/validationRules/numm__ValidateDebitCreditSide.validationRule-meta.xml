@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__ValidateDebitCreditSide</fullName>
+    <active>true</active>
+    <description>check if both side fill</description>
+    <errorConditionFormula>NOT($User.numm__BypassRegles__c) &amp;&amp; (NOT(ISBLANK( numm__Credit__c))) &amp;&amp; (NOT(ISBLANK(numm__Debit__c)))</errorConditionFormula>
+    <errorMessage>L’écriture ne peut pas avoir les champs Débit et Crédit de renseignés</errorMessage>
+</ValidationRule>

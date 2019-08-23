@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Actif__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Détermine si l&#39;établissement est actif (gestion de propriétaires)</description>
+    <externalId>false</externalId>
+    <label>Actif</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

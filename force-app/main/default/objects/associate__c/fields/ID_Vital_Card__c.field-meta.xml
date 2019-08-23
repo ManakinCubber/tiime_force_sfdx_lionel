@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ID_Vital_Card__c</fullName>
+    <description>Champ système contenant l&#39;ID du ContentDocument chargé en tant que &quot;Carte vitale&quot;. null si aucune carte vitale.</description>
+    <externalId>false</externalId>
+    <label>ID de la carte vitale</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

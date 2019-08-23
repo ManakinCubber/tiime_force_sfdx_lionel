@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__RelBqMarquerTraite__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>Les écritures des relevés bancaires lièes a ce schéma seront  marquées comme traitées.</inlineHelpText>
+    <label>Exclure des relevés bancaires</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

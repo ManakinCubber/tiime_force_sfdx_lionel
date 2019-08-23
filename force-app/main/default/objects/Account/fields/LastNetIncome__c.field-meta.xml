@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LastNetIncome__c</fullName>
+    <description>Champs nécessaire à Wallet</description>
+    <externalId>false</externalId>
+    <label>Dernier résultat en K€</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0-4</fullName>
+                <default>false</default>
+                <label>0-4</label>
+            </value>
+            <value>
+                <fullName>5-9</fullName>
+                <default>false</default>
+                <label>5-9</label>
+            </value>
+            <value>
+                <fullName>10-49</fullName>
+                <default>false</default>
+                <label>10-49</label>
+            </value>
+            <value>
+                <fullName>50-149</fullName>
+                <default>false</default>
+                <label>50-149</label>
+            </value>
+            <value>
+                <fullName>150-499</fullName>
+                <default>false</default>
+                <label>150-499</label>
+            </value>
+            <value>
+                <fullName>500-*</fullName>
+                <default>false</default>
+                <label>500-*</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,23 @@
+<aura:component controller="AP13_UploadFileController">
+
+	<aura:attribute name="ObjectRecord" type="Object"/>
+	<aura:attribute name="recordId" type="Id"/>
+	
+	<aura:attribute name="inputs" type="Object[]"/>
+
+	<aura:handler event="lightning:tabRefreshed" action="{!c.recordUpdated}"/>
+	<aura:method name="recordUpdated" action="{!c.recordUpdated}"></aura:method>
+
+	<lightning:layout horizontalAlign="center">
+		<lightning:layoutItem>
+			<table class="spaced-table">
+				<aura:iteration items="{!v.inputs}" var="input">
+					<aura:if isTrue="{!input.shouldDisplay}">
+						<c:UploadFileInput name="{!input.name}" title="{!input.title}" label="{!input.label}" valid="{!input.valid}" recordId="{!v.recordId}" documentId="{!input.documentId}" fieldName="{!input.field}"/>
+					</aura:if>
+				</aura:iteration>
+			</table>
+		</lightning:layoutItem>
+	</lightning:layout>
+
+</aura:component>

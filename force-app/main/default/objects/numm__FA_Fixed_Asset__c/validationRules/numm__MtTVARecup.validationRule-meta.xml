@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__MtTVARecup</fullName>
+    <active>true</active>
+    <description>Si montant de la TVA Recup &gt; MtTVA</description>
+    <errorConditionFormula>numm__MontantTVARecup__c &gt; numm__VATAmount__c</errorConditionFormula>
+    <errorDisplayField>numm__MontantTVARecup__c</errorDisplayField>
+    <errorMessage>Le Montant TVA récupéré doit être inférieur au montant TVA.</errorMessage>
+</ValidationRule>

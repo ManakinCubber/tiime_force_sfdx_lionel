@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DetailPerteLeadObligatoire</fullName>
+    <active>false</active>
+    <description>Rend le champs détail de perte de lead obligatoire quand le statut d&#39;une lead est passé en perdu sauf si c&#39;est un test.</description>
+    <errorConditionFormula>AND(
+$User.BypassValidationRules__c = false,
+ISBLANK(LossDetails__c),
+ISPICKVAL(Status,&quot;Perdu&quot;),
+ISPICKVAL( LossReason__c, &quot;Test&quot;)=false )</errorConditionFormula>
+    <errorDisplayField>LossDetails__c</errorDisplayField>
+    <errorMessage>Veuillez remplir le champs détail de la perte de Lead.</errorMessage>
+</ValidationRule>

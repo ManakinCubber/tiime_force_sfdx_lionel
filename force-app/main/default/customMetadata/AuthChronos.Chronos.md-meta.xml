@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Chronos</label>
+    <protected>false</protected>
+    <values>
+        <field>audience__c</field>
+        <value xsi:type="xsd:string">https://chronos-prod-api/</value>
+    </values>
+    <values>
+        <field>client_id__c</field>
+        <value xsi:type="xsd:string">Hh5KZvDhfh5c9bwt5s7Cowe4z4Wd1yS4</value>
+    </values>
+    <values>
+        <field>client_secret__c</field>
+        <value xsi:type="xsd:string">swWBD7aQpsQJNzAuxe6mbXrUl0S7ou76gLyoRTZf-QkqGNP2tWcZZdKtnCG7E4bG</value>
+    </values>
+    <values>
+        <field>grant_type__c</field>
+        <value xsi:type="xsd:string">http://auth0.com/oauth/grant-type/password-realm</value>
+    </values>
+    <values>
+        <field>realm__c</field>
+        <value xsi:type="xsd:string">Chronos-prod-db</value>
+    </values>
+    <values>
+        <field>scope__c</field>
+        <value xsi:type="xsd:string">openid</value>
+    </values>
+    <values>
+        <field>url_chronos_api__c</field>
+        <value xsi:type="xsd:string">https://chronos-api.tiime-apps.com</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>MainContact__c</columns>
+    <columns>ACCOUNT.CREATED_DATE</columns>
+    <columns>ACCOUNT.LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>Fermé</label>
+    <sharedTo>
+        <role>Wallet</role>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Entreprise__c</fullName>
+    <externalId>false</externalId>
+    <label>Entreprise</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Historique de comptes</relationshipLabel>
+    <relationshipName>Historique_de_comptes</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>true</writeRequiresMasterRead>
+</CustomField>

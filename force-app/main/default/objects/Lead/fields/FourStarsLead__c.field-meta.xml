@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FourStarsLead__c</fullName>
+    <externalId>false</externalId>
+    <formula>ISPICKVAL(Evaluation_a_priori__c,&quot;4Stars&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Lead 4 étoiles</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

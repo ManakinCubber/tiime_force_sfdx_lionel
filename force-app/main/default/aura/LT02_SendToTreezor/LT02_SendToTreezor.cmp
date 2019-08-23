@@ -1,0 +1,29 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="VFC03_SendToTreezor">
+	
+	<aura:attribute name="record" type="Object"/>
+	<aura:attribute name="accountObject" type="Object"/>
+	<aura:attribute name="error" type="String"/>
+	
+	<force:recordData aura:id="company"
+        recordId="{!v.recordId}"
+        fields="Id, Name, ValidatedForAppWallet__c, ChronosId__c"
+        targetRecord="{!v.record}"
+        targetFields="{!v.accountObject}"
+        targetError="{!v.error}" />
+    
+	
+    
+    <lightning:card variant="Narrow" title="Validation KYC" IconName="announcement" class="slds-card slds-size_full">
+    	<lightning:spinner aura:id="spjSpinner" class="slds-hide"/>
+		<fieldset>
+			<aura:text value="{!v.error}"/>
+			
+			<div class="slds-grid slds-grid_align-center">
+				<div class="slds-col">
+					<lightning:button variant="success" label="Envoyer à Treezor" onclick="{! c.sendToTreezor }"/>
+				</div>
+			</div>
+		</fieldset>
+	</lightning:card>
+    
+</aura:component>

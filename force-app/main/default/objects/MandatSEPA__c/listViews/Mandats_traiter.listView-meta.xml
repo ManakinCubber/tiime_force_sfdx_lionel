@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandats_traiter</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>DebtorName__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>MandatStatus__c</field>
+        <operation>equals</operation>
+        <value>à traiter</value>
+    </filters>
+    <label>Mandats à traiter</label>
+</ListView>

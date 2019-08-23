@@ -1,0 +1,58 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global">
+
+	<aura:attribute name="PartnerRecord" type="associate__c"/>
+	<aura:attribute name="record" type="Object"/>
+	<force:recordData aura:id="record"
+		recordId="{!v.recordId}"
+		targetRecord="{!v.record}"
+		targetFields="{!v.PartnerRecord }"
+		fields="AccreRequest__c, RecordTypeId, RecordType.DeveloperName"
+		recordUpdated="{!c.recordUpdated}"
+		mode="VIEW"/>
+
+	<c:UploadFile
+		ObjectRecord="{!v.PartnerRecord}"
+		recordId="{!v.recordId}"
+		inputs="[
+		{'name':'ident',
+		'title':'Carte d\'identité',
+		'label':'Copie (recto-verso le cas échéant) des pièces d’identité valides (CNI, Passeports, Titre de séjour à l’adresse de votre domicile)',
+		'valid': 0,
+		'documentId': null,
+		'field': 'ID_Id_Card__c',
+		'conditions': [
+			{'field':'v.ObjectRecord.RecordType.DeveloperName', 'value':'Personne_Physique'}
+		]
+		},
+		{'name':'vitalCard',
+		'title':'Carte vitale',
+		'label':'Copie de la carte vitale',
+		'valid': 0,
+		'documentId': null,
+		'field': 'ID_Vital_Card__c',
+		'conditions': [
+			{'field':'v.ObjectRecord.RecordType.DeveloperName', 'value':'Personne_Physique'}
+		]
+		},
+		{'name':'kbis',
+		'title':'Extrait de Kbis',
+		'label':'Extrait de Kbis de moins de 3 mois',
+		'valid': 0,
+		'documentId': null,
+		'field': 'ID_Kbis__c',
+		'conditions': [
+			{'field':'v.ObjectRecord.RecordType.DeveloperName', 'value':'Personne_Morale'}
+		]
+		},
+		{'name':'status',
+		'title':'Statuts',
+		'label':'Statuts à jour',
+		'valid': 0,
+		'documentId': null,
+		'field': 'ID_Status__c',
+		'conditions': [
+			{'field':'v.ObjectRecord.RecordType.DeveloperName', 'value':'Personne_Morale'}
+		]
+		}
+	]" aura:id="uploader"/>
+</aura:component>

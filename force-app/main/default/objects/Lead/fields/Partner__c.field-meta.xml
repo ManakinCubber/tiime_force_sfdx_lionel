@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner__c</fullName>
+    <description>liste des partenaires</description>
+    <externalId>false</externalId>
+    <label>Partenaire(old)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AO2C</fullName>
+                <default>false</default>
+                <label>AO2C</label>
+            </value>
+            <value>
+                <fullName>ATR COMPTA</fullName>
+                <default>false</default>
+                <label>ATR COMPTA</label>
+            </value>
+            <value>
+                <fullName>CABINET AUTRAN</fullName>
+                <default>false</default>
+                <label>CABINET AUTRAN</label>
+            </value>
+            <value>
+                <fullName>CFN AUDIT</fullName>
+                <default>false</default>
+                <label>CFN AUDIT</label>
+            </value>
+            <value>
+                <fullName>CPA AUDIT</fullName>
+                <default>false</default>
+                <label>CPA AUDIT</label>
+            </value>
+            <value>
+                <fullName>CTN FRANCE</fullName>
+                <default>false</default>
+                <label>CTN FRANCE</label>
+            </value>
+            <value>
+                <fullName>CULTURE COMPTABLE</fullName>
+                <default>false</default>
+                <label>CULTURE COMPTABLE</label>
+            </value>
+            <value>
+                <fullName>DESPREZ</fullName>
+                <default>false</default>
+                <label>DESPREZ</label>
+            </value>
+            <value>
+                <fullName>FID&#39;OUEST</fullName>
+                <default>false</default>
+                <label>FID&#39;OUEST</label>
+            </value>
+            <value>
+                <fullName>FINANCE CONCEPTION</fullName>
+                <default>false</default>
+                <label>FINANCE CONCEPTION</label>
+            </value>
+            <value>
+                <fullName>FINE GESTION</fullName>
+                <default>false</default>
+                <label>FINE GESTION</label>
+            </value>
+            <value>
+                <fullName>HLB COFIME</fullName>
+                <default>false</default>
+                <label>HLB COFIME</label>
+            </value>
+            <value>
+                <fullName>LYON EXPERTISE</fullName>
+                <default>false</default>
+                <label>LYON EXPERTISE</label>
+            </value>
+            <value>
+                <fullName>OPTIMA EXPERTS</fullName>
+                <default>false</default>
+                <label>OPTIMA EXPERTS</label>
+            </value>
+            <value>
+                <fullName>QUALIANS</fullName>
+                <default>false</default>
+                <label>QUALIANS</label>
+            </value>
+            <value>
+                <fullName>RB CONSULTING</fullName>
+                <default>false</default>
+                <label>RB CONSULTING</label>
+            </value>
+            <value>
+                <fullName>XPERTYS</fullName>
+                <default>false</default>
+                <label>XPERTYS</label>
+            </value>
+            <value>
+                <fullName>AVENIR EXPERT</fullName>
+                <default>false</default>
+                <label>AVENIR EXPERT</label>
+            </value>
+            <value>
+                <fullName>DOLBEAU EXPERTISE</fullName>
+                <default>false</default>
+                <label>DOLBEAU EXPERTISE</label>
+            </value>
+            <value>
+                <fullName>AGC</fullName>
+                <default>false</default>
+                <label>AGC</label>
+            </value>
+            <value>
+                <fullName>HLB COFIME BUREAU</fullName>
+                <default>false</default>
+                <label>HLB COFIME BUREAU</label>
+            </value>
+            <value>
+                <fullName>FIMECO</fullName>
+                <default>false</default>
+                <label>FIMECO</label>
+            </value>
+            <value>
+                <fullName>RC EXPERTISE</fullName>
+                <default>false</default>
+                <label>RC EXPERTISE</label>
+            </value>
+            <value>
+                <fullName>EXPERT COMPTABLE</fullName>
+                <default>false</default>
+                <label>EXPERT COMPTABLE</label>
+            </value>
+            <value>
+                <fullName>COGEP</fullName>
+                <default>false</default>
+                <label>COGEP</label>
+            </value>
+            <value>
+                <fullName>REVISION AUDIT CONSEILS</fullName>
+                <default>false</default>
+                <label>REVISION AUDIT CONSEILS</label>
+            </value>
+            <value>
+                <fullName>OPTION REEL</fullName>
+                <default>false</default>
+                <label>OPTION REEL</label>
+            </value>
+            <value>
+                <fullName>CCPM</fullName>
+                <default>false</default>
+                <label>CCPM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

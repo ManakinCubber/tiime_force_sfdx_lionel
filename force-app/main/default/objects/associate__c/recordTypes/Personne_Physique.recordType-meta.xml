@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Personne_Physique</fullName>
+    <active>true</active>
+    <label>Personne Physique</label>
+    <picklistValues>
+        <picklist>AccreConditions__c</picklist>
+        <values>
+            <fullName>Bénéficiaire du ASS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bénéficiaire du ATT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bénéficiaire du RMI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bénéficiaire du RSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demandeur d%27emploi indemnisé ou indemnisable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demandeur d%27emploi non indemnisé inscrit à Pôle Emploi au cours des 18 derniers mois</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jeune de 18 à 25 ans révolus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personne de moins de 30 ans non indemnisée ou reconnue handicapée</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ActivityTypeConserved__c</picklist>
+        <values>
+            <fullName>Retraité</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salarié</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salarié Agricole</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Civility__c</picklist>
+        <values>
+            <fullName>Madame</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monsieur</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CompanySpouseActivity__c</picklist>
+        <values>
+            <fullName>Non</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oui en tant qu%27Associé</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oui en tant que Collaborateur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oui en tant que Salarié</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CurrentTNSRegime__c</picklist>
+        <values>
+            <fullName>Agricole</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non salarié non agricole</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Régime général</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LegalStatus__c</picklist>
+        <values>
+            <fullName>EURL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SARL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SASU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SELARL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SELARLU</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>MaritalStatus__c</picklist>
+        <values>
+            <fullName>Célibataire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Divorcé</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marié sous le régime de l%27indivision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marié sous le régime de la séparation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pacsé sous le régime de l%27indivision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pacsé sous le régime de la séparation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veuf</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ParallelActivity__c</picklist>
+        <values>
+            <fullName>Sous la forme d%27une auto-entreprise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sous la forme d%27une entreprise individuelle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>non</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SocialMandat__c</picklist>
+        <values>
+            <fullName>DirecteurGeneral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gerant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>President</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SpouseCivility__c</picklist>
+        <values>
+            <fullName>Madame</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monsieur</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

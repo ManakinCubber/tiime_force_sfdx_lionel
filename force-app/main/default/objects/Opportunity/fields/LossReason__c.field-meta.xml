@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LossReason__c</fullName>
+    <externalId>false</externalId>
+    <label>Motif de la perte</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>StageName</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Projet trop en amont</fullName>
+                <default>false</default>
+                <label>Projet trop en amont</label>
+            </value>
+            <value>
+                <fullName>Concurrence</fullName>
+                <default>false</default>
+                <label>Concurrence</label>
+            </value>
+            <value>
+                <fullName>Injoignable suite à rdv manqué</fullName>
+                <default>false</default>
+                <label>Injoignable suite à rdv manqué</label>
+            </value>
+            <value>
+                <fullName>Injoignable suite à envoi de la proposition</fullName>
+                <default>false</default>
+                <label>Injoignable suite à envoi de la proposition</label>
+            </value>
+            <value>
+                <fullName>Prix</fullName>
+                <default>false</default>
+                <label>Prix</label>
+            </value>
+            <value>
+                <fullName>Proximité souhaitée</fullName>
+                <default>false</default>
+                <label>Proximité souhaitée</label>
+            </value>
+            <value>
+                <fullName>Hors zone géographique</fullName>
+                <default>false</default>
+                <label>Hors zone géographique</label>
+            </value>
+            <value>
+                <fullName>Lost to Competitor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lost to Competitor</label>
+            </value>
+            <value>
+                <fullName>No Budget / Lost Funding</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No Budget / Lost Funding</label>
+            </value>
+            <value>
+                <fullName>No Decision / Non-Responsive</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No Decision / Non-Responsive</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Price</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Opportunité perdue</controllingFieldValue>
+            <valueName>Projet trop en amont</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Opportunité perdue</controllingFieldValue>
+            <valueName>Concurrence</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

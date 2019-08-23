@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DateArriveeEnFileAttente__c</fullName>
+    <description>Date et heure où la Lead est affilée pour la première fois à la file d&#39;attente &quot;Leads en attente&quot;.</description>
+    <externalId>false</externalId>
+    <label>Date d&#39;arrivée en file d&#39;attente</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

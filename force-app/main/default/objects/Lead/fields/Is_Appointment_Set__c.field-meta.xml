@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Appointment_Set__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Case système.
+Cochée les champs de RDV ont été renseignés via le composant LeadAppointment.</description>
+    <externalId>false</externalId>
+    <label>RDV planifié</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

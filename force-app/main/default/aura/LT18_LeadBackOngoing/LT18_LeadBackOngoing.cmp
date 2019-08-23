@@ -1,0 +1,9 @@
+<aura:component implements="flexipage:availableForRecordHome,force:lightningQuickActionWithoutHeader,force:hasRecordId" controller="LTC21_LeadBack">
+	<aura:attribute name="startRecord" type="Start__c" />
+	<force:recordData aura:id="startRecord" recordId="{!v.recordId}"
+		fields="Crea__c" mode="VIEW" targetFields="{!v.startRecord}"
+		recordUpdated="{!c.doInit}" />
+
+	<c:LT17_LeadBack type="ongoing" recordId="{!v.startRecord.Crea__c}"
+		aura:id="leadBack" />
+</aura:component>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RDV_EC_confirmer_dans_les_7_jours</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>Partenaire__c</columns>
+    <columns>Contact_Partenaire__c</columns>
+    <columns>Rendez_vous__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Linking__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RDV_EC_confirmer__c</field>
+        <operation>equals</operation>
+        <value>Oui</value>
+    </filters>
+    <filters>
+        <field>Rendez_vous__c</field>
+        <operation>lessOrEqual</operation>
+        <value>NEXT_N_DAYS:7</value>
+    </filters>
+    <filters>
+        <field>Rendez_vous__c</field>
+        <operation>greaterThan</operation>
+        <value>YESTERDAY</value>
+    </filters>
+    <filters>
+        <field>Linking__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.LeadClient</value>
+    </filters>
+    <label>RDV EC à confirmer dans les 7 jours</label>
+    <sharedTo>
+        <role>Commerce</role>
+    </sharedTo>
+</ListView>

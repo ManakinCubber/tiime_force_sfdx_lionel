@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>statutDeLaLeadEtMotifDeLaPerte</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+$User.BypassValidationRules__c = false,
+ISPICKVAL(Status,&quot;Perdu&quot;),
+ISPICKVAL( LossReason__c, &quot;&quot; )
+)</errorConditionFormula>
+    <errorDisplayField>LossReason__c</errorDisplayField>
+    <errorMessage>Le motif de la perte est obligatoire si le statut est Non-qualifié</errorMessage>
+</ValidationRule>

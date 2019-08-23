@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__FormatIBanObligatoire</fullName>
+    <active>true</active>
+    <description>Si zone SEPA, format IBAN obligatoire</description>
+    <errorConditionFormula>AND(numm__IsZoneSEPA__c=true,numm__FormatSepa__c =null)</errorConditionFormula>
+    <errorMessage>Format IBAN obligatoire</errorMessage>
+</ValidationRule>

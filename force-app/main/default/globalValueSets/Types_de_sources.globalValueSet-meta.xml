@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>FacebookAds</fullName>
+        <default>false</default>
+        <label>FacebookAds</label>
+    </customValue>
+    <customValue>
+        <fullName>TMC</fullName>
+        <default>false</default>
+        <label>TMC</label>
+    </customValue>
+    <customValue>
+        <fullName>Adwords</fullName>
+        <default>false</default>
+        <label>Adwords</label>
+    </customValue>
+    <customValue>
+        <fullName>LinkedInAds</fullName>
+        <default>false</default>
+        <label>LinkedInAds</label>
+    </customValue>
+    <customValue>
+        <fullName>novaa-expertise.com</fullName>
+        <default>false</default>
+        <label>novaa-expertise.com</label>
+    </customValue>
+    <customValue>
+        <fullName>incityz.com</fullName>
+        <default>false</default>
+        <label>incityz.com</label>
+    </customValue>
+    <customValue>
+        <fullName>l-expert-comptable.com</fullName>
+        <default>false</default>
+        <label>l-expert-comptable.com</label>
+    </customValue>
+    <customValue>
+        <fullName>Tiime</fullName>
+        <default>false</default>
+        <label>Tiime</label>
+    </customValue>
+    <customValue>
+        <fullName>Google</fullName>
+        <default>false</default>
+        <label>Google</label>
+    </customValue>
+    <customValue>
+        <fullName>Direct</fullName>
+        <default>false</default>
+        <label>Direct</label>
+    </customValue>
+    <customValue>
+        <fullName>Site Tiers</fullName>
+        <default>false</default>
+        <label>Site Tiers</label>
+    </customValue>
+    <masterLabel>Types de sources</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

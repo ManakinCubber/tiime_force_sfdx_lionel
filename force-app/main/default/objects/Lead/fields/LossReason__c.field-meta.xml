@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LossReason__c</fullName>
+    <externalId>false</externalId>
+    <label>Motif de la perte</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ContreLeEnLigneW</fullName>
+                <default>false</default>
+                <label>Contre le &quot;En Ligne&quot; - W</label>
+            </value>
+            <value>
+                <fullName>EnAttenteFinancementW</fullName>
+                <default>false</default>
+                <label>En attente de financement - W</label>
+            </value>
+            <value>
+                <fullName>EnAttenteRetraiteW</fullName>
+                <default>false</default>
+                <label>En attente de sa retraite - W</label>
+            </value>
+            <value>
+                <fullName>EncoreEngageAvecECW</fullName>
+                <default>false</default>
+                <label>Encore engagé avec son EC - W</label>
+            </value>
+            <value>
+                <fullName>EncoreSalariéProcessRuptureConventionnelleW</fullName>
+                <default>false</default>
+                <label>Encore salarié - en process rupture conventionnelle - W</label>
+            </value>
+            <value>
+                <fullName>SeRenseigneReflechitW</fullName>
+                <default>false</default>
+                <label>Se renseigne - réfléchit - W</label>
+            </value>
+            <value>
+                <fullName>Auto Entrepreneur</fullName>
+                <default>false</default>
+                <label>Auto Entrepreneur</label>
+            </value>
+            <value>
+                <fullName>Candidature RH</fullName>
+                <default>false</default>
+                <label>Candidature RH</label>
+            </value>
+            <value>
+                <fullName>concurrence</fullName>
+                <default>false</default>
+                <label>Concurrence</label>
+            </value>
+            <value>
+                <fullName>Demande à l&#39;étranger</fullName>
+                <default>false</default>
+                <label>Demande à l&#39;étranger</label>
+            </value>
+            <value>
+                <fullName>Demande d&#39;un salarié</fullName>
+                <default>false</default>
+                <label>Demande d&#39;un salarié</label>
+            </value>
+            <value>
+                <fullName>Doublon</fullName>
+                <default>false</default>
+                <label>Doublon</label>
+            </value>
+            <value>
+                <fullName>Expert comptable</fullName>
+                <default>false</default>
+                <label>Expert comptable</label>
+            </value>
+            <value>
+                <fullName>Hors cible</fullName>
+                <default>false</default>
+                <label>Hors cible</label>
+            </value>
+            <value>
+                <fullName>Inbound LEC</fullName>
+                <default>false</default>
+                <label>Inbound LEC</label>
+            </value>
+            <value>
+                <fullName>injoignable</fullName>
+                <default>false</default>
+                <label>Injoignable</label>
+            </value>
+            <value>
+                <fullName>Mauvais numéro</fullName>
+                <default>false</default>
+                <label>Mauvais numéro</label>
+            </value>
+            <value>
+                <fullName>Officéo</fullName>
+                <default>false</default>
+                <label>Officéo</label>
+            </value>
+            <value>
+                <fullName>Pas de numéro</fullName>
+                <default>false</default>
+                <label>Pas de numéro</label>
+            </value>
+            <value>
+                <fullName>Projet non viable</fullName>
+                <default>false</default>
+                <label>Projet non viable</label>
+            </value>
+            <value>
+                <fullName>Questions sur les apps</fullName>
+                <default>false</default>
+                <label>Questions sur les apps</label>
+            </value>
+            <value>
+                <fullName>Spam</fullName>
+                <default>false</default>
+                <label>Spam</label>
+            </value>
+            <value>
+                <fullName>Test</fullName>
+                <default>false</default>
+                <label>Test</label>
+            </value>
+            <value>
+                <fullName>Trop en amont</fullName>
+                <default>false</default>
+                <label>Trop en amont</label>
+            </value>
+            <value>
+                <fullName>Demande HS</fullName>
+                <default>false</default>
+                <label>Demande HS</label>
+            </value>
+            <value>
+                <fullName>Envoi vers BGE Ile de France</fullName>
+                <default>false</default>
+                <label>Envoi vers BGE Ile de France</label>
+            </value>
+            <value>
+                <fullName>hors-méthode</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Hors méthode groupe</label>
+            </value>
+            <value>
+                <fullName>Pas de partenaire adapté</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pas de partenaire adapté</label>
+            </value>
+            <value>
+                <fullName>hors secteur géographique</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>hors secteur géographique</label>
+            </value>
+            <value>
+                <fullName>hors-métier</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>hors-métier</label>
+            </value>
+            <value>
+                <fullName>mal-qualifié</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>mal-qualifié</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

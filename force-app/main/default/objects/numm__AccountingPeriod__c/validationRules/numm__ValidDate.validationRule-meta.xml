@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__ValidDate</fullName>
+    <active>true</active>
+    <description>La date de fin doit être supérieure à la date de début</description>
+    <errorConditionFormula>numm__StartDate__c &gt;= numm__EndDate__c</errorConditionFormula>
+    <errorMessage>La date de début doit être inférieure à la date de fin.</errorMessage>
+</ValidationRule>

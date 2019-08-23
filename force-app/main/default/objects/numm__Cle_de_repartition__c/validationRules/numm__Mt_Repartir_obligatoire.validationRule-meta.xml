@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Mt_Repartir_obligatoire</fullName>
+    <active>true</active>
+    <description>Montant à répartir obligatoire en fonction du mode de répartition</description>
+    <errorConditionFormula>AND (OR (ISPICKVAL(numm__Mode__c , &quot;Nb Appart&quot;),ISPICKVAL(numm__Mode__c , &quot;Nb lot&quot;)), OR(numm__Montant_repartir__c =0,  ISBlank(numm__Montant_repartir__c))  )</errorConditionFormula>
+    <errorDisplayField>numm__Montant_repartir__c</errorDisplayField>
+    <errorMessage>Pour ce mode de répartition, le montant à répartir est obligatoire</errorMessage>
+</ValidationRule>

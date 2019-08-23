@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__CheckForValidNumeroDePieceFormat</fullName>
+    <active>true</active>
+    <errorConditionFormula>LEN(numm__AccountingDocument__c) &lt;&gt; 10</errorConditionFormula>
+    <errorDisplayField>numm__AccountingDocument__c</errorDisplayField>
+    <errorMessage>Veuillez spécifier 10 caractères pour le numéro de pièce.
+Exemples : type de compteur Année : 2013000000, type de compteur Période : 1309000000, type de compteur Global : ACH0000000</errorMessage>
+</ValidationRule>

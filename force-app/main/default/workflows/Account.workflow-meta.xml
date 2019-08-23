@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Client_averti</fullName>
+        <field>Warned__c</field>
+        <literalValue>1</literalValue>
+        <name>Client averti</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Date_Signature_compta</fullName>
+        <field>DateContractSign__c</field>
+        <formula>Now()</formula>
+        <name>Date Signature compta</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>MAJKbisReceptionDate</fullName>
+        <field>DateKbisReceive__c</field>
+        <formula>Now()</formula>
+        <name>MAJ Date de réception KBIS</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>delSpaceAction</fullName>
+        <field>Siret__c</field>
+        <formula>SUBSTITUTE(Siret__c, &quot; &quot;, &quot;&quot;)</formula>
+        <name>Enlève les espaces</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Client averti</fullName>
+        <actions>
+            <name>Client_averti</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.TrigramComptable__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Date Signature compta</fullName>
+        <actions>
+            <name>Date_Signature_compta</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.ContractSign__c</field>
+            <operation>equals</operation>
+            <value>Vrai</value>
+        </criteriaItems>
+        <description>Renseigne la date de signature du contrat</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Envoi dossier Base GI</fullName>
+        <active>false</active>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>Account.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Freemium,PartnerCustomer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.LastModifiedById</field>
+            <operation>notEqual</operation>
+            <value>Marianne Denis,NE PAS MODIFIER CONNECTEUR API</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>MAJ Date de réception KBIS</fullName>
+        <actions>
+            <name>MAJKbisReceptionDate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.KbisReceive__c</field>
+            <operation>equals</operation>
+            <value>Vrai</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>delSpaceSIRET</fullName>
+        <actions>
+            <name>delSpaceAction</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Siret__c</field>
+            <operation>contains</operation>
+            <value>&quot; &quot;</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

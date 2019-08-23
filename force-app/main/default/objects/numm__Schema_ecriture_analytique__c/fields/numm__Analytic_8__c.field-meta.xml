@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Analytic_8__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Analytique 8</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>numm__CostAccountingValues__c.numm__IdAxis__r.numm__RelatedAnalytics__c</field>
+            <operation>equals</operation>
+            <value>Analytique 8</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>numm__CostAccountingValues__c</referenceTo>
+    <relationshipLabel>Schémas d&#39;écritures analytiques (Analytique 8)</relationshipLabel>
+    <relationshipName>Schemas_ecritures_analytiques_8</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

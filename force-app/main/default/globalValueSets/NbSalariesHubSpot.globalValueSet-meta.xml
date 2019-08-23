@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Je n&#39;ai pas de salariés et je n&#39;en aurai jamais</fullName>
+        <default>false</default>
+        <label>Je n&#39;ai pas de salariés et je n&#39;en aurai jamais</label>
+    </customValue>
+    <customValue>
+        <fullName>Je n&#39;ai pas de salariés mais je compte embaucher prochainement</fullName>
+        <default>false</default>
+        <label>Je n&#39;ai pas de salariés mais je compte embaucher prochainement</label>
+    </customValue>
+    <customValue>
+        <fullName>De 1 à 5</fullName>
+        <default>false</default>
+        <label>De 1 à 10</label>
+    </customValue>
+    <customValue>
+        <fullName>De 6 à 20</fullName>
+        <default>false</default>
+        <label>De 10 à 20</label>
+    </customValue>
+    <customValue>
+        <fullName>Plus de 20</fullName>
+        <default>false</default>
+        <label>Plus de 20</label>
+    </customValue>
+    <masterLabel>NbSalariesHubSpot</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

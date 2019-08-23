@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuthProvider xmlns="http://soap.sforce.com/2006/04/metadata">
+    <authorizeUrl>https://accounts.google.com/o/oauth2/auth?access_type=offline&amp;approval_prompt=force</authorizeUrl>
+    <consumerKey>367339606564-2jkun9evnmknq10osmiugo8cu7qlfhbm.apps.googleusercontent.com</consumerKey>
+    <consumerSecret>+9Xrl9aFGnx77nYZkbZg67hq4aFXyulOcEEY92ILatc=</consumerSecret>
+    <defaultScopes>https://www.googleapis.com/auth/calendar</defaultScopes>
+    <friendlyName>GoogleCalendarTest</friendlyName>
+    <includeOrgIdInIdentifier>false</includeOrgIdInIdentifier>
+    <providerType>OpenIdConnect</providerType>
+    <sendAccessTokenInHeader>true</sendAccessTokenInHeader>
+    <sendClientCredentialsInHeader>false</sendClientCredentialsInHeader>
+    <tokenUrl>https://accounts.google.com/o/oauth2/token</tokenUrl>
+</AuthProvider>

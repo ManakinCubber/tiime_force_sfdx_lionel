@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NumberBGI__c</fullName>
+    <description>Le numéro de dossier enregistré dans la BaseGI. Ce numéro doit être unique.</description>
+    <externalId>true</externalId>
+    <label>Numéro Dossier BaseGI</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>true</unique>
+</CustomField>

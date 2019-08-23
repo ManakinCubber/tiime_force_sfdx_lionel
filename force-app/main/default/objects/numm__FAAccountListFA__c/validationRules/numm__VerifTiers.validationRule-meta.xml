@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__VerifTiers</fullName>
+    <active>true</active>
+    <description>Vérification de la cohérence du tiers</description>
+    <errorConditionFormula>If (ISBLANK (numm__ThirdParty__c),false,OR( numm__IdAccountingCode__r.numm__IdCtrlAccounting__c &lt;&gt; numm__ThirdParty__r.numm__IdctrlAccounting__c, numm__FA_Fixed_Asset__r.numm__Entity__c &lt;&gt; numm__ThirdParty__r.numm__Entite__c ))</errorConditionFormula>
+    <errorDisplayField>numm__ThirdParty__c</errorDisplayField>
+    <errorMessage>Tiers incorrecte.</errorMessage>
+</ValidationRule>

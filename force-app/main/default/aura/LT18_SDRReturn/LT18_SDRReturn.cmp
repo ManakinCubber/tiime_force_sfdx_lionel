@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForRecordHome,force:lightningQuickActionWithoutHeader,force:hasRecordId" access="global" >
+  <aura:attribute name="simpleRecord" type="Lead"/>
+  <force:recordData aura:id="TheRecord"
+        recordId="{!v.recordId}"
+        fields="Id, Status, Partenaire__c, Contact_Partenaire__c"
+        mode="EDIT"
+        targetFields="{!v.simpleRecord}"
+        recordUpdated="{!c.doInit}"/>
+
+        <div class="slds-grid slds-is-relative">
+        	<lightning:spinner variant="brand" alternativeText="Renvoi en cours..." size="small" />
+    	</div>
+</aura:component>

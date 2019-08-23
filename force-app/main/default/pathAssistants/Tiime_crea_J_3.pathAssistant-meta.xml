@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>enquetedeSatisfaction__c</entityName>
+    <fieldName>Statut__c</fieldName>
+    <masterLabel>Tiime créa J+3</masterLabel>
+    <recordTypeName>Crea_suite_Kbis_J_3</recordTypeName>
+</PathAssistant>

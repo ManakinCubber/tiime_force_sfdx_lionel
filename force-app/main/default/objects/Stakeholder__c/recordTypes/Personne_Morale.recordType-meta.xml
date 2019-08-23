@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Personne_Morale</fullName>
+    <active>true</active>
+    <label>Personne Morale</label>
+    <picklistValues>
+        <picklist>AccountApp__c</picklist>
+        <values>
+            <fullName>Actif</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactif</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>AccreConditions__c</picklist>
+        <values>
+            <fullName>Bénéficiaire du ASS%09Bénéficiaire du ASS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bénéficiaire du ATT%09Bénéficiaire du ATT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bénéficiaire du RMI%09Bénéficiaire du RMI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bénéficiaire du RSA%09Bénéficiaire du RSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demandeur d%27emploi indemnisé ou indemnisable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demandeur d%27emploi non indemnisé inscrit à Pôle Emploi au cours des 18 derniers mois</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jeune de 18 à 25 ans révolus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personne de moins de 30 ans non indemnisée ou reconnue handicapée</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>App__c</picklist>
+        <values>
+            <fullName>Invoice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tiime</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wallet</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ContactType__c</picklist>
+        <values>
+            <fullName>Bénéficiaire Effectif</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mandataire social</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>InvoiceApp__c</picklist>
+        <values>
+            <fullName>Actif</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactif</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OfficerType__c</picklist>
+        <values>
+            <fullName>Co-gerant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DirecteurGeneral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DirecteurGeneralDelegue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gerant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>President</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ReceiptApp__c</picklist>
+        <values>
+            <fullName>Actif</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactif</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>WalletApp__c</picklist>
+        <values>
+            <fullName>Fermé</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incomplet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incomplet traité</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nouveau</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refusé</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Validé</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

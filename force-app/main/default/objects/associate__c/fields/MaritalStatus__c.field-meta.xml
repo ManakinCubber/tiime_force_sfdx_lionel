@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MaritalStatus__c</fullName>
+    <externalId>false</externalId>
+    <label>Situation matrimoniale</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Célibataire</fullName>
+                <default>false</default>
+                <label>Célibataire</label>
+            </value>
+            <value>
+                <fullName>Marié sous le régime de l&#39;indivision</fullName>
+                <default>false</default>
+                <label>Marié sous le régime de l&#39;indivision</label>
+            </value>
+            <value>
+                <fullName>Marié sous le régime de la séparation</fullName>
+                <default>false</default>
+                <label>Marié sous le régime de la séparation</label>
+            </value>
+            <value>
+                <fullName>Pacsé sous le régime de l&#39;indivision</fullName>
+                <default>false</default>
+                <label>Pacsé sous le régime de l&#39;indivision</label>
+            </value>
+            <value>
+                <fullName>Pacsé sous le régime de la séparation</fullName>
+                <default>false</default>
+                <label>Pacsé sous le régime de la séparation</label>
+            </value>
+            <value>
+                <fullName>Divorcé</fullName>
+                <default>false</default>
+                <label>Divorcé</label>
+            </value>
+            <value>
+                <fullName>Veuf</fullName>
+                <default>false</default>
+                <label>Veuf</label>
+            </value>
+            <value>
+                <fullName>Marié sous le régime de la communauté</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Marié sous le régime de la communauté</label>
+            </value>
+            <value>
+                <fullName>Pacsé sous le régime de la communauté</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pacsé sous le régime de la communauté</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

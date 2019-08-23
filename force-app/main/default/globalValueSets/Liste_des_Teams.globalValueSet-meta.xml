@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Novaa</fullName>
+        <default>false</default>
+        <label>Novaa</label>
+    </customValue>
+    <customValue>
+        <fullName>Incityz</fullName>
+        <default>false</default>
+        <label>Incityz</label>
+    </customValue>
+    <customValue>
+        <fullName>TMC</fullName>
+        <default>false</default>
+        <label>TMC</label>
+    </customValue>
+    <customValue>
+        <fullName>Condillac</fullName>
+        <default>false</default>
+        <label>Condillac</label>
+    </customValue>
+    <customValue>
+        <fullName>Ola Compta</fullName>
+        <default>false</default>
+        <label>Ola Compta</label>
+    </customValue>
+    <masterLabel>Liste des Teams</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IncomPerTranche__c</fullName>
+    <externalId>false</externalId>
+    <label>Revenus par Tranche</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0 - 18 K€</fullName>
+                <default>false</default>
+                <label>0 - 18 K€</label>
+            </value>
+            <value>
+                <fullName>19 - 23 K€</fullName>
+                <default>false</default>
+                <label>19 - 23 K€</label>
+            </value>
+            <value>
+                <fullName>24 - 27K€</fullName>
+                <default>false</default>
+                <label>24 - 27K€</label>
+            </value>
+            <value>
+                <fullName>28 - 35K€</fullName>
+                <default>false</default>
+                <label>28 - 35K€</label>
+            </value>
+            <value>
+                <fullName>36 - 56K€</fullName>
+                <default>false</default>
+                <label>36 - 56K€</label>
+            </value>
+            <value>
+                <fullName>57K€ ou plus</fullName>
+                <default>false</default>
+                <label>57K€ ou plus</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TransferDay__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(
+				WEEKDAY(
+								DATEVALUE(TransferMonitoring__c)), 1, &quot;Dimanche&quot;, 2, &quot;Lundi&quot;,3, &quot;Mardi&quot;,4, &quot;Mercredi&quot;,5, &quot;Jeudi&quot;,6,&quot;Vendredi&quot;,7,&quot;Samedi&quot;,&quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Jour de transfert</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

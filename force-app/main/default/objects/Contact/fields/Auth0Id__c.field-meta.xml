@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Auth0Id__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <description>Identifiant Auth0 du user des apps</description>
+    <externalId>true</externalId>
+    <label>Id auth0</label>
+    <length>40</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

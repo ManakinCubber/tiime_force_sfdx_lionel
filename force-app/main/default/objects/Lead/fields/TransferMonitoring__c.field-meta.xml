@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TransferMonitoring__c</fullName>
+    <externalId>false</externalId>
+    <label>Suivi Transfert</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Creation</fullName>
+                <default>false</default>
+                <label>Créa</label>
+            </value>
+            <value>
+                <fullName>Partenaire</fullName>
+                <default>false</default>
+                <label>Partenaire</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Partenaire</controllingFieldValue>
+            <valueName>Creation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partenaire</controllingFieldValue>
+            <valueName>Partenaire</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IssuedeRelanceObligatoire</fullName>
+    <active>false</active>
+    <description>Le champs Issue de Relance doit être renseigné si on souhaite passer la tâche au statut terminé.</description>
+    <errorConditionFormula>AND(
+$User.BypassValidationRules__c = false,
+				 OR(RecordType.DeveloperName =&quot;TacheCabinets&quot;,
+								RecordType.DeveloperName =&quot;TacheCabinetsAutoMail&quot;,
+								RecordType.DeveloperName =&quot;TacheCabinetsLastCall&quot;,
+							RecordType.DeveloperName =&quot;TacheTransfert&quot;),
+				 ISPICKVAL(Status ,&quot;Terminé&quot;), 
+		  	ISPICKVAL(IssueDeLaRelance__c,&quot;&quot;)
+				)</errorConditionFormula>
+    <errorMessage>Le champs Issue de Relance doit être renseigné pour passer au statut terminé.</errorMessage>
+</ValidationRule>

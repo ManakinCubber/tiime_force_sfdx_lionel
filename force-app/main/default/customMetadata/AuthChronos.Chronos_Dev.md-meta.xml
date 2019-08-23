@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Chronos-Dev</label>
+    <protected>false</protected>
+    <values>
+        <field>audience__c</field>
+        <value xsi:type="xsd:string">https://chronos-dev/</value>
+    </values>
+    <values>
+        <field>client_id__c</field>
+        <value xsi:type="xsd:string">3DjblisJ1usgR0TDJuYdZ9rQS0GTp5Gv</value>
+    </values>
+    <values>
+        <field>client_secret__c</field>
+        <value xsi:type="xsd:string">a5Lyn0vKgG1itOqFFIa4-z5tw9V1198S5IM5uw09OBU-kfWyqmCQm6_0ywhsLm42</value>
+    </values>
+    <values>
+        <field>grant_type__c</field>
+        <value xsi:type="xsd:string">http://auth0.com/oauth/grant-type/password-realm</value>
+    </values>
+    <values>
+        <field>realm__c</field>
+        <value xsi:type="xsd:string">Chronos-dev</value>
+    </values>
+    <values>
+        <field>scope__c</field>
+        <value xsi:type="xsd:string">openid</value>
+    </values>
+    <values>
+        <field>url_chronos_api__c</field>
+        <value xsi:type="xsd:string">https://chronos-api-development.herokuapp.com</value>
+    </values>
+</CustomMetadata>

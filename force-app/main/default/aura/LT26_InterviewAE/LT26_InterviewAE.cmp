@@ -1,0 +1,100 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="LTC26_InterviewAE">
+
+    <aura:attribute name="labels" type="Object" />
+
+    <aura:attribute name="leadRecord" type="Object" />
+
+    <aura:attribute name="simpleRecord" type="Transfert__c" />
+    <aura:attribute name="transfertRecord" type="Object" description="Objet Transfert avec tous les champs utiles" />
+    <force:recordData aura:id="TheRecord" recordId="{!v.recordId}" 
+    	fields="RecordTypeId, AEComments__c, LeadTemperature__c, TemperatureDetails__c, Lead__c, Lead__r.Canal__c, Lead__r.Detail__c, Lead__r.Partnership__c, Lead__r.Event__c" targetRecord="{!v.transfertRecord}"
+        targetError="{!v.recordError}" targetFields="{!v.simpleRecord}" recordUpdated="{!c.doInit}" mode="EDIT" 
+    />
+
+    <lightning:card variant="Narrow" title="Informations de la lead" iconName="standard:lead" class="slds-card slds-size_full">
+        <div class="slds-card">
+            <lightning:recordEditForm aura:id="recordViewLeadForm" recordId="{!v.leadRecord.Id}" objectApiName="Lead" onsubmit="{!c.handleSubmit}" onsuccess="{!c.handleLeadSuccess}">
+            	<lightning:messages />
+                <div class="slds-grid slds-wrap slds-align_absolute-center slds-m-bottom_small">
+                    <div class="slds-col slds-size_1-of-2">
+                        <div class="slds-grid slds-wrap slds-gutters slds-grid_align-center">
+                            <div class="slds-col slds-size_1-of-1">
+                                <lightning:inputField fieldName="Canal__c" value="{!v.leadRecord.Canal__c}" class="slds-m-top_medium slds-col" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <div class="slds-grid slds-wrap slds-gutters slds-grid_align-center">
+                            <div class="slds-grid slds-col slds-size_1-of-1">
+                                <aura:if isTrue="{!v.leadRecord.Canal__c == 'partenariats'}">
+                                    <lightning:inputField fieldName="Partnership__c" value="{!v.leadRecord.Partnership__c}" class="slds-m-top_medium slds-col slds-size_1-of-2" />
+                                    <lightning:inputField fieldName="Event__c" value="{!v.leadRecord.Event__c}" class="slds-m-top_medium slds-col slds-size_1-of-2" />
+                                    <aura:set attribute="else">
+                                        <aura:if isTrue="{!v.leadRecord.Canal__c == 'events'}">
+                                            <lightning:inputField fieldName="Event__c" value="{!v.leadRecord.Event__c}" class="slds-m-top_medium slds-col" />
+                                            <aura:set attribute="else">
+                                            	<aura:if isTrue="{!v.leadRecord.Canal__c == 'reco-client'}">
+                                            		<lightning:inputField fieldName="CustomerRecommendation__c" value="{!v.leadRecord.CustomerRecommendation__c}" class="slds-m-top_medium slds-col" />
+	                                            	<aura:set attribute="else">
+	                                                	<lightning:inputField fieldName="Detail__c" value="{!v.leadRecord.Detail__c}" class="slds-m-top_medium slds-col" />
+	                                                </aura:set>
+	                                        	</aura:if>
+                                            </aura:set>
+                                        </aura:if>
+                                    </aura:set>
+                                </aura:if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-grid slds-wrap slds-align_absolute-center slds-m-bottom_small">
+                    <div class="slds-col slds-size_1-of-2">
+                        <div class="slds-grid slds-wrap slds-gutters slds-grid_align-center">
+                            <div class="slds-col slds-size_1-of-1">
+                                <lightning:inputField fieldName="OrigineWebsite__c" value="{!v.leadRecord.OrigineWebsite__c}" class="slds-m-top_medium slds-col" />
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="slds-grid slds-wrap slds-align_absolute-center">
+					<div class="slds-col slds-align_absolute-center">
+                <lightning:button aura:id="submitLead" type="submit" label="Valider" class="slds-m-top_medium" variant="brand"/>
+                	</div>
+                </div>
+            </lightning:recordEditForm>
+        </div>
+    </lightning:card>
+	
+
+    <lightning:card variant="Narrow" title="Informations du transfert" iconName="custom:custom18" class="slds-card slds-size_full">
+        <div class="slds-card">
+            <lightning:recordEditForm aura:id="recordViewTransfertForm" recordId="{!v.recordId}" objectApiName="Transfert__c" onsuccess="{!c.handleTransfertSuccess}">
+                <div class="slds-grid slds-wrap slds-align_absolute-center slds-m-bottom_small">
+                    <div class="slds-col slds-size_1-of-2">
+                        <div class="slds-grid slds-wrap slds-gutters slds-grid_align-center">
+                            <div class="slds-col slds-size_1-of-1">
+                                <lightning:inputField fieldName="AEComments__c" class="slds-m-top_medium slds-col textarea_full" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <div class="slds-grid slds-wrap slds-gutters slds-grid_align-center">
+                            <div class="slds-col slds-size_1-of-1">
+                                <lightning:inputField fieldName="LeadTemperature__c" class="slds-m-top_medium slds-col" />
+                            </div>
+                            <div class="slds-col slds-size_1-of-1">
+                                <lightning:inputField fieldName="TemperatureDetails__c" class="slds-m-top_medium slds-col" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-grid slds-wrap slds-align_absolute-center">
+					<div class="slds-col slds-align_absolute-center">
+                <lightning:button aura:id="submitTransfert" type="submit" label="Valider" class="slds-m-top_medium" variant="brand"/>
+                	</div>
+                </div>
+            </lightning:recordEditForm>
+        </div>
+    </lightning:card>
+
+</aura:component>

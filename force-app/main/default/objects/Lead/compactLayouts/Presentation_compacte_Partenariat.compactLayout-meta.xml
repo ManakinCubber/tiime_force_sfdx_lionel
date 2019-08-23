@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Presentation_compacte_Partenariat</fullName>
+    <fields>Name</fields>
+    <fields>MobilePhone</fields>
+    <fields>Email</fields>
+    <fields>SourceSPE__c</fields>
+    <fields>ContactSourceSPE__c</fields>
+    <fields>DateAtelierSPE__c</fields>
+    <label>Présentation compacte Partenariat</label>
+</CompactLayout>

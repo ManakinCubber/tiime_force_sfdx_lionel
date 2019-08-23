@@ -1,0 +1,46 @@
+<aura:component controller="AP13_UploadFileController">
+
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="fieldName" type="String" />
+    <aura:attribute name="documentId" type="Id" />
+    <aura:attribute name="valid" type="Integer" default="0"/>
+    <aura:attribute name="label" type="String" default="DEFAULT LABEL"/>
+    <aura:attribute name="title" type="String" default="DEFAULT TITLE"/>
+    <aura:attribute name="name" type="String"/>
+
+    <tr>
+        <aura:if isTrue="{!v.documentId != null}">
+            <td>
+                <lightning:button label="{!v.title}" onclick="{! c.openSingleFile }" class="preview-button"/>
+            </td>
+            <td class="input-icon">
+                <lightning:icon iconName="action:approval" size="small" title="Fichier envoyé"/>
+            </td>
+            <aura:set attribute="else">
+                <td>
+                    <lightning:fileUpload
+                        name="{!v.name}"
+                        label="{!v.label}"
+                        multiple="false"
+                        recordId="{!v.recordId}"
+                        disabled="{!v.valid > 0}"
+                        onuploadfinished="{!c.handleUploadFinished}"/>
+                </td>
+                <td class="input-icon">
+                    <aura:if isTrue="{!v.valid == 2}">
+                        <lightning:icon iconName="action:approval" size="small" title="Fichier envoyé"/>
+                        <aura:set attribute="else">
+                            <aura:if isTrue="{!v.valid == 1}">
+                                <lightning:icon iconName="action:upload" size="small" title="Envoi en cours"/>
+                                <aura:set attribute="else">
+                                    <lightning:icon iconName="action:priority" size="small" title="Envoi nécessaire"/>
+                                </aura:set>
+                            </aura:if>
+                        </aura:set>
+                    </aura:if>
+                </td>
+            </aura:set>
+        </aura:if>
+    </tr>
+
+</aura:component>

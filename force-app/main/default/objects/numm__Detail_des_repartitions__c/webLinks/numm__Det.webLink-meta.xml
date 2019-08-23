@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Det</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Paramétrer les détails</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>var ModeRegle=&#39;{!numm__Cle_de_repartition__c.numm__Mode__c}&#39;;
+
+if (ModeRegle==&#39;Tantieme&#39;){
+
+location.assign(&#39;/apex/numm__VFPAP11_ParamDetailRepart?id={!numm__Cle_de_repartition__c.Id}&#39;);
+
+}
+else 
+{ 
+
+alert (&quot;Opération interdite pour ce type de règle&quot;); 
+
+}</url>
+</WebLink>

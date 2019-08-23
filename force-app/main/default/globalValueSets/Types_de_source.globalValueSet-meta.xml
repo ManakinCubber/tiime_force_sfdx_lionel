@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>FacebookAds</fullName>
+        <default>false</default>
+        <label>FacebookAds</label>
+    </customValue>
+    <customValue>
+        <fullName>TMC</fullName>
+        <default>false</default>
+        <label>TMC</label>
+    </customValue>
+    <customValue>
+        <fullName>Adwords</fullName>
+        <default>false</default>
+        <label>Adwords</label>
+    </customValue>
+    <customValue>
+        <fullName>LinkedInAds</fullName>
+        <default>false</default>
+        <label>LinkedInAds</label>
+    </customValue>
+    <customValue>
+        <fullName>novaa-expertise.com</fullName>
+        <default>false</default>
+        <label>novaa-expertise.com</label>
+    </customValue>
+    <customValue>
+        <fullName>incityz.com</fullName>
+        <default>false</default>
+        <label>incityz.com</label>
+    </customValue>
+    <customValue>
+        <fullName>l-expert-comptable.com</fullName>
+        <default>false</default>
+        <label>l-expert-comptable.com</label>
+    </customValue>
+    <masterLabel>Types de source</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

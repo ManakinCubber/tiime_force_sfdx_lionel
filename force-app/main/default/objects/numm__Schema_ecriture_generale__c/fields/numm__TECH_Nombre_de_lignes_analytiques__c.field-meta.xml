@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__TECH_Nombre_de_lignes_analytiques__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>TECH Nombre de lignes analytiques</label>
+    <summaryForeignKey>numm__Schema_ecriture_analytique__c.numm__Schema_ecriture_generale__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

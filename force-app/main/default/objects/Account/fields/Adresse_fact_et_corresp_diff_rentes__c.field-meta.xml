@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adresse_fact_et_corresp_diff_rentes__c</fullName>
+    <externalId>false</externalId>
+    <formula>NOT(ISBLANK(BillingStreet)&amp;&amp;
+ISBLANK(BillingCity) &amp;&amp;
+ISBLANK(BillingPostalCode)) &amp;&amp;
+(NOT(ShippingStreet   =   BillingStreet)  ||  
+NOT(ShippingCity   =   BillingCity)  || 
+ NOT(ShippingPostalCode   =   BillingPostalCode))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Adresse fact et corresp différentes</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

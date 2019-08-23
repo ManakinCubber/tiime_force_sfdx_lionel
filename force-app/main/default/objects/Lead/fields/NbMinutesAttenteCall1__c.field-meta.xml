@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NbMinutesAttenteCall1__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  OR(
+    ISBLANK(DateArriveeEnFileAttente__c ),
+    HOUR(TIMEVALUE(DateArriveeEnFileAttente__c))+2  &lt; 9,
+    HOUR(TIMEVALUE(DateArriveeEnFileAttente__c))+2  &gt;= 19
+  ),
+  0,
+  (IF(
+    ISBLANK(DateCall1Termine__c),
+    NOW(),
+    DateCall1Termine__c
+  ) -  DateArriveeEnFileAttente__c ) * 24 *60)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Nb Minutes d&#39;Attente pour Call1</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

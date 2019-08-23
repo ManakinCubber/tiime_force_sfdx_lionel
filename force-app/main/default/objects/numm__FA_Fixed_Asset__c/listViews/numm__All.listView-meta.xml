@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__All</fullName>
+    <columns>NAME</columns>
+    <columns>numm__Entity__c</columns>
+    <columns>numm__Establishment__c</columns>
+    <columns>numm__Description__c</columns>
+    <columns>numm__DisposalDate__c</columns>
+    <columns>numm__DisposalCode__c</columns>
+    <columns>numm__AmountExclVAT__c</columns>
+    <columns>numm__StartAmountDepr01__c</columns>
+    <columns>numm__PISDate__c</columns>
+    <columns>numm__AmountAlreadyDep01__c</columns>
+    <columns>numm__FARule1__c</columns>
+    <columns>numm__ImmoPrinc__c</columns>
+    <columns>numm__Category__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Tout</label>
+    <language>fr</language>
+</ListView>

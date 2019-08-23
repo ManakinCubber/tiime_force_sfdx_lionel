@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__CompteGeneralHT</fullName>
+    <active>true</active>
+    <description>Le compte général doit obligatoirement être de catégorie HT.</description>
+    <errorConditionFormula>AND (
+RecordType.DeveloperName = &#39;Produit&#39;,
+TEXT(numm__AccountingCode__r.numm__Categorie_de_compte__c)  &lt;&gt;  &#39;HT&#39;
+)</errorConditionFormula>
+    <errorDisplayField>numm__AccountingCode__c</errorDisplayField>
+    <errorMessage>Le compte général doit obligatoirement être de catégorie HT.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+<aura:event type="COMPONENT" description="Event template" >
+    <aura:attribute name="selectedDate" type="DateTime"/>
+    <aura:attribute name="userId" type="string" />
+    <aura:attribute name="start" type="DateTime" />
+    <aura:attribute name="startEvent" type="DateTime" />
+    <aura:attribute name="endEvent" type="DateTime" />
+    <aura:attribute name="end" type="DateTime" />
+    <aura:attribute name="name" type="string" />
+</aura:event>

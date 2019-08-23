@@ -1,0 +1,112 @@
+<aura:component implements="force:lightningQuickAction" access="global" controller="AP15_ControllerLeadResume">
+	<aura:attribute name="LeadObject" type="Object" description="Objet LEAD avec tous ses champs" />
+	<aura:attribute name="recordError" type="String" description="Eventuelles erreurs" />
+	<aura:attribute name="originError" type="String" />
+	<aura:attribute name="canalError" type="String" />
+	<aura:attribute name="detailError" type="String" />
+	<aura:attribute name="meansOfContactError" type="String" />
+	<aura:attribute name="simpleRecord" type="Lead"/>
+	<aura:attribute name="show" type="Boolean" default="true"/>
+	<aura:attribute name="ListContactPartenariat" type="String[]"/>	   
+	<aura:attribute name="labels" type="Object"/>
+	<!-- attribute lookup -->
+	<aura:attribute access="private" type="Boolean" name="isMultiEntry" default="false"/>
+	<aura:attribute access="private" type="List" name="errors" default="[]"/>
+	<aura:attribute access="private" type="List" name="selection" default="[]"/>
+	
+	<force:recordData aura:id="recordCreator"
+		layoutType="FULL"
+		fields="FirstName,LastName,MobilePhone,TypeOfNeed__c,LegalStatus__c,Activity__c,ActivityDetails__c,HowDoYouKnowUs__c,WillHaveEmployes__c,Evaluation_a_priori__c,City,PostalCode,Country,Street,Longitude,Latitude,Echeance_de_besoin_de_creation__c, OrigineWebsite__c, MeansOfContact__c, Canal__c, SourceDetails__c, Partnership__c, Event__c, CustomerRecommendation__c, LeadRecommendation__c, Detail__c, ContactPartenariat__c, OwnerId,WebFormComments__c"
+		targetRecord="{!v.LeadObject}"
+		targetFields="{!v.simpleRecord}"
+		targetError="{!v.recordError}" />
+		
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+		
+	<lightning:messages />
+
+	<lightning:spinner aura:id="spjSpinner" class="slds-hide"/>
+
+	<aura:if isTrue="{!v.show}">
+		<lightning:recordEditForm aura:id="recordViewForm" recordId="{!v.simpleRecord.Id}" objectApiName="Lead">
+			<div class="slds-grid slds-wrap slds-gutters">
+				<div class="slds-col slds-size_full slds-medium-size_1-of-2 slds-m-top_small lead-field-container lead-field-required" aura:id="leadCanalField">
+					<lightning:inputField name="{!globalId + 'canal'}" fieldName="Canal__c" value="{!v.simpleRecord.Canal__c}"/>
+					<aura:if isTrue="{!v.canalError}">
+						<p class="slds-form-element__help">{!v.canalError}</p>
+					</aura:if>
+				</div>
+				<aura:if isTrue="{!v.simpleRecord.Canal__c == 'partenariats'}">
+				<lightning:inputField name="{!globalId + 'partnership'}" fieldName="Partnership__c" value="{!v.simpleRecord.Partnership__c}" class="slds-m-top_small slds-col slds-size_full slds-medium-size_1-of-2"  onchange="{!c.contactPartenariat}"/>
+					<div class="slds-col slds-size_full slds-medium-size_1-of-2 slds-m-top_small">
+	                	<lightning:select aura:id="selectContactPartenariat" name="select" label="{!v.labels.ContactPartenariat__c}" onchange="{!c.selectContactPartenariat}">
+	       					<option value="" > - Aucun - </option>
+	                        <aura:iteration items="{!v.ListContactPartenariat}" var="contPartenariat" indexVar="Id">
+	               				<option value="{!contPartenariat.Id}" selected="{!contPartenariat.Id == v.simpleRecord.ContactPartenariat__c}">{!contPartenariat.Name}</option>
+	          				 </aura:iteration>
+	   					</lightning:select>
+		            </div>
+		            <lightning:inputField name="{!globalId + 'event'}" fieldName="Event__c" value="{!v.simpleRecord.Event__c}" class="slds-m-top_small slds-col slds-size_full slds-medium-size_1-of-2"/>
+		            <aura:set attribute="else">
+		            	<aura:if isTrue="{!v.simpleRecord.Canal__c == 'events'}">
+		            		<lightning:inputField name="{!globalId + 'event'}" fieldName="Event__c" value="{!v.simpleRecord.Event__c}" class="slds-m-top_small slds-col slds-size_full slds-medium-size_1-of-2"/>
+							<aura:set attribute="else">
+								<aura:if isTrue="{!v.simpleRecord.Canal__c == 'reco-client'}">
+									<!-- <lightning:inputField name="{!globalId + 'customerRecommendation'}" fieldName="CustomerRecommendation__c" value="{!v.simpleRecord.CustomerRecommendation__c}" class="slds-m-top_small slds-col slds-size_full slds-medium-size_1-of-2"/> -->
+									<div class="slds-col slds-size_full slds-medium-size_1-of-3 slds-m-top_small lead-field-container" aura:id="recommandation">
+										<c:Lookup selection="{!v.selection}"  onSearch="{!c.lookupSearch}" onSelection="{!c.clearErrorsOnChange}" errors="{!v.errors}" label="Recommandation Client" placeholder="Search Salesforce" isMultiEntry="{!v.isMultiEntry}"/>
+									</div>
+									<aura:set attribute="else">
+										<div class="slds-col slds-size_full slds-medium-size_1-of-2 slds-m-top_small lead-field-container" aura:id="leadDetailField">
+											<lightning:inputField name="{!globalId + 'detail'}" fieldName="Detail__c" value="{!v.simpleRecord.Detail__c}"/>
+											<aura:if isTrue="{!v.detailError}">
+												<p class="slds-form-element__help">{!v.canalError}</p>
+											</aura:if>
+										</div>
+									</aura:set>
+								</aura:if>
+							</aura:set>
+						</aura:if>
+		            </aura:set>
+	            </aura:if>
+				
+				<div class="slds-col slds-size_full slds-medium-size_1-of-2 slds-m-top_small lead-field-container lead-field-required" aura:id="leadMeansOfContactField">
+					<lightning:inputField name="{!globalId + 'meansOfContact'}" fieldName="MeansOfContact__c" value="{!v.simpleRecord.MeansOfContact__c}"/>
+					<aura:if isTrue="{!v.meansOfContactError}">
+						<p class="slds-form-element__help">{!v.meansOfContactError}</p>
+					</aura:if>
+				</div>
+				<div class="slds-col slds-size_full slds-medium-size_1-of-2 slds-m-top_small lead-field-container lead-field-required specific-size-picklist" aura:id="leadOriginField">
+					<lightning:inputField name="{!globalId + 'origin'}" fieldName="OrigineWebsite__c" value="{!v.simpleRecord.OrigineWebsite__c}"/>
+					<aura:if isTrue="{!v.originError}">
+						<p class="slds-form-element__help">{!v.originError}</p>
+					</aura:if>
+				</div>
+
+				<div class="slds-col slds-size_full slds-border_top m-top_large slds-m-bottom_small"></div>
+
+				<lightning:input aura:id="leadField" name="{!globalId + 'firstName'}" label="Prénom" value="{!v.simpleRecord.FirstName}" required="true" class="slds-m-top_small slds-col slds-size_full slds-medium-size_1-of-3"/>
+				<lightning:input aura:id="leadField" name="{!globalId + 'lastName'}" label="Nom" value="{!v.simpleRecord.LastName}" required="true" class="slds-m-top_small slds-col slds-size_full slds-medium-size_1-of-3"/>
+				<lightning:input aura:id="leadField" name="{!globalId + 'company'}" label="Nom de l'entreprise" value="{!v.simpleRecord.Company}" required="true" class="slds-m-top_small slds-col slds-size_full slds-medium-size_1-of-3"/>
+
+				<lightning:input aura:id="leadField" name="{!globalId + 'phone'}" label="Téléphone principal" value="{!v.simpleRecord.MobilePhone}" required="true" class="slds-m-top_small slds-col slds-size_full slds-medium-size_1-of-2"/>
+				<lightning:input aura:id="leadField" name="{!globalId + 'email'}" label="Adresse e-mail" value="{!v.simpleRecord.Email}" required="true" class="slds-m-top_small slds-col slds-size_full slds-medium-size_1-of-2"/>
+			</div>
+
+			<c:LT14_Qualification simpleRecord="{!v.simpleRecord}" aura:id="qualification"/>
+
+			<c:LT17_LeadBack type="horsCible" recordId="{!v.simpleRecord.Id}" aura:id="leadBack" />
+			<div class="slds-grid ">
+                <div class="slds-col slds-size_1-of-3">
+                	<lightning:button variant="success" title="Créer et mettre en file d'attente" label="Créer et mettre en file d'attente" onclick="{! c.createAndWaitingList}" iconName="utility:check" iconPosition="left" class="slds-m-top_medium slds-m-bottom_medium  slds-text-color_inverse text-lg slds-align_absolute-center"/>
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                	<lightning:button variant="success" title="Créer et mettre en file d'attenteHors cible envoi au SDR" label="Hors cible envoi au SDR" onclick="{! c.horsCibleretourSDR}" iconName="utility:undo" iconPosition="left" class="slds-m-top_medium slds-m-bottom_medium slds-text-color_inverse text-lg slds-align_absolute-center"/>
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning:button variant="success" title="Créer" label="Créer" onclick="{! c.createClicked }" iconName="utility:check" iconPosition="right" class="slds-m-top_medium slds-m-bottom_medium slds-text-color_inverse text-lg slds-align_absolute-center"/>
+                </div>
+            </div>
+		</lightning:recordEditForm>
+	</aura:if>
+</aura:component>

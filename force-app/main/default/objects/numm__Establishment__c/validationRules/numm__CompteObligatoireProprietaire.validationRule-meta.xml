@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__CompteObligatoireProprietaire</fullName>
+    <active>true</active>
+    <description>Le compte est obligatoire si l&#39;établissement est de type &#39;Propriétaire&#39;</description>
+    <errorConditionFormula>AND(  ISBLANK(numm__Compte__c), ISPICKVAL(numm__TypeEtablissement__c, &#39;Proprietaire&#39;) )</errorConditionFormula>
+    <errorMessage>Compte obligatoire pour un établissement de type &#39;Propriétaire&#39;</errorMessage>
+</ValidationRule>

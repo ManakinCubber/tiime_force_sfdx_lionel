@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Ba</fullName>
+        <default>false</default>
+        <label>BA</label>
+    </customValue>
+    <customValue>
+        <fullName>Bic</fullName>
+        <default>false</default>
+        <label>BIC</label>
+    </customValue>
+    <customValue>
+        <fullName>Bsci</fullName>
+        <default>false</default>
+        <label>BSCI</label>
+    </customValue>
+    <customValue>
+        <fullName>Scm</fullName>
+        <default>false</default>
+        <label>SCM</label>
+    </customValue>
+    <customValue>
+        <fullName>Bnc</fullName>
+        <default>false</default>
+        <label>BNC</label>
+    </customValue>
+    <masterLabel>Catégories de revenus</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

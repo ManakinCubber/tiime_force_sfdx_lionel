@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__RelatedAnalytics__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>Sélectionner la position de votre axe analytique</inlineHelpText>
+    <label>Position</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Analytique 1</fullName>
+                <default>false</default>
+                <label>Analytique 1</label>
+            </value>
+            <value>
+                <fullName>Analytique 2</fullName>
+                <default>false</default>
+                <label>Analytique 2</label>
+            </value>
+            <value>
+                <fullName>Analytique 3</fullName>
+                <default>false</default>
+                <label>Analytique 3</label>
+            </value>
+            <value>
+                <fullName>Analytique 4</fullName>
+                <default>false</default>
+                <label>Analytique 4</label>
+            </value>
+            <value>
+                <fullName>Analytique 5</fullName>
+                <default>false</default>
+                <label>Analytique 5</label>
+            </value>
+            <value>
+                <fullName>Analytique 6</fullName>
+                <default>false</default>
+                <label>Analytique 6</label>
+            </value>
+            <value>
+                <fullName>Analytique 7</fullName>
+                <default>false</default>
+                <label>Analytique 7</label>
+            </value>
+            <value>
+                <fullName>Analytique 8</fullName>
+                <default>false</default>
+                <label>Analytique 8</label>
+            </value>
+            <value>
+                <fullName>Analytique 9</fullName>
+                <default>false</default>
+                <label>Analytique 9</label>
+            </value>
+            <value>
+                <fullName>Analytique 10</fullName>
+                <default>false</default>
+                <label>Analytique 10</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

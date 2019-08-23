@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Niveau__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Niveau</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pré relance</fullName>
+                <default>false</default>
+                <label>Pré relance</label>
+            </value>
+            <value>
+                <fullName>Niveau 1</fullName>
+                <default>false</default>
+                <label>Niveau 1</label>
+            </value>
+            <value>
+                <fullName>Niveau 2</fullName>
+                <default>false</default>
+                <label>Niveau 2</label>
+            </value>
+            <value>
+                <fullName>Niveau 3</fullName>
+                <default>false</default>
+                <label>Niveau 3</label>
+            </value>
+            <value>
+                <fullName>Contentieux</fullName>
+                <default>false</default>
+                <label>Contentieux</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

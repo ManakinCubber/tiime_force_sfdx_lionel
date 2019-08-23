@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partenaireatrouver</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  $User.BypassValidationRules__c  = false,
+  ISPICKVAL(Status, &quot;EC à Trouver&quot;),
+  ISBLANK(City ))</errorConditionFormula>
+    <errorMessage>Il faut renseigner la ville pour pouvoir faciliter la recherche du partenaire</errorMessage>
+</ValidationRule>

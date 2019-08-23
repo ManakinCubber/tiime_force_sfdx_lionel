@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>MAJOpportunityName</fullName>
+        <field>Name</field>
+        <formula>LeadFullName__c</formula>
+        <name>MAJOpportunityName</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>StatusChange</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Client</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Changement Statut Commercial</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>StatusChange2</fullName>
+        <field>Status__c</field>
+        <literalValue>BilledClient</literalValue>
+        <name>Changement Statut Commercial2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <rules>
+        <fullName>BusinessReminderTask</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Proposition envoyée</value>
+        </criteriaItems>
+        <description>Relance de l&#39;opportunité après 1 semaine</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ProspectFollowUp</name>
+                <type>Task</type>
+            </actions>
+            <timeLength>7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>MAJOpportunityName</fullName>
+        <actions>
+            <name>MAJOpportunityName</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Name</field>
+            <operation>equals</operation>
+            <value>[not provided]</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>OppPrincipaleGagnee</fullName>
+        <actions>
+            <name>StatusChange</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>StatusChange2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Contrat signé</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>PrimaryOppWon</fullName>
+        <actions>
+            <name>StatusChange</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>StatusChange2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Contrat signé</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <tasks>
+        <fullName>ProspectFollowUp</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>Merci de rappeler ce prospect après l&#39;envoi de la proposition</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Ouvert</status>
+        <subject>Relance du prospect</subject>
+    </tasks>
+</Workflow>

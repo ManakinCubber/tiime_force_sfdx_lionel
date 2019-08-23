@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AnnualTurnover__c</fullName>
+    <externalId>false</externalId>
+    <label>Chiffre d&#39;affaires Annuel</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0-39</fullName>
+                <default>false</default>
+                <label>0 - 39K€</label>
+            </value>
+            <value>
+                <fullName>40-99</fullName>
+                <default>false</default>
+                <label>40 - 99K€</label>
+            </value>
+            <value>
+                <fullName>100-249</fullName>
+                <default>false</default>
+                <label>100 - 249K€</label>
+            </value>
+            <value>
+                <fullName>250-999</fullName>
+                <default>false</default>
+                <label>250 - 999K€</label>
+            </value>
+            <value>
+                <fullName>1000-2999</fullName>
+                <default>false</default>
+                <label>1000 - 2999K€</label>
+            </value>
+            <value>
+                <fullName>3000-9999</fullName>
+                <default>false</default>
+                <label>3000 - 9999K€</label>
+            </value>
+            <value>
+                <fullName>10000-99999</fullName>
+                <default>false</default>
+                <label>10000 - 99999K€</label>
+            </value>
+            <value>
+                <fullName>100000-*</fullName>
+                <default>false</default>
+                <label>100000K€ et plus</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

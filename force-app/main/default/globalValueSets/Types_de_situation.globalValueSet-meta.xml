@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>SansEmploi</fullName>
+        <default>false</default>
+        <label>Sans emploi</label>
+    </customValue>
+    <customValue>
+        <fullName>Salarié</fullName>
+        <default>false</default>
+        <label>Salarié</label>
+    </customValue>
+    <customValue>
+        <fullName>Etudiant</fullName>
+        <default>false</default>
+        <label>Etudiant</label>
+    </customValue>
+    <customValue>
+        <fullName>Comptable / Expert-comptable</fullName>
+        <default>false</default>
+        <label>Comptable / Expert-comptable</label>
+    </customValue>
+    <customValue>
+        <fullName>Déjà dirigeant</fullName>
+        <default>false</default>
+        <label>Déjà dirigeant</label>
+    </customValue>
+    <customValue>
+        <fullName>AutoEntrepreneur</fullName>
+        <default>false</default>
+        <label>Auto-entrepreneur</label>
+    </customValue>
+    <customValue>
+        <fullName>Entrepreneur</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Entrepreneur</label>
+    </customValue>
+    <customValue>
+        <fullName>Demandeur d&#39;emploi</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Demandeur d&#39;emploi</label>
+    </customValue>
+    <masterLabel>Types de situation</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

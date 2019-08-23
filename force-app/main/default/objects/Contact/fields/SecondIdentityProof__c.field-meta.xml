@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SecondIdentityProof__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Pièce d&#39;entité supplémentaire, cochée automatiquement CNI et passeport sont cochée ou si CNI ou passeport + permis de conduire est cochée</description>
+    <externalId>false</externalId>
+    <label>Pièce d&#39;identité 2</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

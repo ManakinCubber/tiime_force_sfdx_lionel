@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Axe_Rubrique__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>Sélectionner l&#39;axe rubrique correspondant à votre rubrique</inlineHelpText>
+    <label>Axe Rubrique</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>numm__SectionName__c.numm__IsFreeArea__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>numm__SectionName__c</referenceTo>
+    <relationshipLabel>Rubriques</relationshipLabel>
+    <relationshipName>Rubriques</relationshipName>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

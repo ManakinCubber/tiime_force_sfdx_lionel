@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Etape__c</fullName>
+    <externalId>false</externalId>
+    <label>Etape</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Transfert</fullName>
+                <default>true</default>
+                <label>Transfert</label>
+            </value>
+            <value>
+                <fullName>Rdv Planifié</fullName>
+                <default>false</default>
+                <label>Rdv Planifié</label>
+            </value>
+            <value>
+                <fullName>Rdv Echoué</fullName>
+                <default>false</default>
+                <label>Rdv Echoué</label>
+            </value>
+            <value>
+                <fullName>Perdu</fullName>
+                <default>false</default>
+                <label>Perdu</label>
+            </value>
+            <value>
+                <fullName>Nurtering</fullName>
+                <default>false</default>
+                <label>Nurtering</label>
+            </value>
+            <value>
+                <fullName>Proposition Envoyée</fullName>
+                <default>false</default>
+                <label>Proposition Envoyée</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

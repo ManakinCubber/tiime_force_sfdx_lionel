@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mes_Enquetes_Realiser</fullName>
+    <columns>NAME</columns>
+    <columns>Statut__c</columns>
+    <columns>CompletionDate__c</columns>
+    <columns>Lead__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Statut__c</field>
+        <operation>equals</operation>
+        <value>New,Rappel</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>enquetedeSatisfaction__c.Prise_de_contact</value>
+    </filters>
+    <filters>
+        <field>Date_de_transfert__c</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Mes Enquêtes à Réaliser premier contact</label>
+</ListView>

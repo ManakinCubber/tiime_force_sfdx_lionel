@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ForcePriorite</fullName>
+    <active>false</active>
+    <description>Lors de la modification on force le remplissage de champs &#39;Priorité&#39;</description>
+    <errorConditionFormula>AND(
+	$User.BypassValidationRules__c = false,
+	NOT( ISNEW() ),
+	OR (
+		ISPICKVAL(Priority ,&quot;Non_definie&quot;),
+		ISPICKVAL(Priority ,&quot;&quot;)
+	)
+	
+)</errorConditionFormula>
+    <errorDisplayField>Priority</errorDisplayField>
+    <errorMessage>Merci de remplir le champs &quot;Priorité&quot;</errorMessage>
+</ValidationRule>

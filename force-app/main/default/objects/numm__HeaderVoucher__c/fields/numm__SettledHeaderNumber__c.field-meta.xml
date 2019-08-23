@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__SettledHeaderNumber__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Numéro de la pièce réglé par cette ligne généré par règlement</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Numéro de la pièce réglé par cette ligne généré par règlement</inlineHelpText>
+    <label>Numéro de pièce réglé</label>
+    <length>80</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

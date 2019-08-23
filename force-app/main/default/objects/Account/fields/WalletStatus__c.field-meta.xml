@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WalletStatus__c</fullName>
+    <externalId>false</externalId>
+    <label>Statut Wallet</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CGUPending</fullName>
+                <default>false</default>
+                <label>CGU</label>
+            </value>
+            <value>
+                <fullName>TIIMEPending</fullName>
+                <default>false</default>
+                <label>Nouveau</label>
+            </value>
+            <value>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+                <label>Incomplet</label>
+            </value>
+            <value>
+                <fullName>KYCPending</fullName>
+                <default>false</default>
+                <label>Pending</label>
+            </value>
+            <value>
+                <fullName>KYCRefused</fullName>
+                <default>false</default>
+                <label>KYC Refusé</label>
+            </value>
+            <value>
+                <fullName>KYCValidated</fullName>
+                <default>false</default>
+                <label>KYC Validé</label>
+            </value>
+            <value>
+                <fullName>CBOrdered</fullName>
+                <default>false</default>
+                <label>CB Commandée</label>
+            </value>
+            <value>
+                <fullName>CBActivated</fullName>
+                <default>false</default>
+                <label>CB Activée</label>
+            </value>
+            <value>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <label>Fermé</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

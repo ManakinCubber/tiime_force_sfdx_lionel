@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsConvertedByLT20__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Cette case est récupérée depuis la lead lors de la conversion. En cas de conversion par le composant LT20, cette case vaut &quot;true&quot; et la règle de duplication ne s&#39;applique alors pas.</description>
+    <externalId>false</externalId>
+    <label>Conversion par LT20</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

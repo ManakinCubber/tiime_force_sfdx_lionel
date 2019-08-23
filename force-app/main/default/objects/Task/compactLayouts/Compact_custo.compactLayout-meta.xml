@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compact_custo</fullName>
+    <fields>Subject</fields>
+    <fields>ActivityDate</fields>
+    <fields>OwnerId</fields>
+    <label>Compact custo project task</label>
+</CompactLayout>

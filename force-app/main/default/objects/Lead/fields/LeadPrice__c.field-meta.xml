@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LeadPrice__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL( Partenaire__r.PartnerType__c,&quot;Groupe&quot;), 200,
+			    	IF(ISPICKVAL( Partenaire__r.PartnerType__c,&quot;Hors Groupe&quot;), 100, 0))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Lead Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

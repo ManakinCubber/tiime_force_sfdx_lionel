@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__MT_TOTAL__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Montant à payer</label>
+    <summarizedField>numm__NDFItem__c.numm__MT_TTC__c</summarizedField>
+    <summaryForeignKey>numm__NDFItem__c.numm__NDF__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

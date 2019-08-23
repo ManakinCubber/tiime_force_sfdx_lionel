@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Manager</fullName>
+        <default>false</default>
+        <label>Gérant</label>
+    </customValue>
+    <customValue>
+        <fullName>Comanager</fullName>
+        <default>false</default>
+        <label>Co-gérant</label>
+    </customValue>
+    <customValue>
+        <fullName>Ceo</fullName>
+        <default>false</default>
+        <label>Président</label>
+    </customValue>
+    <customValue>
+        <fullName>Dg</fullName>
+        <default>false</default>
+        <label>Directeur Général</label>
+    </customValue>
+    <customValue>
+        <fullName>Operator</fullName>
+        <default>false</default>
+        <label>Exploitant</label>
+    </customValue>
+    <customValue>
+        <fullName>Associe</fullName>
+        <default>false</default>
+        <label>Associé</label>
+    </customValue>
+    <customValue>
+        <fullName>Commercial</fullName>
+        <default>false</default>
+        <label>Commercial</label>
+    </customValue>
+    <customValue>
+        <fullName>Comptable</fullName>
+        <default>false</default>
+        <label>Comptable</label>
+    </customValue>
+    <customValue>
+        <fullName>MarketingCom</fullName>
+        <default>false</default>
+        <label>Marketing / Com</label>
+    </customValue>
+    <masterLabel>Types de fonctions</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

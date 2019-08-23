@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>check_issue_du_call</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+$User.BypassValidationRules__c = false, 
+RecordType.DeveloperName = &quot;activitequalificationdelalead&quot;
+ &amp;&amp; 
+ispickval(CallQualiflication__c, &quot;&quot;)
+ &amp;&amp; 
+ispickval(Status,&quot;Terminé&quot;)
+)</errorConditionFormula>
+    <errorMessage>Veuillez renseigner une issue pour cet appel</errorMessage>
+</ValidationRule>

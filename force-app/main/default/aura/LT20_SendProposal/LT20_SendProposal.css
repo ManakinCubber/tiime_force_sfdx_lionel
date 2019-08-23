@@ -1,0 +1,17 @@
+.THIS .dualListBloc {
+	width: 80%;
+}
+
+.THIS .mission-bloc {
+	border: solid thin #53DA85;
+	border-radius: 25px;
+	padding: 10px;
+}
+
+.THIS .bold-text {
+	font-weight: bold;
+}
+
+.THIS .mission-bloc div.comment-input label, .THIS .mission-bloc div.tarif-input label {
+	display: none;
+}

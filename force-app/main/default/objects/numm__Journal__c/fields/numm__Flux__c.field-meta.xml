@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Flux__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>Sélectionner un flux pour que les pièces de ce journal soient prises en compte pour les éditions comptables.</inlineHelpText>
+    <label>Flux</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Réel</fullName>
+                <default>true</default>
+                <label>Réel</label>
+            </value>
+            <value>
+                <fullName>Temporaire</fullName>
+                <default>false</default>
+                <label>Temporaire</label>
+            </value>
+            <value>
+                <fullName>Budget</fullName>
+                <default>false</default>
+                <label>Budget</label>
+            </value>
+            <value>
+                <fullName>Banque</fullName>
+                <default>false</default>
+                <label>Banque</label>
+            </value>
+            <value>
+                <fullName>Relevé bancaire</fullName>
+                <default>false</default>
+                <label>Relevé bancaire</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

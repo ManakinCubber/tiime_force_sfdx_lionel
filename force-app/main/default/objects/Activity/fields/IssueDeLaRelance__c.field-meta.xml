@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IssueDeLaRelance__c</fullName>
+    <externalId>false</externalId>
+    <label>Issue de la relance</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pas de réponse</fullName>
+                <default>false</default>
+                <label>Pas de réponse</label>
+            </value>
+            <value>
+                <fullName>Relance reportée</fullName>
+                <default>false</default>
+                <label>Relance reportée</label>
+            </value>
+            <value>
+                <fullName>En réflexion</fullName>
+                <default>false</default>
+                <label>En réflexion</label>
+            </value>
+            <value>
+                <fullName>Engagement Signature</fullName>
+                <default>false</default>
+                <label>Engagement Signature</label>
+            </value>
+            <value>
+                <fullName>Nurturing</fullName>
+                <default>false</default>
+                <label>Nurturing</label>
+            </value>
+            <value>
+                <fullName>Proposition envoyée</fullName>
+                <default>false</default>
+                <label>Proposition envoyée</label>
+            </value>
+            <value>
+                <fullName>Perte Trop en amont</fullName>
+                <default>false</default>
+                <label>Perte Trop en amont</label>
+            </value>
+            <value>
+                <fullName>Perte Concurrence</fullName>
+                <default>false</default>
+                <label>Perte Concurrence</label>
+            </value>
+            <value>
+                <fullName>Nouveau RDV</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Nouveau RDV</label>
+            </value>
+            <value>
+                <fullName>Perte</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Perte</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Analytique01__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Analytique 1</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>numm__CostAccountingValues__c.numm__IdAxis__r.numm__RelatedAnalytics__c</field>
+            <operation>equals</operation>
+            <value>Analytique 1</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>numm__CostAccountingValues__c</referenceTo>
+    <relationshipLabel>Ligne de note de frais</relationshipLabel>
+    <relationshipName>Ligne_de_note_de_frais</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

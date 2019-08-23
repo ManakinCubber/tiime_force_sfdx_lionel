@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>SimplifiedRegimen</fullName>
+        <default>false</default>
+        <label>Régime simplifié</label>
+    </customValue>
+    <customValue>
+        <fullName>NormalMonthlyRegimen</fullName>
+        <default>false</default>
+        <label>Régime normal mensuel</label>
+    </customValue>
+    <customValue>
+        <fullName>TrimesterNormalRegimen</fullName>
+        <default>false</default>
+        <label>Régime normal trimestriel</label>
+    </customValue>
+    <customValue>
+        <fullName>Franchise</fullName>
+        <default>false</default>
+        <label>Franchise en base</label>
+    </customValue>
+    <masterLabel>Régimes TVA</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

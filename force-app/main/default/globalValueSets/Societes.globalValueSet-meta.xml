@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>ImageAudit</fullName>
+        <default>false</default>
+        <label>IMAGE AUDIT</label>
+    </customValue>
+    <customValue>
+        <fullName>Novaa</fullName>
+        <default>false</default>
+        <label>NOVAA</label>
+    </customValue>
+    <customValue>
+        <fullName>AExpertise</fullName>
+        <default>false</default>
+        <label>A.EXPERTISE</label>
+    </customValue>
+    <customValue>
+        <fullName>AgpAuficom</fullName>
+        <default>false</default>
+        <label>AGP - AUFICOM</label>
+    </customValue>
+    <customValue>
+        <fullName>Auficom</fullName>
+        <default>false</default>
+        <label>AUFICOM</label>
+    </customValue>
+    <customValue>
+        <fullName>AuficomAssocies</fullName>
+        <default>false</default>
+        <label>Auficom &amp; Associés</label>
+    </customValue>
+    <customValue>
+        <fullName>Auficom54</fullName>
+        <default>false</default>
+        <label>AUFICOM 54</label>
+    </customValue>
+    <customValue>
+        <fullName>AuficomAgricole</fullName>
+        <default>false</default>
+        <label>AUFICOM AGRICOLE</label>
+    </customValue>
+    <customValue>
+        <fullName>Auficompta</fullName>
+        <default>false</default>
+        <label>AUFICOMPTA</label>
+    </customValue>
+    <customValue>
+        <fullName>AufiEst</fullName>
+        <default>false</default>
+        <label>AUFI-EST</label>
+    </customValue>
+    <customValue>
+        <fullName>BaseGi</fullName>
+        <default>false</default>
+        <label>BASE GI</label>
+    </customValue>
+    <customValue>
+        <fullName>CabinetGametAudit</fullName>
+        <default>false</default>
+        <label>CABINET GAMET AUDIT</label>
+    </customValue>
+    <customValue>
+        <fullName>Caplib</fullName>
+        <default>false</default>
+        <label>CAPLIB</label>
+    </customValue>
+    <customValue>
+        <fullName>CondillacExpertise</fullName>
+        <default>false</default>
+        <label>CONDILLAC EXPERTISE</label>
+    </customValue>
+    <customValue>
+        <fullName>ConfluenceExpertise</fullName>
+        <default>false</default>
+        <label>CONFLUENCE EXPERTISE</label>
+    </customValue>
+    <customValue>
+        <fullName>CosiExpertise</fullName>
+        <default>false</default>
+        <label>COSI EXPERTISE</label>
+    </customValue>
+    <customValue>
+        <fullName>Cubber</fullName>
+        <default>false</default>
+        <label>CUBBER</label>
+    </customValue>
+    <customValue>
+        <fullName>DataAndCo</fullName>
+        <default>false</default>
+        <label>Data and Co</label>
+    </customValue>
+    <customValue>
+        <fullName>Datadevice</fullName>
+        <default>false</default>
+        <label>DATADEVICE</label>
+    </customValue>
+    <customValue>
+        <fullName>DoillonAudit</fullName>
+        <default>false</default>
+        <label>Doillon Audit</label>
+    </customValue>
+    <customValue>
+        <fullName>EsAudit</fullName>
+        <default>false</default>
+        <label>E.S. AUDIT</label>
+    </customValue>
+    <customValue>
+        <fullName>EfixConseil</fullName>
+        <default>false</default>
+        <label>Efix Conseil</label>
+    </customValue>
+    <customValue>
+        <fullName>EllipseExpertise</fullName>
+        <default>false</default>
+        <label>ELLIPSE EXPERTISE</label>
+    </customValue>
+    <customValue>
+        <fullName>ExpertsEntrepreneurs</fullName>
+        <default>false</default>
+        <label>EXPERTS ET ENTREPRENEURS</label>
+    </customValue>
+    <customValue>
+        <fullName>Externalys</fullName>
+        <default>false</default>
+        <label>Externalys</label>
+    </customValue>
+    <customValue>
+        <fullName>GametAssocies</fullName>
+        <default>false</default>
+        <label>Gamet et Associés</label>
+    </customValue>
+    <customValue>
+        <fullName>Goneo</fullName>
+        <default>false</default>
+        <label>GONEO</label>
+    </customValue>
+    <customValue>
+        <fullName>Idgrh</fullName>
+        <default>false</default>
+        <label>IDGRH</label>
+    </customValue>
+    <customValue>
+        <fullName>Ideofi</fullName>
+        <default>false</default>
+        <label>IDEOFI</label>
+    </customValue>
+    <customValue>
+        <fullName>Infoneo</fullName>
+        <default>false</default>
+        <label>Infoneo</label>
+    </customValue>
+    <customValue>
+        <fullName>Kipeo</fullName>
+        <default>false</default>
+        <label>KIPEO</label>
+    </customValue>
+    <customValue>
+        <fullName>LeNetExpertComptable</fullName>
+        <default>false</default>
+        <label>LE NET EXPERT-COMPTABLE</label>
+    </customValue>
+    <customValue>
+        <fullName>LecConseil</fullName>
+        <default>false</default>
+        <label>LEC CONSEIL</label>
+    </customValue>
+    <customValue>
+        <fullName>LExpertComptableBordeaux</fullName>
+        <default>false</default>
+        <label>L-Expert-comptable Bordeaux</label>
+    </customValue>
+    <customValue>
+        <fullName>LExpertComptableLille</fullName>
+        <default>false</default>
+        <label>L-Expert-comptable Lille</label>
+    </customValue>
+    <customValue>
+        <fullName>LExpertComptableMarseille</fullName>
+        <default>false</default>
+        <label>L-Expert-comptable Marseille</label>
+    </customValue>
+    <customValue>
+        <fullName>LExpertComptableNancy</fullName>
+        <default>false</default>
+        <label>L-Expert-Comptable Nancy</label>
+    </customValue>
+    <customValue>
+        <fullName>LExpertComptableParis</fullName>
+        <default>false</default>
+        <label>L-Expert-comptable Paris</label>
+    </customValue>
+    <customValue>
+        <fullName>LExpertComptableValenciennes</fullName>
+        <default>false</default>
+        <label>L-Expert-Comptable Valenciennes</label>
+    </customValue>
+    <customValue>
+        <fullName>LExpertComptableCom</fullName>
+        <default>false</default>
+        <label>L-Expert-comptable.com</label>
+    </customValue>
+    <customValue>
+        <fullName>LncgExpertise</fullName>
+        <default>false</default>
+        <label>LNCG EXPERTISE</label>
+    </customValue>
+    <customValue>
+        <fullName>LncmExpertise</fullName>
+        <default>false</default>
+        <label>LNCM EXPERTISE</label>
+    </customValue>
+    <customValue>
+        <fullName>Lnec</fullName>
+        <default>false</default>
+        <label>LNEC</label>
+    </customValue>
+    <customValue>
+        <fullName>MadeInData</fullName>
+        <default>false</default>
+        <label>MADE IN DATA</label>
+    </customValue>
+    <customValue>
+        <fullName>Mag</fullName>
+        <default>false</default>
+        <label>MAG</label>
+    </customValue>
+    <customValue>
+        <fullName>Neoworking</fullName>
+        <default>false</default>
+        <label>NEOWORKING</label>
+    </customValue>
+    <customValue>
+        <fullName>OCompta</fullName>
+        <default>false</default>
+        <label>Ô Compta</label>
+    </customValue>
+    <customValue>
+        <fullName>OlaCompta</fullName>
+        <default>false</default>
+        <label>OLA COMPTA</label>
+    </customValue>
+    <customValue>
+        <fullName>Onlicorn</fullName>
+        <default>false</default>
+        <label>ONLICORN</label>
+    </customValue>
+    <customValue>
+        <fullName>ProxiCompta</fullName>
+        <default>false</default>
+        <label>PROXI COMPTA</label>
+    </customValue>
+    <customValue>
+        <fullName>RevoCompta</fullName>
+        <default>false</default>
+        <label>REVO COMPTA</label>
+    </customValue>
+    <customValue>
+        <fullName>RevoComptaCaen</fullName>
+        <default>false</default>
+        <label>REVO COMPTA CAEN</label>
+    </customValue>
+    <customValue>
+        <fullName>StanServices</fullName>
+        <default>false</default>
+        <label>Stan-Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Tiime</fullName>
+        <default>false</default>
+        <label>Tiime</label>
+    </customValue>
+    <customValue>
+        <fullName>TiimeConsulting</fullName>
+        <default>false</default>
+        <label>Tiime Consulting</label>
+    </customValue>
+    <customValue>
+        <fullName>TiimeLab</fullName>
+        <default>false</default>
+        <label>TIIME LAB</label>
+    </customValue>
+    <customValue>
+        <fullName>TiimeSoftware</fullName>
+        <default>false</default>
+        <label>Tiime Software</label>
+    </customValue>
+    <customValue>
+        <fullName>V5Expertise</fullName>
+        <default>false</default>
+        <label>V5 Expertise</label>
+    </customValue>
+    <customValue>
+        <fullName>Viseal</fullName>
+        <default>false</default>
+        <label>VISEAL</label>
+    </customValue>
+    <description>Liste des sociétés du groupe</description>
+    <masterLabel>Sociétés</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

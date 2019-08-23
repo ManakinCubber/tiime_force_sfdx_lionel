@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__CompteGeneralObligatoire</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  OR(
+TEXT(numm__CategorieJournal__c) = &#39;Vente&#39;,
+TEXT(numm__CategorieJournal__c) = &#39;Achat&#39;,
+TEXT(numm__CategorieJournal__c) = &#39;Banque&#39;
+ ),
+ ISBLANK( numm__IdAccountingCode__c ) 
+)</errorConditionFormula>
+    <errorDisplayField>numm__IdAccountingCode__c</errorDisplayField>
+    <errorMessage>Le compte général est obligatoire pour les journaux de Vente, Achat, et Banque.</errorMessage>
+</ValidationRule>

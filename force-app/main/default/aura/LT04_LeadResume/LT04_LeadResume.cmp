@@ -1,0 +1,175 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="AP15_ControllerLeadResume">
+	
+	<aura:attribute name="LeadObject" type="Object" description="Objet LEAD avec tous ses champs" />
+	<aura:attribute name="recordError" type="String" description="Eventuelles erreurs" />
+	<aura:attribute name="simpleRecord" type="Lead"/>  
+	<aura:attribute name="labels" type="Object"/>
+	<aura:attribute name="showRappelerPlusTard" type="Boolean" default="false"/>
+	<aura:attribute name="showDateRappelError" type="Boolean" default="false"/>
+	<aura:attribute name="DateRappelInit" type="Date"/>
+	<aura:attribute name="showNextCall" type="Boolean"/>
+	<aura:attribute name="currentCall" type="String" />
+	<aura:attribute name="messagesNextCall" type="String" />
+	<aura:attribute name="MapMessageNextCall" type="Map" default="{'Call 1':'Laisser un message et passer en Call 2', 'Call 2':'Envoyer un sms et passer en Call 3', 'Call 3':'Envoyer un mail et passer en Call 4', 'Call 4':'Passer au Call 5', 'Call 5':'Laisser un message et passer au Call 6', 'Call 6':'Passer au Call 7' }"/>
+	<aura:attribute name="ListContactPartenariat" type="String[]"/>	
+    
+	<aura:handler event="lightning:tabRefreshed" action="{!c.doInit}"/>
+    
+	<force:recordData aura:id="TheRecord"
+						recordId="{!v.recordId}"
+						fields="WebFormComments__c, TypeOfNeed__c, LegalStatus__c, Activity__c, ActivityDetails__c, HowDoYouKnowUs__c, WillHaveEmployes__c, Evaluation_a_priori__c, City, PostalCode, Country, Street, Longitude, Latitude, Echeance_de_besoin_de_creation__c, Branding__c, CallBackDate__c, Source__c, QualificationDone__c, MeansOfContact__c, Canal__c, SourceDetails__c, Partnership__c, Event__c, CustomerRecommendation__c, LeadRecommendation__c, Detail__c, ContactPartenariat__c, Status"
+						targetRecord="{!v.LeadObject}"
+						targetError="{!v.recordError}"
+						targetFields="{!v.simpleRecord}"
+						recordUpdated="{!c.doInit}"
+						mode="EDIT"/>
+						
+	<lightning:spinner aura:id="spjSpinner" class="slds-hide"/>
+		<lightning:recordEditForm aura:id="recordViewForm"
+									 recordId="{!v.recordId}"
+									 objectApiName="Lead">
+		 
+		<lightning:messages />
+		    <div class="slds-grid slds-wrap slds-gutters slds-form-element slds-border_bottom slds-p-bottom_x-small scroll-x">
+	            <div class="slds-col slds-m-bottom_medium">
+					<div class="slds-grid slds-grid_align-center">
+						<lightning:inputfield fieldName="Canal__c" value="{!v.simpleRecord.Canal__c}"/>
+					</div>
+	            </div>
+	            <aura:if isTrue="{!v.simpleRecord.Canal__c == 'partenariats'}">
+	            <div class="slds-col slds-m-bottom_medium">
+	                <div class="slds-grid slds-grid_align-center">
+	                    <lightning:inputfield fieldName="Partnership__c" value="{!v.simpleRecord.Partnership__c}" onchange="{!c.contactPartenariat}"/>
+					</div>
+	            </div>
+	            <div class="slds-col slds-m-bottom_medium">
+	                <div class="slds-grid slds-grid_align-center">
+                        <lightning:select aura:id="selectContactPartenariat" name="select" label="{!v.labels.ContactPartenariat__c}" onchange="{!c.selectContactPartenariat}">
+       						<option value="" > - Aucun - </option>
+                            <aura:iteration items="{!v.ListContactPartenariat}" var="contPartenariat" indexVar="Id">
+               					<option value="{!contPartenariat.Id}" selected="{!contPartenariat.Id == v.simpleRecord.ContactPartenariat__c}">{!contPartenariat.Name}</option>
+          				 	</aura:iteration>
+   						</lightning:select>
+					</div>
+	            </div>
+		            <div class="slds-col slds-m-bottom_medium">
+				                <div class="slds-grid slds-grid_align-center">
+				                    <lightning:inputfield fieldName="Event__c" value="{!v.simpleRecord.Event__c}"/>
+				                </div>
+				            </div>
+	            	<aura:set attribute="else">
+	            		<aura:if isTrue="{!v.simpleRecord.Canal__c == 'events'}">
+	            <div class="slds-col slds-m-bottom_medium">
+	                <div class="slds-grid slds-grid_align-center">
+	                    <lightning:inputfield fieldName="Event__c" value="{!v.simpleRecord.Event__c}"/>
+	                </div>
+	            </div>
+	            			<aura:set attribute="else">
+                            	<aura:if isTrue="{!v.simpleRecord.Canal__c == 'reco-client'}">
+	            <div class="slds-col slds-m-bottom_medium">
+	                <div class="slds-grid slds-grid_align-center">
+	                    <lightning:inputfield fieldName="CustomerRecommendation__c" value="{!v.simpleRecord.CustomerRecommendation__c}"/>
+	                </div>
+	            </div>
+				<div class="slds-col slds-m-bottom_medium">
+	                <div class="slds-grid slds-grid_align-center">
+	                    <lightning:inputfield fieldName="LeadRecommendation__c" value="{!v.simpleRecord.LeadRecommendation__c}"/>
+	                </div>
+				</div>
+                            		<aura:set attribute="else">
+                            			<div class="slds-col slds-m-bottom_medium">
+							                <div class="slds-grid slds-grid_align-center">
+							                    <lightning:inputfield fieldName="Detail__c" value="{!v.simpleRecord.Detail__c}"/>
+							                </div>
+							            </div>
+                            		</aura:set>
+                            	</aura:if>
+                            </aura:set>
+	            		</aura:if>
+	            	</aura:set>
+	            </aura:if>
+	        </div>
+	        <div class="slds-grid slds-wrap slds-gutters slds-form-element slds-border_bottom slds-p-bottom_x-small scroll-x">
+	            <div class="slds-col slds-grid">
+				<aura:if isTrue="{!and(v.simpleRecord.WebFormComments__c!=null, v.simpleRecord.WebFormComments__c!='')}">
+				    <div class="slds-col slds-size_1-of-2 p-0 slds-m-bottom_medium">
+						<lightning:accordion allowMultipleSectionsOpen="true"
+											activeSectionName="comForm"
+	                                            class="slds-col">
+							<lightning:accordionSection name="comForm" label="{!v.labels.WebFormComments__c}" >
+								<aura:set attribute="body">
+									<lightning:formattedRichText readonly="true" value="{!v.simpleRecord.WebFormComments__c}" class="text-pre"/>
+								</aura:set>
+							</lightning:accordionSection>
+						</lightning:accordion>
+					</div>
+					<aura:set attribute="else">
+						<div class="slds-col slds-size_1-of-2 p-0 slds-m-bottom_medium mt-auto mx-auto slds-grid">
+							<div class="slds-box slds-box_x-small m-auto">
+								<span>Pas de commentaires du formulaire Web</span>
+							</div>
+						</div>
+					</aura:set>
+				</aura:if>
+	            </div>
+	            <div class="slds-col slds-m-bottom_medium">
+
+					<div class="slds-grid slds-grid_align-center">
+		                    <lightning:inputfield fieldName="MeansOfContact__c" value="{!v.simpleRecord.MeansOfContact__c}"/>
+					</div>
+				</div>
+	            <div class="slds-col slds-m-bottom_medium">
+	                <div class="slds-grid slds-grid_align-center">
+                    <lightning:inputfield fieldName="Branding__c" value="{!v.simpleRecord.Branding__c}"/>
+				</div>
+			</div>
+		</div>
+
+		<br/>
+		
+		<div class="slds-card">
+			<aura:if isTrue="{!v.showRappelerPlusTard}">
+				<aura:if isTrue="{!v.showDateRappelError}">
+					<div class="slds-align_absolute-center">
+						<div class="slds-form-element slds-has-error">
+							<div class="slds-form-element__control">
+								<lightning:inputfield fieldName="CallBackDate__c" value="{!v.simpleRecord.CallBackDate__c}"/>
+							</div>
+							<div class="slds-form-element__help" id="form-error-01">Ce champs est vide ou inchangé, veuillez renseigner une nouvelle date.</div>
+						</div>
+					</div>
+					<aura:set attribute="else">
+						<div class="slds-align_absolute-center">
+							<lightning:inputfield fieldName="CallBackDate__c" value="{!v.simpleRecord.CallBackDate__c}"/>
+						</div>
+					</aura:set>
+				</aura:if>				
+				<aura:set attribute="else">
+					<c:LT14_Qualification simpleRecord="{!v.simpleRecord}" aura:id="qualification"/>
+				</aura:set>
+			</aura:if>
+			<div class="slds-grid slds-grid_align-space slds-border_top slds-m-top_large">
+				<div class="slds-col slds-grid">
+					<aura:if isTrue="{!v.showRappelerPlusTard}">
+						<lightning:button aura:id="Veut être rappelé plus tard" variant="brand" onclick="{!c.switchAppelerPlusTard}" class="slds-button slds-align_absolute-center">Qualifier maintenant</lightning:button>
+						<aura:set attribute="else">
+							<lightning:button aura:id="Veut être rappelé plus tard" variant="brand" onclick="{!c.switchAppelerPlusTard}" class="slds-button slds-align_absolute-center">Veut être rappelé plus tard</lightning:button>
+						</aura:set>
+					</aura:if>
+				</div>
+				<div class="slds-col">
+					<lightning:button aura:id="validation" variant="brand" onclick="{!c.clickValidate}" class="slds-button slds-m-bottom_small slds-m-top_small text-lg">Valider</lightning:button>
+				</div>
+				<aura:if isTrue="{! !or(and(v.showRappelerPlusTard, !v.showNextCall),and(v.simpleRecord.Canal__c == 'partenariats', v.simpleRecord.Status == 'Call 5')) }">
+					<div class="slds-col slds-grid">
+						<lightning:button aura:id="CallSuivant" onclick="{!c.changeToNextCall}" iconName="utility:internal_share" iconPosition="right" variant="success" class="slds-align_absolute-center">{!v.messagesNextCall}</lightning:button>
+					</div>
+				</aura:if>
+			</div>
+		</div>
+		
+		
+	</lightning:recordEditForm>
+		
+
+</aura:component>

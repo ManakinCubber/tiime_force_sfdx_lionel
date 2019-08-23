@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SourceDetailPartner__c</fullName>
+    <externalId>false</externalId>
+    <label>Détail de la source (partenaire)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Novaa</fullName>
+                <default>false</default>
+                <label>Novaa</label>
+            </value>
+            <value>
+                <fullName>Incityz</fullName>
+                <default>false</default>
+                <label>Incityz</label>
+            </value>
+            <value>
+                <fullName>Condillac</fullName>
+                <default>false</default>
+                <label>Condillac</label>
+            </value>
+            <value>
+                <fullName>LEC Lille</fullName>
+                <default>false</default>
+                <label>LEC Lille</label>
+            </value>
+            <value>
+                <fullName>Goneo</fullName>
+                <default>false</default>
+                <label>Goneo</label>
+            </value>
+            <value>
+                <fullName>Ola Compta</fullName>
+                <default>false</default>
+                <label>Ola Compta</label>
+            </value>
+            <value>
+                <fullName>LNEC</fullName>
+                <default>false</default>
+                <label>LNEC</label>
+            </value>
+            <value>
+                <fullName>Onlicorn</fullName>
+                <default>false</default>
+                <label>Onlicorn</label>
+            </value>
+            <value>
+                <fullName>Ô Compta</fullName>
+                <default>false</default>
+                <label>Ô Compta</label>
+            </value>
+            <value>
+                <fullName>Cosi</fullName>
+                <default>false</default>
+                <label>Cosi</label>
+            </value>
+            <value>
+                <fullName>Evo compta Metz</fullName>
+                <default>false</default>
+                <label>Evo compta Metz</label>
+            </value>
+            <value>
+                <fullName>Evo compta Nancy</fullName>
+                <default>false</default>
+                <label>Evo compta Nancy</label>
+            </value>
+            <value>
+                <fullName>Up expert</fullName>
+                <default>false</default>
+                <label>Up expert</label>
+            </value>
+            <value>
+                <fullName>LEC Valenciennes</fullName>
+                <default>false</default>
+                <label>LEC Valenciennes</label>
+            </value>
+            <value>
+                <fullName>Confluence Nantes</fullName>
+                <default>false</default>
+                <label>Confluence Nantes</label>
+            </value>
+            <value>
+                <fullName>Confluence Rennes</fullName>
+                <default>false</default>
+                <label>Confluence Rennes</label>
+            </value>
+            <value>
+                <fullName>Pépit Strasbourg</fullName>
+                <default>false</default>
+                <label>Pépit Strasbourg</label>
+            </value>
+            <value>
+                <fullName>Pépit Rouen</fullName>
+                <default>false</default>
+                <label>Pépit Rouen</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

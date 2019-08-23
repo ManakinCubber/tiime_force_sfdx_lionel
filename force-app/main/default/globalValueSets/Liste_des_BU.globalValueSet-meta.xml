@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Tmc</fullName>
+        <default>false</default>
+        <label>TMC</label>
+    </customValue>
+    <customValue>
+        <fullName>Novaa</fullName>
+        <default>false</default>
+        <label>Novaa</label>
+    </customValue>
+    <customValue>
+        <fullName>Incityz</fullName>
+        <default>false</default>
+        <label>Incityz</label>
+    </customValue>
+    <customValue>
+        <fullName>Condillac</fullName>
+        <default>false</default>
+        <label>Condillac</label>
+    </customValue>
+    <customValue>
+        <fullName>LecLille</fullName>
+        <default>false</default>
+        <label>LEC Lille</label>
+    </customValue>
+    <customValue>
+        <fullName>Goneo</fullName>
+        <default>false</default>
+        <label>Goneo</label>
+    </customValue>
+    <customValue>
+        <fullName>OlaCompta</fullName>
+        <default>false</default>
+        <label>Ola Compta</label>
+    </customValue>
+    <customValue>
+        <fullName>Lnec</fullName>
+        <default>false</default>
+        <label>LNEC</label>
+    </customValue>
+    <customValue>
+        <fullName>Onlicorn</fullName>
+        <default>false</default>
+        <label>Onlicorn</label>
+    </customValue>
+    <customValue>
+        <fullName>OCompta</fullName>
+        <default>false</default>
+        <label>Ô Compta</label>
+    </customValue>
+    <customValue>
+        <fullName>Cosi</fullName>
+        <default>false</default>
+        <label>Cosi</label>
+    </customValue>
+    <customValue>
+        <fullName>EvoComptaMetz</fullName>
+        <default>false</default>
+        <label>Evo compta Metz</label>
+    </customValue>
+    <customValue>
+        <fullName>EvoComptaNancy</fullName>
+        <default>false</default>
+        <label>Evo compta Nancy</label>
+    </customValue>
+    <customValue>
+        <fullName>UpExpert</fullName>
+        <default>false</default>
+        <label>Up expert</label>
+    </customValue>
+    <customValue>
+        <fullName>LecValenciennes</fullName>
+        <default>false</default>
+        <label>LEC Valenciennes</label>
+    </customValue>
+    <customValue>
+        <fullName>ConfluenceNantes</fullName>
+        <default>false</default>
+        <label>Confluence Nantes</label>
+    </customValue>
+    <customValue>
+        <fullName>ConfluenceRennes</fullName>
+        <default>false</default>
+        <label>Confluence Rennes</label>
+    </customValue>
+    <customValue>
+        <fullName>PepitStrasbourg</fullName>
+        <default>false</default>
+        <label>Pépit Strasbourg</label>
+    </customValue>
+    <customValue>
+        <fullName>PepitRouen</fullName>
+        <default>false</default>
+        <label>Pépit Rouen</label>
+    </customValue>
+    <customValue>
+        <fullName>Production</fullName>
+        <default>false</default>
+        <label>Production</label>
+    </customValue>
+    <customValue>
+        <fullName>Tiime</fullName>
+        <default>false</default>
+        <label>Tiime</label>
+    </customValue>
+    <masterLabel>Liste des BU</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

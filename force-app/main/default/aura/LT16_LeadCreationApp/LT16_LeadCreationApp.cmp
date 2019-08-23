@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable">
+	<lightning:card title="Créer une lead">
+		<div class="slds-clearfix slds-p-horizontal_large">
+			<c:LT15_LeadCreation/>
+		</div>
+    </lightning:card>
+</aura:component>

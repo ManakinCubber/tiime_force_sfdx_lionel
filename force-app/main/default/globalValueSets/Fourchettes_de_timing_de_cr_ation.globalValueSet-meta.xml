@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Le plus tôt possible</fullName>
+        <default>false</default>
+        <label>Le plus tôt possible</label>
+    </customValue>
+    <customValue>
+        <fullName>Dans moins de trois mois</fullName>
+        <default>false</default>
+        <label>Dans moins de trois mois</label>
+    </customValue>
+    <customValue>
+        <fullName>Dans les 12 prochains mois</fullName>
+        <default>false</default>
+        <label>Dans les 12 prochains mois</label>
+    </customValue>
+    <customValue>
+        <fullName>Je n&#39;ai pas de projet défini</fullName>
+        <default>false</default>
+        <label>Je n&#39;ai pas de projet défini</label>
+    </customValue>
+    <customValue>
+        <fullName>Moins de 6 mois</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Moins de 6 mois</label>
+    </customValue>
+    <customValue>
+        <fullName>Moins de 3 mois</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Moins de 3 mois</label>
+    </customValue>
+    <customValue>
+        <fullName>Immédiatement</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Immédiatement</label>
+    </customValue>
+    <customValue>
+        <fullName>Dans plus de 6 mois</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Dans plus de 6 mois</label>
+    </customValue>
+    <masterLabel>Fourchettes de timing de création</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

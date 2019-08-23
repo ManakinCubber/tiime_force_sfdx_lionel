@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__ExtPaymentPeriodCode__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <deprecated>false</deprecated>
+    <description>Code délai de paiement externe</description>
+    <externalId>true</externalId>
+    <inlineHelpText>Saisir un code de délai de paiement externe qui peut contenir jusqu&#39;à 10 caractères</inlineHelpText>
+    <label>Code Délai Externe</label>
+    <length>10</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

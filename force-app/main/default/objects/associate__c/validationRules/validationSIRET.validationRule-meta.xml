@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>validationSIRET</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+$User.BypassValidationRules__c = false,
+NOT(ISBLANK(Siret__c)), 
+LEN(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;)) != 14 ||
+MOD( 
+IF( VALUE(MID( SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 1, 1))&lt;5, 
+VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 1, 1))*2, 
+VALUE(MID(TEXT(VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 1, 1))*2),1,1))+VALUE(MID(TEXT(VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 1, 1))*2),2,1)) 
+) +
+VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 2, 1))+ 
+IF( VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 3, 1))&lt;5, 
+VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 3, 1))*2, 
+VALUE(MID(TEXT(VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 3, 1))*2),1,1))+VALUE(MID(TEXT(VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 3, 1))*2),2,1)) 
+) +
+
+VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 4, 1))+ 
+IF( VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 5, 1))&lt;5, 
+VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 5, 1))*2, 
+VALUE(MID(TEXT(VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 5, 1))*2),1,1))+VALUE(MID(TEXT(VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 5, 1))*2),2,1)) 
+) +
+
+VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 6, 1))+ 
+IF( VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 7, 1))&lt;5, 
+VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 7, 1))*2, 
+VALUE(MID(TEXT(VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 7, 1))*2),1,1))+VALUE(MID(TEXT(VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 7, 1))*2),2,1)) 
+) +
+
+VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 8, 1))+ 
+IF( VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 9, 1))&lt;5, 
+VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 9, 1))*2, 
+VALUE(MID(TEXT(VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 9, 1))*2),1,1))+VALUE(MID(TEXT(VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 9, 1))*2),2,1)) 
+) + 
+
+
+VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 10, 1))+ 
+IF( VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 11, 1))&lt;5, 
+VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) ,11, 1))*2, 
+VALUE(MID(TEXT(VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 11, 1))*2),1,1))+VALUE(MID(TEXT(VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 11, 1))*2),2,1)) 
+) +
+VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 12, 1))+ 
+IF( VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 13, 1))&lt;5, 
+VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 13, 1))*2, 
+VALUE(MID(TEXT(VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 13, 1))*2),1,1))+VALUE(MID(TEXT(VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 13, 1))*2),2,1)) 
+) +
+VALUE(MID(SUBSTITUTE(Siret__c , &quot; &quot;, &quot;&quot;) , 14, 1))
+, 10) != 0
+)</errorConditionFormula>
+    <errorDisplayField>Siret__c</errorDisplayField>
+    <errorMessage>Le numéro de SIRET est invalide.</errorMessage>
+</ValidationRule>

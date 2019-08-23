@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LossReason__c</fullName>
+    <externalId>false</externalId>
+    <label>Motif de perte</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Abandon projet</fullName>
+                <default>false</default>
+                <label>Abandon projet</label>
+            </value>
+            <value>
+                <fullName>Auto-entreprise</fullName>
+                <default>false</default>
+                <label>Auto-entreprise</label>
+            </value>
+            <value>
+                <fullName>Concurrence</fullName>
+                <default>false</default>
+                <label>Concurrence</label>
+            </value>
+            <value>
+                <fullName>Hors cible</fullName>
+                <default>false</default>
+                <label>Hors cible</label>
+            </value>
+            <value>
+                <fullName>Injoignable</fullName>
+                <default>false</default>
+                <label>Injoignable</label>
+            </value>
+            <value>
+                <fullName>Trop en amont</fullName>
+                <default>false</default>
+                <label>Trop en amont</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__TypeEtabliObligatoire</fullName>
+    <active>true</active>
+    <description>Le type d&#39;établissement est obligatoire si l&#39;entité gère les propriètaires</description>
+    <errorConditionFormula>AND (numm__Entity__r.numm__GestionProprietaires__c,ISPICKVAL( numm__TypeEtablissement__c ,&quot;&quot;))</errorConditionFormula>
+    <errorMessage>Type d&#39;établissement obligatoire</errorMessage>
+</ValidationRule>

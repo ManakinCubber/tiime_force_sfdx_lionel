@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__SOLDE_NUMM_BNP</fullName>
+    <columns>numm__Entite__c</columns>
+    <columns>numm__Etablissement__c</columns>
+    <columns>numm__DateDernierPointage__c</columns>
+    <columns>numm__Solde__c</columns>
+    <columns>numm__IdThirdParty__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <label>Tous</label>
+    <language>fr</language>
+</ListView>

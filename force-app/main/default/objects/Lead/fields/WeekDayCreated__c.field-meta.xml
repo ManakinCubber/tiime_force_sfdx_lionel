@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WeekDayCreated__c</fullName>
+    <description>Champ système</description>
+    <externalId>false</externalId>
+    <formula>CASE (WEEKDAY(DATEVALUE(CreatedDate)) , 7, &quot;6-samedi&quot;, 1, &quot;7-dimanche&quot;, 2, &quot;1-lundi&quot;, 3, &quot;2-mardi&quot;, 4, &quot;3-mercredi &quot;, 5, &quot;4-jeudi &quot;, 6,&quot;5-vendredi &quot;,&quot;Erreur&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Jour semaine de création</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

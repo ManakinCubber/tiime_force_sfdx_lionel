@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BloquerCampagnesFB</fullName>
+    <active>true</active>
+    <description>La source Facebook n&#39;accepte que certaines campagnes</description>
+    <errorConditionFormula>AND(
+  $User.BypassValidationRules__c = false,
+   UtmSource__c = &#39;facebook&#39;,
+   ISPICKVAL(UtmMedium__c, &#39;social&#39;),
+   UtmCampaign__c &lt;&gt; &#39;Publication RS - Business - LEC&#39;,
+   UtmCampaign__c &lt;&gt; &#39;Publication RS - Business compta - LEC&#39;,
+   UtmCampaign__c &lt;&gt; &#39;Publication RS - Business créa - LEC&#39;
+)</errorConditionFormula>
+    <errorMessage>Cette campagne n&#39;est pas autorisée lorsque la source de la lead est Facebook.</errorMessage>
+</ValidationRule>

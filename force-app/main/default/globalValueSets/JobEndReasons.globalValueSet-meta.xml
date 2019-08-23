@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>ArretTravauxImpayes</fullName>
+        <default>false</default>
+        <label>Arrêt de travaux pour impayés</label>
+    </customValue>
+    <customValue>
+        <fullName>CessationActivite</fullName>
+        <default>false</default>
+        <label>Cessation d&#39;activité</label>
+    </customValue>
+    <customValue>
+        <fullName>ClientNonViable</fullName>
+        <default>false</default>
+        <label>Client non viable</label>
+    </customValue>
+    <customValue>
+        <fullName>PassageSociete</fullName>
+        <default>false</default>
+        <label>Passage en société</label>
+    </customValue>
+    <customValue>
+        <fullName>Insatisfaction</fullName>
+        <default>false</default>
+        <label>Insatisfaction</label>
+    </customValue>
+    <customValue>
+        <fullName>TropCher</fullName>
+        <default>false</default>
+        <label>Trop cher</label>
+    </customValue>
+    <customValue>
+        <fullName>Motif 2</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Motif 2</label>
+    </customValue>
+    <masterLabel>Motifs de fin des travaux</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

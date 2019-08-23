@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>SASUSAS</fullName>
+        <default>false</default>
+        <label>SASU / SAS</label>
+    </customValue>
+    <customValue>
+        <fullName>EURLSARL</fullName>
+        <default>false</default>
+        <label>EURL / SARL</label>
+    </customValue>
+    <customValue>
+        <fullName>EntrepriseIndividuelle</fullName>
+        <default>false</default>
+        <label>Entreprise Individuelle</label>
+    </customValue>
+    <customValue>
+        <fullName>AutoEntrepreneur</fullName>
+        <default>false</default>
+        <label>Auto-Entrepreneur</label>
+    </customValue>
+    <customValue>
+        <fullName>SCI</fullName>
+        <default>false</default>
+        <label>SCI</label>
+    </customValue>
+    <customValue>
+        <fullName>Autre</fullName>
+        <default>false</default>
+        <label>Autre</label>
+    </customValue>
+    <customValue>
+        <fullName>NeSaitPas</fullName>
+        <default>false</default>
+        <label>Je ne sais pas, j&#39;hésite</label>
+    </customValue>
+    <masterLabel>Formes juridiques Hubspot</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

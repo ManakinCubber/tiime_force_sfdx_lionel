@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Epic__c</fullName>
+    <externalId>false</externalId>
+    <label>Epic</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CRM CAB</fullName>
+                <default>false</default>
+                <label>CRM CAB</label>
+            </value>
+            <value>
+                <fullName>SERVICE CLOUD</fullName>
+                <default>false</default>
+                <label>SERVICE CLOUD</label>
+            </value>
+            <value>
+                <fullName>JURIDIQUE</fullName>
+                <default>false</default>
+                <label>JURIDIQUE</label>
+            </value>
+            <value>
+                <fullName>WALLET</fullName>
+                <default>false</default>
+                <label>WALLET</label>
+            </value>
+            <value>
+                <fullName>SDR</fullName>
+                <default>false</default>
+                <label>SDR</label>
+            </value>
+            <value>
+                <fullName>Partenariats</fullName>
+                <default>false</default>
+                <label>Partenariats</label>
+            </value>
+            <value>
+                <fullName>Kipeo</fullName>
+                <default>false</default>
+                <label>Kipeo</label>
+            </value>
+            <value>
+                <fullName>SIRH</fullName>
+                <default>false</default>
+                <label>SIRH</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

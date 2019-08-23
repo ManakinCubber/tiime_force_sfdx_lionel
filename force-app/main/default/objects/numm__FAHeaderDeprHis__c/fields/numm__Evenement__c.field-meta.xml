@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Evenement__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Evenement</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cession</fullName>
+                <default>false</default>
+                <label>Cession</label>
+            </value>
+            <value>
+                <fullName>Réévaluation</fullName>
+                <default>false</default>
+                <label>Réévaluation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

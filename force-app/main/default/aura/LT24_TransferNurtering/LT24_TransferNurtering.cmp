@@ -1,0 +1,3 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId"	access="global">
+	<c:LT23_Nurtering apiName="Transfert__c" recordId="{!v.recordId}" />
+</aura:component>

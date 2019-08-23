@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ParallelActivity__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Si l&#39;associé est dirigeant, exerce-t-il une activité en parallèle ?</inlineHelpText>
+    <label>Activité en parallèle ?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sous la forme d&#39;une entreprise individuelle</fullName>
+                <default>false</default>
+                <label>Sous la forme d&#39;une entreprise individuelle</label>
+            </value>
+            <value>
+                <fullName>Sous la forme d&#39;une auto-entreprise</fullName>
+                <default>false</default>
+                <label>Sous la forme d&#39;une auto-entreprise</label>
+            </value>
+            <value>
+                <fullName>non</fullName>
+                <default>false</default>
+                <label>non</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

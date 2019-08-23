@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__VerifTypeEtablissement</fullName>
+    <active>true</active>
+    <description>doit être un parking ou un appartement ou l&#39;établissement Rompu</description>
+    <errorConditionFormula>NOT OR(ISPICKVAL(numm__Etablissement__r.numm__TypeEtablissement__c, &quot;Appartement&quot;), ISPICKVAL(numm__Etablissement__r.numm__TypeEtablissement__c, &quot;Parking&quot;),
+ISPICKVAL(numm__Etablissement__r.numm__TypeEtablissement__c, &quot;Rompu&quot;))</errorConditionFormula>
+    <errorMessage>Affectation non valide pour ce type d&#39;établissement</errorMessage>
+</ValidationRule>

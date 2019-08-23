@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Generer_un_pdf</fullName>
+    <availability>online</availability>
+    <description>Génération d&#39;un pdf des factures sélectionnées</description>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Génération d&#39;un pdf</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/22.0/apex.js&quot; )} 
+{!REQUIRESCRIPT (&quot;/soap/ajax/13.0/connection.js&quot;)}
+
+var records = {!GETRECORDIDS($ObjectType.numm__InvoiceHeader__c)}; 
+var newRecords = [];
+
+var date = new Date();
+var current_hour =date.getFullYear()+&quot;&quot;+date.getMonth()+&quot;&quot;+date.getDate()+&quot;&quot; +date.getHours() +&quot;&quot;+ date.getMinutes()+&quot;&quot;+date.getSeconds()+&quot;&quot;+Math.random()*1000 ;
+
+var idp = current_hour ;
+var r = confirm(&quot;Voulez vous créer un pdf ?&quot; ); 
+
+if(r == true){ 
+
+if(!records.length==0) 
+{
+	for (var n=0; n&lt;records.length; n++) {
+			var c = new sforce.SObject(&quot;numm__InvoiceHeader__c&quot;);
+			c.id = records[n];
+			c.numm__IdPrint__c = idp ;
+			newRecords.push(c); 
+	}
+	result = sforce.connection.update(newRecords); 
+	window.open(&#39;/apex/numm__vfpap03_facturepdf?IdPrint=&#39;+idp ); 
+} 
+else 
+{ 
+	alert(&#39;Sélectionner des factures à éditer&#39;); 
+}
+}</url>
+</WebLink>

@@ -1,0 +1,28 @@
+<aura:component >
+    <aura:attribute name="note" type="Object"/>
+    <aura:attribute name="title" type="String"/>
+    <aura:attribute name="numero" type="String"/>
+    <aura:attribute name="typeNote" type="List"/>
+    <aura:attribute name="showAucun" type="Boolean" default="false"/>
+    <aura:attribute name="showLeft" type="Boolean" default="false"/>
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	
+	<div aura:id="composant" class="slds-grid_vertical slds-align_absolute-center slds-m-top_medium">
+		<div class="slds-col slds-p-top_xx-small">
+			<label class="slds-text-heading_small">{!v.title}</label>
+		</div>
+		<div class="slds-col slds-grid">
+			<lightning:radioGroup aura:id="radioG"
+								name="{!v.numero}"  
+								options="{!v.typeNote}" 
+								value="{!v.note}" 
+								type="button" 
+								class="nowrap centered"
+			/>
+			<aura:if isTrue="{!v.showAucun}">
+				<lightning:buttonIcon onclick="{!c.removeValue}" iconName="utility:close"  alternativeText="Aucun" class="slds-align-middle slds-m-top_xx-small slds-m-left_xx-small"/>
+			</aura:if>
+		</div>
+	</div>
+</aura:component>

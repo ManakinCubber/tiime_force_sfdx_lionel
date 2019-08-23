@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__AccountingProrataCode__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>Ne rien indiquer lorsque le compte non déductible correspond au compte d&#39;origine hors taxe de la saisie. Dans le cas contraire, préciser le compte non déductible de prorata de TVA</inlineHelpText>
+    <label>Compte prorata non déductible</label>
+    <referenceTo>numm__AccountingCode__c</referenceTo>
+    <relationshipLabel>affectations de TVA (Compte prorata non déductible)</relationshipLabel>
+    <relationshipName>affectations_de_TVA2</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

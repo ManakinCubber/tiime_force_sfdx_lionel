@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Role_du_Tiers__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>Si vous souhaitez restreindre l&#39;utilisation du schéma à un seul tiers.</inlineHelpText>
+    <label>Role du Tiers</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>$Source.numm__Entite__c</field>
+            <operation>equals</operation>
+            <valueField>numm__ThirdPartyRule__c.numm__Entite__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>numm__ThirdPartyRule__c</referenceTo>
+    <relationshipLabel>Roles du schéma</relationshipLabel>
+    <relationshipName>Roles_du_schema</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EntrepriseStakeholder_bloque</fullName>
+    <active>true</active>
+    <description>Cette règle permet de rendre le champ entreprise du stakeholder en lecture seule</description>
+    <errorConditionFormula>AND(
+$User.BypassValidationRules__c = false, 
+ISCHANGED(Company__c)
+)</errorConditionFormula>
+    <errorMessage>L&#39;entreprise liée à ce contact ne peut être changée. Merci de créer un nouveau contact</errorMessage>
+</ValidationRule>

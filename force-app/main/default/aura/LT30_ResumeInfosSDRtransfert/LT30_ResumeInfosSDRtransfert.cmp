@@ -1,0 +1,91 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    
+    <aura:attribute name="recordError" type="String" description="Eventuelles erreurs" />
+    <aura:attribute name="simpleRecord" type="Transfert__c"/>  
+    <aura:attribute name="TransfertObject" type="Object" />
+    
+	<force:recordData aura:id="TheRecord"
+	                    recordId="{!v.recordId}"
+	                    fields="Lead__c, Lead__r.Canal__c"
+	                    targetRecord="{!v.TransfertObject}"
+	                    targetError="{!v.recordError}"
+	                    targetFields="{!v.simpleRecord}"
+	                    mode="EDIT"/>
+    
+    <lightning:card variant="Narrow" title="Information sur le prospect" iconName="standard:lead">
+        <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Lead">
+            <div class="slds-col slds-m-around_large slds-p-around_small shadow">
+                <div class="slds-text-heading_medium slds-m-bottom_x-small"> 
+                    Activité
+                </div>
+                <div class="slds-grid slds-gutters slds-align_absolute-center">
+                    <div class="slds-col">
+                        <lightning:outputField fieldName="Activity__c"/>
+                    </div>
+                    <div class="slds-col">
+                        <lightning:outputField fieldName="ActivityDetails__c"/>
+                    </div> 
+                </div>
+            </div>
+            <div class="slds-col slds-m-around_large slds-p-around_small shadow">
+                <div class="slds-text-heading_medium slds-m-bottom_x-small"> 
+                    Besoin
+                </div>
+                <div class="slds-grid slds-gutters slds-align_absolute-center">
+                    <div class="slds-col">
+                        <lightning:outputField fieldName="TypeOfNeed__c" />
+                    </div>
+                    <div class="slds-col">
+                        <lightning:outputField fieldName="Echeance_de_besoin_de_creation__c" />
+                    </div>   
+                </div>
+            </div>
+     	</lightning:recordViewForm>
+        <lightning:recordViewForm recordId="{!v.simpleRecord.Lead__c}" objectApiName="Lead">
+            <div class="slds-m-around_large slds-p-around_small shadow">
+                <div class="slds-text-heading_medium slds-m-bottom_x-small"> 
+                    Sources
+                </div>
+                <div class="slds-grid slds-gutters slds-wrap slds-align_absolute-center">
+                    <div class="slds-col">
+                        <lightning:outputField fieldName="Canal__c"/>
+                    </div>
+                    <aura:if isTrue="{!v.simpleRecord.Lead__r.Canal__c == 'partenariats'}">
+                        <div class="slds-col">
+                            <lightning:outputField fieldName="Partnership__c" />
+                        </div>
+                        <aura:set attribute="else">
+                            <aura:if isTrue="{!v.simpleRecord.Lead__r.Canal__c == 'events'}">
+                                <div class="slds-col">
+                        			<lightning:outputField fieldName="Event__c" />
+                    			</div> 
+                                <aura:set attribute="else">
+                                    <aura:if isTrue="{!v.simpleRecord.Lead__r.Canal__c == 'reco-client'}">
+                                        <div class="slds-col">
+                                            <lightning:outputField fieldName="CustomerRecommendation__c" />
+                                        </div>
+                                        <aura:set attribute="else">
+                                             <div class="slds-col">
+                                                <lightning:outputField fieldName="Detail__c" />
+                                            </div>
+                                        </aura:set>
+                                    </aura:if>
+                                </aura:set>
+                            </aura:if>
+                        </aura:set>
+                    </aura:if>
+            	</div>
+            </div>  
+        </lightning:recordViewForm>
+        <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Lead">
+            <div class="slds-m-around_large slds-p-around_small shadow">
+                <div class="slds-text-heading_medium slds-m-bottom_x-small"> 
+                        Commentaires
+                </div>
+                <div class="slds-align_absolute-center">
+                	<lightning:outputField fieldName="WebFormComments__c"/>
+                </div>
+            </div>
+        </lightning:recordViewForm>
+    </lightning:card>
+</aura:component>

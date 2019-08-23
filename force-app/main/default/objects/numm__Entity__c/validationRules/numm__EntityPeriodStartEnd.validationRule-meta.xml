@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__EntityPeriodStartEnd</fullName>
+    <active>true</active>
+    <description>La date de fin de période doit être supérieure à la date de début de période</description>
+    <errorConditionFormula>numm__PeriodStart__c &gt;=  numm__PeriodEnd__c</errorConditionFormula>
+    <errorDisplayField>numm__PeriodStart__c</errorDisplayField>
+    <errorMessage>La date de début d&#39;exercice doit être inférieure à la date de fin d&#39;exercice.</errorMessage>
+</ValidationRule>

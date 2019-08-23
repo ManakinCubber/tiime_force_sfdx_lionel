@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ActivityArea__c</fullName>
+    <externalId>false</externalId>
+    <label>Secteur d&#39;activité</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cible : B2B avec salariés</fullName>
+                <default>false</default>
+                <label>Cible : B2B avec salariés</label>
+            </value>
+            <value>
+                <fullName>Cible : B2B sans salariés</fullName>
+                <default>false</default>
+                <label>Cible : B2B sans salariés</label>
+            </value>
+            <value>
+                <fullName>Cible : B2C Tiimer</fullName>
+                <default>false</default>
+                <label>Cible : B2C Tiimer</label>
+            </value>
+            <value>
+                <fullName>Cible :Médical</fullName>
+                <default>false</default>
+                <label>Cible : Médical</label>
+            </value>
+            <value>
+                <fullName>Cible : Production / Artiste</fullName>
+                <default>false</default>
+                <label>Cible : Production / Artiste</label>
+            </value>
+            <value>
+                <fullName>Hors cible : Agricole</fullName>
+                <default>false</default>
+                <label>Hors cible : Agricole</label>
+            </value>
+            <value>
+                <fullName>Hors cible : B2C Autres</fullName>
+                <default>false</default>
+                <label>Hors cible : B2C Autres</label>
+            </value>
+            <value>
+                <fullName>Hors cible : BTP</fullName>
+                <default>false</default>
+                <label>Hors cible : BTP</label>
+            </value>
+            <value>
+                <fullName>Hors cible : Commerce</fullName>
+                <default>false</default>
+                <label>Hors cible : Commerce</label>
+            </value>
+            <value>
+                <fullName>Hors cible : E-Commerce</fullName>
+                <default>false</default>
+                <label>Hors cible : E-Commerce</label>
+            </value>
+            <value>
+                <fullName>Hors cible : Immobilier</fullName>
+                <default>false</default>
+                <label>Hors cible : Immobilier</label>
+            </value>
+            <value>
+                <fullName>Hors cible : Industrie</fullName>
+                <default>false</default>
+                <label>Hors cible : Industrie</label>
+            </value>
+            <value>
+                <fullName>Hors cible : Startup</fullName>
+                <default>false</default>
+                <label>Hors cible : Startup</label>
+            </value>
+            <value>
+                <fullName>Hors cible : Transport</fullName>
+                <default>false</default>
+                <label>Hors cible : Transport</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

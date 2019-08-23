@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Statut__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(
+  TEXT(numm__Statut_liste__c) = &#39;En cours&#39;,
+  IMAGE(&#39;/img/msg_icons/info16.png&#39;, &#39;Erreur&#39;),
+  IF(
+    numm__TECH_Erreur__c,
+    IMAGE(&#39;/img/msg_icons/error16.png&#39;, &#39;Erreur&#39;),
+    IMAGE(&#39;/img/msg_icons/confirm16.png&#39;, &#39;Succès&#39;)
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Statut</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

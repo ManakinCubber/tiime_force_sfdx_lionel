@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mes_transferts_en_cours</fullName>
+    <columns>NAME</columns>
+    <columns>TransferMonitoring__c</columns>
+    <columns>AppointmentDate__c</columns>
+    <columns>Etape__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Etape__c</field>
+        <operation>notEqual</operation>
+        <value>Perdu,Nurtering,Proposition Envoyée</value>
+    </filters>
+    <label>Mes transferts en cours</label>
+</ListView>

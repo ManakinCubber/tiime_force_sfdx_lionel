@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ForceSousTypeSiType</fullName>
+    <active>false</active>
+    <description>sur une modification, si on rempli le champ &#39;type&#39; on doit remplir également le champ &#39;sous type&#39;</description>
+    <errorConditionFormula>AND(
+	$User.BypassValidationRules__c = false,
+	NOT ( ISNEW() ),
+	NOT (ISCHANGED(OwnerId)),
+	OR(
+		AND ( 
+			ISPICKVAL(Type ,&quot;&quot;) , 
+			NOT ( ISPICKVAL(SubType__c ,&quot;&quot;) )
+		),
+		AND ( 
+			NOT ( ISPICKVAL(Type ,&quot;&quot;) ) , 
+			ISPICKVAL(SubType__c ,&quot;&quot;)
+		)
+	)
+)</errorConditionFormula>
+    <errorMessage>si on remplit le champ &#39;Type&#39; on doit remplir également le champ &#39;sous Type&#39;</errorMessage>
+</ValidationRule>

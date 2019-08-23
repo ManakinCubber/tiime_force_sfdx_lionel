@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__TreatUndeliveredMail__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>- TreatUndeliveredMail : Gestion électronique des Plis Non Distribuables (PND, ex-NPAI) Si cette option est activée, Maileva recevra les courriers non distribués retournés par La Poste. Ces informations seront disponibles dans le suivi en ligne. Il est également possible de demander un retour périodique (toutes les semaines) de cette liste d’adresses dans un format électronique (voir élément Notification, type PND). Pour que la fonctionnalité soit effective, le client ne doit pas demander l’impression de son adresse au niveau de la zone expéditeur (option PrintSenderAddress).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>- TreatUndeliveredMail : Gestion électronique des Plis Non Distribuables (PND, ex-NPAI) Si cette option est activée, Maileva recevra les courriers non distribués retournés par La Poste. Ces informations seront disponibles dans le suivi en ligne. Il est ég</inlineHelpText>
+    <label>ZNUTreatUndeliveredMail</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

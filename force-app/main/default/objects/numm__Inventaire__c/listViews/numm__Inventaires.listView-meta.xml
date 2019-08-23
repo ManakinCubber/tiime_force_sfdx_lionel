@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Inventaires</fullName>
+    <columns>numm__Statut__c</columns>
+    <columns>NAME</columns>
+    <columns>numm__Commentaire__c</columns>
+    <columns>numm__Date_start__c</columns>
+    <columns>numm__Date_end__c</columns>
+    <columns>numm__Entrepot__c</columns>
+    <columns>numm__Produit__c</columns>
+    <columns>numm__Site__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Inventaires</label>
+    <language>fr</language>
+</ListView>

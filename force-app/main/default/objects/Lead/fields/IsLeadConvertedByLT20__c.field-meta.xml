@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsLeadConvertedByLT20__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Cette case est cochée lors de la conversion de la lead par le composant lightning LT20. Elle permet lors de la conversion de ne pas appliquer la règle de duplication des contacts</description>
+    <externalId>false</externalId>
+    <label>Conversion par LT20</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

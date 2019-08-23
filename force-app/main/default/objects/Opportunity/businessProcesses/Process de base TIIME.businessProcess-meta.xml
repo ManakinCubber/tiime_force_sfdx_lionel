@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Process de base TIIME</fullName>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Contrat signé</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Nurturing</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Opportunité perdue</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Proposition envoyée</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Relance</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Relance 2</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Relance 3</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Relance 4</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Relance 5</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

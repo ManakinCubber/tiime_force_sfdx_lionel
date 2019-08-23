@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BypassAllTriggers__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Cocher ce champ si l&#39;utilisateur souhaite ne déclencher aucune action de type Trigger.</description>
+    <externalId>false</externalId>
+    <label>BypassAllTriggers</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

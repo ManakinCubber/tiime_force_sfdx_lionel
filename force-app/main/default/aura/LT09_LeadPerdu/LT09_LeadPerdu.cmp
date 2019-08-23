@@ -1,0 +1,35 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global">
+
+	<aura:attribute name="recordError" type="String" description="Eventuelles erreurs" />
+    <aura:attribute name="simpleRecord" type="Lead"/>  
+    <aura:attribute name="LeadObject" type="Object" />
+    
+	<force:recordData aura:id="TheRecord"
+	                    recordId="{!v.recordId}"
+	                    fields="LossReason__c, LossDetails__c, Status"
+	                    targetRecord="{!v.LeadObject}"
+	                    targetError="{!v.recordError}"
+	                    targetFields="{!v.simpleRecord}"
+	                    mode="EDIT"/>
+	                    
+	<lightning:card>
+		<lightning:spinner aura:id="spjSpinner" class="slds-hide"/>
+  		<aura:set attribute="title">
+	  		<div class="slds-align_absolute-center">
+	  			<lightning:icon iconName="utility:resource_absence" size="small" class="slds-m-right_x-small"/>  
+	  			Lead perdu 
+			</div>
+        </aura:set>
+   			<lightning:recordEditForm aura:id="recordViewForm"
+                                     recordId="{!v.recordId}"
+                                     objectApiName="Lead">
+	   	  		<lightning:messages />
+	   	  		
+				<lightning:inputfield fieldName="LossReason__c" value="{!v.simpleRecord.LossReason__c}"/>   	
+	   	 		<lightning:inputfield fieldName="LossDetails__c" value="{!v.simpleRecord.LossDetails__c}"/>
+	   	 		
+	   			<lightning:button aura:id="validation" variant="brand" onclick="{!c.clickValidate}" class="slds-align_absolute-center slds-button slds-m-bottom_small slds-m-top_small" label="Passer en perdu"/>
+	   		
+	   		</lightning:recordEditForm>
+	</lightning:card>
+</aura:component>

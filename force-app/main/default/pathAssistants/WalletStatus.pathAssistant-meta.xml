@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Account</entityName>
+    <fieldName>WalletStatus__c</fieldName>
+    <masterLabel>Statut Wallet</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt;&quot;&gt;La CB a été activée !&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>CBActivated</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt;&quot;&gt;Mail envoyé, en attente de validation des CGU par le client&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>CGUPending</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt;&quot;&gt;En attente du retour client sur les éléments manquants pour Treezor&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Incomplete</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt;&quot;&gt;Treezor devrait revenir vers nous d&amp;#39;ici peu =)&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>KYCPending</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt;&quot;&gt;Il semble que Treezor ait détecté quelques informations manquantes, RDV dans Détails Treezor pour analyser cela.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>KYCRefused</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt;&quot;&gt;Top ! Il ne reste plus au client qu&amp;#39;à commander sa CB via son interface&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>KYCValidated</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt;&quot;&gt;Il est temps de vérifier que tout est ok avec la Checklist pour l&amp;#39;envoi à Treezor !&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>TIIMEPending</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Client</recordTypeName>
+</PathAssistant>

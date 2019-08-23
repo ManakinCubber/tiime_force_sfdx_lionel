@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ID_Kbis__c</fullName>
+    <description>Champ système contenant l&#39;ID du ContentDocument chargé en tant que &quot;Extrait de Kbis&quot;. null si aucun Kbis.</description>
+    <externalId>false</externalId>
+    <label>ID Kbis</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

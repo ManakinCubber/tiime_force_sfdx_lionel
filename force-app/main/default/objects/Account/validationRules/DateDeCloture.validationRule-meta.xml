@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DateDeCloture</fullName>
+    <active>true</active>
+    <description>Empêche de choisir un jour supérieur à 31</description>
+    <errorConditionFormula>AND(
+$User.BypassValidationRules__c = false,
+DayClosingPeriod__c  &gt; 31
+)</errorConditionFormula>
+    <errorDisplayField>DayClosingPeriod__c</errorDisplayField>
+    <errorMessage>Il n&#39; y que 31 jours dans un mois !</errorMessage>
+</ValidationRule>

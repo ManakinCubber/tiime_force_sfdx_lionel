@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Statut__c</fullName>
+    <externalId>false</externalId>
+    <label>Statut</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>true</default>
+                <label>Nouvelle</label>
+            </value>
+            <value>
+                <fullName>Call 1</fullName>
+                <default>false</default>
+                <label>Rappel 1</label>
+            </value>
+            <value>
+                <fullName>Call 2</fullName>
+                <default>false</default>
+                <label>Rappel 2</label>
+            </value>
+            <value>
+                <fullName>Rappel</fullName>
+                <default>false</default>
+                <label>Rappel</label>
+            </value>
+            <value>
+                <fullName>Done</fullName>
+                <default>false</default>
+                <label>Réalisée</label>
+            </value>
+            <value>
+                <fullName>Failed</fullName>
+                <default>false</default>
+                <label>Echouée</label>
+            </value>
+            <value>
+                <fullName>DoNotCall</fullName>
+                <default>false</default>
+                <label>Ne plus appeler</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

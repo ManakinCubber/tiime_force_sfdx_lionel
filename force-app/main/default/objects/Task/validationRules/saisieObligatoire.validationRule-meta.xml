@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>saisieObligatoire</fullName>
+    <active>true</active>
+    <description>saisie Obligatoire des champs Activité-Projet / Durée / Date d&#39;échéance, si le Statut est terminé</description>
+    <errorConditionFormula>AND(
+$User.BypassValidationRules__c = false, 
+( ((ISPICKVAL(Status , &quot;Terminé&quot;)  ||  Over__c = true )  &amp;&amp;
+ RecordType.Name  =  &quot;Tâche-Projet&quot;)  &amp;&amp; 
+(
+ ISBLANK( ActivityDate ) || 
+ ISBLANK( Duration__c)))
+)</errorConditionFormula>
+    <errorMessage>Les valeurs Activité-Projet / Durée et Date d&#39;échéance doivent être renseignées si le statut de la tâche est fermé</errorMessage>
+</ValidationRule>

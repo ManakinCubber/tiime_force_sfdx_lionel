@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NumMailChgtStatut</fullName>
+    <active>true</active>
+    <description>Impossible de changer l&#39;étape de la lead s&#39;il manque le numéro ou l&#39;adresse mail</description>
+    <errorConditionFormula>AND(
+$User.BypassValidationRules__c = false,
+(NOT((ISPICKVAL(Status,&quot;Call 1&quot;)))) 
+&amp;&amp; 
+((ISBLANK(MobilePhone)) || (ISBLANK( Email )))
+)</errorConditionFormula>
+    <errorMessage>Le numéro de téléphone et l&#39;adresse mail doivent tout deux être renseignés pour changer de statut</errorMessage>
+</ValidationRule>

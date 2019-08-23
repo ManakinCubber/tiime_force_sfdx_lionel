@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MyAccounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>MainEmail__c</columns>
+    <columns>MainPhoneNumber__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>Mes entreprises</label>
+</ListView>

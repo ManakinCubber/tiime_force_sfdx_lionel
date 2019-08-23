@@ -1,0 +1,89 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	
+	<aura:attribute name="recordError" type="String"/>
+	<aura:attribute name="LeadObject" type="Lead"/>
+	<aura:attribute name="isOpen" type="Boolean" default="false"/>
+	<aura:attribute name="isNotifyOpen" type="Boolean" default="false"/>
+	<aura:attribute name="componentActif" type="Boolean" default="true"/>
+	
+	<force:recordData aura:id="TheRecord"
+					  recordId="{!v.recordId}"
+					  fields="Id, OwnerId, DateAssignation__c, Owner.Name, Linking__c, RDV_EC_confirmer__c, Type_de_renvoi__c, OrigineWebsite__c"
+					  targetFields="{!v.LeadObject}"
+					  targetError="{!v.recordError}"
+					  recordUpdated="{!c.doInit}"
+					  mode="EDIT"
+					  />
+				
+	<aura:if isTrue="{!v.isOpen}">
+		<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open"> 
+			<div class="slds-modal__container">
+				<header class="slds-modal__header">
+					<lightning:spinner aura:id="spjSpinner" variant="brand" class="slds-hide"/> 
+					<lightning:buttonIcon iconName="utility:close"
+										  onclick="{! c.closeModel }"
+										  alternativeText="close"
+										  variant="bare-inverse"
+										  class="slds-modal__close"/>
+					<h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Voulez-vous vous assigner la LEAD ?</h2>
+				</header>
+				
+				<aura:if isTrue="{!v.LeadObject.Type_de_renvoi__c == 'Lead en cours'}">
+					<div class="slds-modal__content slds-p-around_medium">
+						<h2 class="slds-text-heading_small slds-text-color_error slds-hyphenate">Attention ! La Lead est en cours de création chez Tiime et cherche un EC.</h2>
+					</div>
+				</aura:if>
+				<aura:if isTrue="{!v.LeadObject.Type_de_renvoi__c == 'Erreur de casting'}">
+					<div class="slds-modal__content slds-p-around_medium">
+						<h2 class="slds-text-heading_small slds-text-color_error slds-hyphenate">Attention ! Erreur de casting, la Lead est de retour au SDR pour réorientation.</h2>
+					</div>
+				</aura:if>
+                <aura:if isTrue="{!v.LeadObject.Type_de_renvoi__c == 'Lead hors cible'}">
+					<div class="slds-modal__content slds-p-around_medium">
+                        <h2 class="slds-text-heading_small slds-text-color_error slds-hyphenate">Attention ! Le prospect est une recommandation '{!v.LeadObject.OrigineWebsite__c}', à rappeler sous Tiime</h2>
+					</div>
+				</aura:if>
+
+				<footer class="slds-modal__footer slds-grid slds-grid_align-center">
+					<lightning:button variant="neutral" 
+									  label="Annuler"
+									  title="Annuler"
+									  onclick="{! c.closeModel }"
+									  class="slds-col"/>
+					<lightning:button variant="brand" 
+									  label="M'assigner"
+									  title="M'assigner"
+									  onclick="{! c.assigner }"
+									  class="slds-col"/>
+				 </footer>
+			</div>
+		</section>		
+		<div class="slds-backdrop slds-backdrop_open"></div>
+	</aura:if>
+
+	<aura:if isTrue="{!v.isNotifyOpen}">
+		<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-2" class="slds-modal slds-fade-in-open"> 
+			<div class="slds-modal__container">
+				<header class="slds-modal__header warning">
+					<h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Avertissement</h2>
+				</header>
+
+				<div class="slds-modal__content slds-p-around_medium " id="modal-content-id-2">
+					<p class="slds-text-heading_small">
+						<lightning:icon iconName="utility:warning" alternativeText="Attention !" variant="warning"/>&nbsp;
+						Attention, il s'agit d'une mise en relation programmée !
+					</p>
+				</div>
+				
+				<footer class="slds-modal__footer slds-grid slds-grid_align-center">
+					<lightning:button variant="brand" 
+									  label="Ok"
+									  title="Ok"
+									  onclick="{! c.closeNotify }"
+					/>
+				 </footer>
+			</div>
+		</section>		
+		<div class="slds-backdrop slds-backdrop_open"></div>
+	</aura:if>
+</aura:component>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CompactLayoutTiimeSurvey</fullName>
+    <fields>Partner__c</fields>
+    <fields>Lead__c</fields>
+    <fields>Telephone_de_la_lead__c</fields>
+    <fields>Contact__c</fields>
+    <fields>Date_de_transfert__c</fields>
+    <fields>OrigineWebsite__c</fields>
+    <fields>Branding__c</fields>
+    <label>Présentation Compact Tiime</label>
+</CompactLayout>

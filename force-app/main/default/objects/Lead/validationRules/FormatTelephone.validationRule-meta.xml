@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FormatTelephone</fullName>
+    <active>true</active>
+    <description>L&#39;expression régulière doit valider correctement :
+- les numéros français 
+- les numéros internationaux si il commence par `+` ou `00`puis un chiffres entre 1 et 9 
+(mais pas 33) puis des chiffres
+- on accepte que le numéro comporte des ., - ou espace</description>
+    <errorConditionFormula>AND(
+$User.BypassValidationRules__c = false,
+NOT(OR(ISBLANK(MobilePhone), 
+REGEX(SUBSTITUTE(
+        SUBSTITUTE(
+          SUBSTITUTE(MobilePhone, &quot; &quot;, &quot;&quot;)
+          , &quot;.&quot;, &quot;&quot;)
+        , &quot;-&quot;, &quot;&quot;)
+      ,&quot;^((0|\\+33|0033)[1-9][0-9]{8}|(\\+|00)(?!3{2})[1-9][0-9]+)$&quot;)))
+)</errorConditionFormula>
+    <errorMessage>Le format téléphonique est incorrect. veuillez renseigner votre téléphone en respectant l&#39;un des formats suivants : 06XXXXXXXX ou +336XXXXXXXXX.</errorMessage>
+</ValidationRule>

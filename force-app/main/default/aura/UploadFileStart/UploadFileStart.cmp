@@ -1,0 +1,55 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global">
+
+	<aura:attribute name="StartRecord" type="Start__c"/>
+	<aura:attribute name="record" type="Object"/>
+	<force:recordData aura:id="record"
+		recordId="{!v.recordId}"
+		targetRecord="{!v.record}"
+		targetFields="{!v.StartRecord }"
+		fields="HeadquarterType__c,LegalStatus__c"
+		recordUpdated="{!c.recordUpdated}"
+		mode="VIEW"/>
+
+	<c:UploadFile 
+		ObjectRecord="{!v.StartRecord}"
+		recordId="{!v.recordId}"
+		inputs="[
+		{'name':'registeredOfficeOwner',
+		'title':'Domiciliation (Propriétaire)',
+		'label':'Domiciliation chez le dirigeant (dirigeant propriétaire) : copie du dernier avis de taxe foncière et facture (électricité, eau, gaz) de moins de 3 mois',
+		'valid': 0,
+		'documentId': null,
+		'field': 'ID_Registered_Office_Owner__c',
+		'conditions': [
+			{'field':'v.ObjectRecord.HeadquarterType__c', 'value':'Domicile du dirigeant - propriétaire'}
+		]
+		},
+		{'name':'registeredOfficeLessee',
+		'title':'Domiciliation (Locataire)',
+		'label':'Domiciliation chez le dirigeant (dirigeant locataire) : facture (électricité, eau, gaz) de moins de 3 mois et autorisation de domiciliation du propriétaire',
+		'valid': 0,
+		'documentId': null,
+		'field': 'ID_Registered_Office_Lessee__c',
+		'conditions': [
+			{'field':'v.ObjectRecord.HeadquarterType__c', 'value':'Locataire'}
+		]
+		},
+		{'name':'registeredOfficeHosted',
+		'title':'Domiciliation (Hébergé par un tiers)',
+		'label':'Domiciliation chez le dirigeant (dirigeant hébergé par un tiers) : facture (électricité, eau, gaz) de moins de 3 mois au nom de l\'hébergeur, copie d\'une pièce d\'identité de l\'hébergeur et attestation d\'hébergement signée',
+		'valid': 0,
+		'documentId': null,
+		'field': 'ID_Registered_Office_Hosted__c',
+		'conditions': [
+			{'field':'v.ObjectRecord.HeadquarterType__c', 'value':'Hébergé'}
+		]
+		},
+		{'name':'lease',
+		'title':'Bail commercial / contrat de domiciliation',
+		'label':'Bail commercial / contrat de domiciliation (daté et signé par les deux parties)',
+		'valid': 0,
+		'documentId': null,
+		'field': 'ID_Lease__c',
+		}
+	]" aura:id="uploader"/>
+</aura:component>

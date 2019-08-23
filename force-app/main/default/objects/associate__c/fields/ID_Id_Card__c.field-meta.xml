@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ID_Id_Card__c</fullName>
+    <description>Champ système contenant l&#39;ID du ContentDocument chargé en tant que &quot;Carte d&#39;identité&quot;. null si aucune carte d&#39;identité.</description>
+    <externalId>false</externalId>
+    <label>ID de la carte d&#39;identité</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

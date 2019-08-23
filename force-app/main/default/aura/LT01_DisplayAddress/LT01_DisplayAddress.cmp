@@ -1,0 +1,37 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+
+	<aura:attribute name="record" type="Object"/>
+	<aura:attribute name="LeadObject" type="Lead"/>
+	<aura:attribute name="mapMarkers" type="object"/>
+	<aura:attribute name="zoomLevel" type="Integer" />
+	
+	<force:recordData aura:id="record"
+        recordId="{!v.recordId}"
+        fields="Id, Name, Street, City, Country, PostalCode"
+        mode="VIEW"
+        targetRecord="{!v.record}"
+        targetFields="{!v.LeadObject}"
+        recordUpdated="{!c.initMap}"
+        targetError="{!v.error}" />
+
+	<lightning:card variant="Narrow" title="Adresse" iconName="standard:address" class="slds-card slds-size_full">
+		<fieldset class="slds-grid slds-grid_vertical">
+			<div class="slds-col slds-size_full slds-m-bottom_small slds-p-left_small slds-p-right_small">
+			
+				<lightning:formattedAddress
+			        title="Adresse :"
+					street="{!v.LeadObject.Street}"
+					city="{!v.LeadObject.City}"
+					country="{!v.LeadObject.Country}"
+					postalCode="{!v.LeadObject.PostalCode}"
+					showStaticMap="false" 
+					disabled="true"/>
+			</div>
+			<div class="slds-col slds-size_full slds-p-left_small slds-p-right_small">
+				<aura:if isTrue="{!v.mapMarkers.length > 0}" >
+			    	<lightning:map mapMarkers="{!v.mapMarkers}" zoomLevel="{!v.zoomLevel}" style="height:225px;"/>
+			    </aura:if>
+			</div>
+		</fieldset>
+	</lightning:card>
+</aura:component>

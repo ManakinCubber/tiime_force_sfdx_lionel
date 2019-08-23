@@ -1,0 +1,19 @@
+<aura:component implements="force:hasRecordId">
+	<aura:attribute name="apiName" type="String" />
+    <aura:attribute name="scenarioField" type="String" default="NurturingScenario__c"/>
+    <aura:attribute name="toNurturField" type="String" default="ToNurtur__c"/>
+    <aura:attribute name="commentsField" type="String" default="NurturingComments__c"/>
+    <aura:attribute name="dateField" type="String" default="NewContactDate__c"/>
+	<lightning:recordEditForm onsuccess="{!c.handleSuccess}" recordId="{!v.recordId}" objectApiName="{!v.apiName}">
+
+		<lightning:messages />
+
+		<lightning:inputField fieldName="{!v.scenarioField}" />
+		<lightning:inputField fieldName="{!v.toNurturField}" />
+		<lightning:inputField fieldName="{!v.commentsField}" />
+		<lightning:inputField fieldName="{!v.dateField}" />
+		<div class="slds-m-top_medium">
+			<lightning:button variant="brand" type="submit" name="save" label="Sauvegarder" />
+		</div>
+	</lightning:recordEditForm>
+</aura:component>

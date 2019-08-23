@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__IdVatProrata__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Where GenericTable.IdObjet = 7 and VatRate.IdType = 2</description>
+    <externalId>false</externalId>
+    <label>Prorata de TVA</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>numm__VATRate__c.numm__Prorata__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>numm__VATRate__c</referenceTo>
+    <relationshipName>ProrataTVA</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

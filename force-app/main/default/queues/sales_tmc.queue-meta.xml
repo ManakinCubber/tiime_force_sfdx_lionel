@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Leads en attente</name>
+    <queueMembers>
+        <roles>
+            <role>Commerce</role>
+        </roles>
+        <users>
+            <user>projet.tiime@carrenet.com</user>
+            <user>audrey.gostoli@tiime.fr</user>
+            <user>beatrice.chiara@tiime.fr</user>
+            <user>claire.pagniez@tiime.fr</user>
+            <user>gerard.lesne@tiime.fr</user>
+            <user>gregoire.charroyer@tiime.fr</user>
+            <user>john.user@test.com28</user>
+            <user>karine.georges@tiime.fr</user>
+            <user>kevin.couppe.de.k.martin@tiime.fr</user>
+            <user>marine.zannoni@tiime.fr</user>
+            <user>melissa.el.majri@tiime.fr</user>
+            <user>sylvain.peureux@tiime.fr</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+</Queue>

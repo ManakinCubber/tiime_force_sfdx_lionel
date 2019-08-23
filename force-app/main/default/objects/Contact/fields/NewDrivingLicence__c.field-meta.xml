@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NewDrivingLicence__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Nouveaux permis de conduire au format carte de crédit</description>
+    <externalId>false</externalId>
+    <label>Permis de conduire (après 09/2013)</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

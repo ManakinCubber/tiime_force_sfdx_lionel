@@ -1,0 +1,124 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="LTC20_SendProposal">
+	
+	<aura:attribute name="simpleRecord" type="Transfert__c"/>
+	<aura:attribute name="transfertRecord" type="Object" description="Objet Transfert avec tous les champs utiles" />
+	<aura:attribute name="labels" type="Object"/>
+	<aura:attribute name="offreOptions" type="List" default="[]"/>
+	<aura:attribute name="offreOptionsSelected" type="List" default="[]"/>
+	<aura:attribute name="missions" type="List" default="[]"/>
+	<aura:attribute name="accountId" type="String"/>
+	<aura:attribute name="contactId" type="String"/>
+	<aura:attribute name="oppId" type="String"/>
+	<aura:attribute name="offreDocs" type="List" default="[]"/>
+	<aura:attribute name="offreDocsSelected" type="List" default="[]"/>
+	<aura:attribute name="suggestUpdate" type="boolean"/>
+	
+	
+	
+	<force:recordData aura:id="TheRecord"
+						recordId="{!v.recordId}"
+						fields="Company__c, Partenaire__c, MailAddress__c, MobilePhone__c, Address__c, ConvertedAccountId__c, ConvertedOpportunity__c, Etape__c, ContractSignLink__c, AEComments__c, Lead__c, Lead__r.FirstName, Lead__r.LastName, Lead__r.Branding__c, Lead__r.Offres__c, Lead__r.IsConverted"
+						targetRecord="{!v.transfertRecord}"
+						targetError="{!v.recordError}"
+						targetFields="{!v.simpleRecord}"
+						recordUpdated="{!c.doInit}"
+						mode="EDIT"/>
+						
+	
+	
+	<lightning:spinner aura:id="spinner" class="slds-hide"/>
+	<div class="slds-card">
+		<div class="slds-grid slds-wrap slds-align_absolute-center slds-m-bottom_small">
+			<div class="slds-col slds-size_1-of-2">
+				<div class="slds-grid slds-wrap slds-gutters slds-grid_align-center">
+					<div class="slds-col slds-size_1-of-1">
+						<lightning:input label="{!v.labels.Company__c}" fieldName="Company__c" value="{!v.simpleRecord.Company__c}" class="slds-m-top_medium slds-col" onchange="{!c.suggestUpdate}"/>
+					</div>
+					<div class="slds-col slds-size_1-of-1">
+						<lightning:input label="{!v.labels.LastName}" fieldName="Lead__r.LastName" value="{!v.simpleRecord.Lead__r.LastName}" class="slds-m-top_medium slds-col" onchange="{!c.suggestUpdate}"/>
+					</div>
+					<div class="slds-col slds-size_1-of-1">
+						<lightning:input label="{!v.labels.FirstName}" fieldName="Lead__r.FirstName" value="{!v.simpleRecord.Lead__r.FirstName}" class="slds-m-top_medium slds-col" onchange="{!c.suggestUpdate}"/>
+					</div>
+				</div>
+			</div> 
+		
+			<div class="slds-col slds-size_1-of-2">
+				<div class="slds-grid slds-wrap slds-gutters slds-grid_align-center">
+					<div class="slds-col slds-size_1-of-1">
+						<lightning:input label="{!v.labels.MailAddress__c}" fieldName="MailAddress__c" value="{!v.simpleRecord.MailAddress__c}" class="slds-m-top_medium slds-col" onchange="{!c.suggestUpdate}"/>
+					</div>
+					<div class="slds-col slds-size_1-of-1">
+						<lightning:input label="{!v.labels.MobilePhone__c}" fieldName="MobilePhone__c" value="{!v.simpleRecord.MobilePhone__c}" class="slds-m-top_medium slds-col" onchange="{!c.suggestUpdate}"/>
+					</div>
+					<div class="slds-col slds-size_1-of-1">
+						<lightning:input label="{!v.labels.Address__c}" fieldName="Address__c" value="{!v.simpleRecord.Address__c}" class="slds-m-top_medium slds-col" readonly="true"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slds-grid slds-wrap slds-align_absolute-center slds-m-bottom_small">
+			<div class="slds-col slds-size_1-of-2">
+				<div class="slds-grid slds-wrap slds-gutters slds-grid_align-center">
+					<lightning:recordEditForm aura:id="recordViewForm" recordId="{!v.simpleRecord.Lead__c}" objectApiName="Lead">
+						<div class="slds-col  slds-size_1-of-1">		
+							<lightning:inputField fieldName="Branding__c" value="{!v.simpleRecord.Lead__r.Branding__c}" class="slds-m-top_medium slds-col" onchange="{!c.suggestUpdate}"/>
+						</div>
+					</lightning:recordEditForm>
+				</div>
+			</div>
+		</div>
+		<aura:if isTrue="{! v.suggestUpdate == 'true' }">
+			<div class="slds-grid slds-wrap slds-align_absolute-center">
+				<div class="slds-col slds-align_absolute-center">
+					<lightning:button variant="brand" type="submit" name="save" label="Valider les modifications" onclick="{! c.updateLeadInfo }"/>
+				</div>
+			</div>
+		</aura:if>
+		<div class="slds-grid slds-wrap slds-grid_align-center slds-m-bottom_small">
+			<div class="slds-col slds-size_1-of-1 slds-medium-size_10-of-12 slds-large-size_8-of-12">
+				<lightning:checkboxGroup name="Offres" label="Offres" options="{!v.offreOptions}" value="{!v.offreOptionsSelected}" required="true" 
+					onchange="{! c.handleOffresChange }"
+				/>
+			</div>
+		</div>
+		<div class="slds-grid slds-wrap slds-grid_align-center slds-m-bottom_small">
+			<div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_10-of-12">
+				<aura:iteration items="{! v.missions }" var="mission">
+					<div class="slds-card">
+						<div class="slds-grid slds-wrap slds-align_absolute-center mission-bloc">
+							<div class="slds-col slds-large-size_2-of-12 slds-medium-size_2-of-12 bold-text">{! mission.offerName }</div>
+							<div class="slds-col slds-large-size_2-of-12 slds-medium-size_2-of-12">{! mission.libelle }</div>
+							<div class="slds-col slds-large-size_3-of-12 slds-medium-size_4-of-12 slds-grid slds-align_absolute-center tarif-input">
+								<lightning:input class="slds-col slds-size_1-of-3" placeholder="Tarif.." value="{! mission.tarif }" onchange="{! c.missionChangeHandler }"/> 
+								<span class="slds-col slds-size_2-of-3">{! (mission.periodicite == 'M' ? ' / mois' : ' / an') }</span>
+							</div>
+							<div class="slds-col slds-large-size_5-of-12 slds-medium-size_4-of-12 slds-grid slds-align_absolute-center comment-input">
+								<lightning:input class="slds-col slds-size_1-of-1" placeholder="Commentaire.." value="{! mission.commentaire }" onchange="{! c.missionChangeHandler }"/>
+							</div>
+						</div>
+						
+					</div>
+        			
+    			</aura:iteration>
+			</div>
+		</div>
+		<div class="slds-grid slds-wrap slds-grid_align-center slds-m-bottom_small">
+			<div class="slds-col slds-size_1-of-1 slds-medium-size_10-of-12 slds-large-size_8-of-12">
+				<lightning:checkboxGroup name="Attachment" label="Pièces jointes" options="{! v.offreDocs }" value="{! v.offreDocsSelected }" required="true" />
+			</div>
+		</div>
+		<div class="slds-grid slds-wrap slds-align_absolute-center">
+			<div class="slds-col slds-align_absolute-center">
+				<aura:if isTrue="{!and(v.simpleRecord.Lead__r.IsConverted, v.simpleRecord.Etape__c != 'Proposition Envoyée')}">
+					<lightning:button variant="brand" type="submit" name="save" label="Renvoyer vers la BaseGI" onclick="{! c.sendToBGI }"/>
+					<aura:set attribute="else">
+						<lightning:button variant="brand" type="submit" name="save" label="Valider" onclick="{! c.handleSave }" 
+						disabled="{!v.simpleRecord.Lead__r.IsConverted}"/>	
+					</aura:set>
+				</aura:if>
+			</div>
+        </div>
+	</div>
+	
+</aura:component>

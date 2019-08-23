@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Schema_ecriture__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Schéma d&#39;écriture</label>
+    <referenceTo>numm__Schema_Ecriture__c</referenceTo>
+    <relationshipLabel>Roles du schéma</relationshipLabel>
+    <relationshipName>Roles_du_schema</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

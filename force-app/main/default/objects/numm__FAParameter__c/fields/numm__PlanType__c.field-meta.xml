@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__PlanType__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Type de plan : COMPTA, FISCAL, IFRS</description>
+    <externalId>false</externalId>
+    <label>Type de plan</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>COMPTA</fullName>
+                <default>false</default>
+                <label>COMPTA</label>
+            </value>
+            <value>
+                <fullName>FISCAL</fullName>
+                <default>false</default>
+                <label>FISCAL</label>
+            </value>
+            <value>
+                <fullName>IFRS</fullName>
+                <default>false</default>
+                <label>IFRS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

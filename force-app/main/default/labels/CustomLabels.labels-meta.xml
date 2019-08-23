@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Account_Id_Partenariat</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Account_Id_Partenariat</shortDescription>
+        <value>0121w0000005vXMAAY</value>
+    </labels>
+    <labels>
+        <fullName>ChronosEnvironement</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>ChronosEnvironement</shortDescription>
+        <value>Chronos_Dev</value>
+    </labels>
+    <labels>
+        <fullName>EmailRdvLead_AdditionnalRecipients</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Le séparateur à mettre entre les adresses est un &quot;;&quot;</shortDescription>
+        <value>adminsalesforce@tiime.fr</value>
+    </labels>
+    <labels>
+        <fullName>EmailTemplate_JuridiqueRelance3</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>EmailTemplate_JuridiqueRelance3</shortDescription>
+        <value>Bonjour !%%Lead_FirstName%%!,&lt;br/&gt;
+&lt;br/&gt;
+Je suis à votre disposition pour avancer ensemble sur votre projet de création. Quand puis-je vous appeler pour collecter les informations et éléments par téléphone qui me sont nécessaires à la rédaction du dossier de demande d&#39;immatriculation de votre société ?&lt;br/&gt;
+&lt;br/&gt;
+Vous trouverez ci dessous mes coordonnées.&lt;br/&gt;
+&lt;br/&gt;
+Merci et bonne journée,&lt;br/&gt;
+&lt;br/&gt;
+!%%Lead_FirstName%%! de Tiime&lt;br/&gt;
+!%%MobilePhone%%!&lt;br/&gt;</value>
+    </labels>
+    <labels>
+        <fullName>EmailTemplate_MailFollowUpCall3</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>EmailTemplate_MailFollowUpCall3</shortDescription>
+        <value>Bonjour,
+
+Nous avons tenté de vous joindre suite à votre demande sur notre site !%%Branding__c%%!, vous pouvez nous contacter au 06 44 60 25 70
+
+Merci,
+
+Cordialement,
+
+L&#39;équipe !%%Branding__c%%!</value>
+    </labels>
+    <labels>
+        <fullName>EmailTemplate_MailUnreachable</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>EmailTemplate_MailUnreachable</shortDescription>
+        <value>Bonjour,
+
+Nous faisons suite à la demande de renseignement que vous avez effectuée sur notre site internet !%%Branding__c%%!.
+
+Nous avons tenté de vous joindre à plusieurs reprises afin d&#39;avoir des précisions sur votre demande, sans succès.
+
+Quel serait le moment opportun pour vous recontacter ?
+
+N&#39;hésitez pas à revenir vers nous par retour de mail ou par téléphone 06 44 60 25 70.
+
+Merci,
+
+
+L&#39;équipe !%%Branding__c%%!</value>
+    </labels>
+    <labels>
+        <fullName>EmailTemplate_MailWrongNumber</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>EmailTemplate_MailWrongNumber</shortDescription>
+        <value>Bonjour,
+
+Nous faisons suite à la demande de renseignements que vous avez effectuée sur notre site internet !%%Branding__c%%!.
+
+Nous avons tenté de vous joindre mais il semblerait que le numéro de téléphone dont nous disposons ne soit pas attribué.
+
+N&#39;hésitez pas à revenir vers nous par retour de mail ou par téléphone au “06 44 60 25 70”.
+
+Merci,
+
+L&#39;équipe  !%%Branding__c%%!</value>
+    </labels>
+    <labels>
+        <fullName>EmailTemplate_PropAccompagnementReflexionRelance4</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>EmailTemplate_PropAccompagnementReflexionRelance4</shortDescription>
+        <value>Bonjour !%%Contact_FirstName%%!,&lt;br/&gt;
+&lt;br/&gt;
+J’espère que vous allez bien.&lt;br/&gt;
+Je me permets de revenir vers vous afin de savoir où vous en êtes dans votre réflexion suite à notre proposition d’accompagnement.&lt;br/&gt;
+Votre retour nous est très précieux !&lt;br/&gt;
+&lt;br/&gt;
+Je vous renvoie en pièce jointe notre présentation ainsi que le lien vers la signature de notre contrat : !%%Account_ContractSignLink__c%%!&lt;br/&gt;
+&lt;br/&gt;
+Merci beaucoup pour votre retour, je reste bien entendu à votre disposition pour échanger.&lt;br/&gt;
+Très bonne journée !&lt;br/&gt; 
+&lt;br/&gt;
+!%%FirstName%%! de la Team !%%Opportunity_Branding__c%%!&lt;br/&gt;
+!%%MobilePhone%%!&lt;br/&gt;</value>
+    </labels>
+    <labels>
+        <fullName>EmailTemplate_PropAccompagnementRelance4</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>EmailTemplate_PropAccompagnementRelance4</shortDescription>
+        <value>Bonjour !%%Contact_FirstName%%!,&lt;br/&gt;
+&lt;br/&gt;
+J’espère que vous allez bien.&lt;br/&gt;
+Je vous avais transmis par mail notre proposition d’accompagnement suite à notre entretien. Je me permets de revenir vers vous afin de savoir où vous en êtes dans votre réflexion.&lt;br/&gt;
+Votre retour nous est très précieux !&lt;br/&gt;
+&lt;br/&gt;
+Je vous renvoie en pièce jointe notre présentation ainsi que le lien vers la signature de notre contrat : !%%Account_ContractSignLink__c%%!&lt;br/&gt;
+&lt;br/&gt;
+Merci beaucoup pour votre retour, je reste bien entendu à votre disposition pour échanger.&lt;br/&gt;
+Très bonne journée !&lt;br/&gt; 
+&lt;br/&gt;
+!%%FirstName%%! de la Team !%%Opportunity_Branding__c%%!&lt;br/&gt;
+!%%MobilePhone%%!&lt;br/&gt;</value>
+    </labels>
+    <labels>
+        <fullName>EmailTemplate_PropAccompagnementWillSignRelance4</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>EmailTemplate_PropAccompagnementWillSignRelance4</shortDescription>
+        <value>Bonjour !%%Contact_FirstName%%!,&lt;br/&gt;
+&lt;br/&gt;
+J’espère que vous allez bien.&lt;br/&gt;
+Je me permets de revenir vers vous pour la mise en place de notre accompagnement pour commencer à travailler ensemble sur votre projet.
+Votre retour nous est très précieux !&lt;br/&gt;
+&lt;br/&gt;
+Je vous renvoie en pièce jointe notre présentation ainsi que le lien vers la signature de notre contrat : !%%Account_ContractSignLink__c%%!&lt;br/&gt;
+&lt;br/&gt;
+Merci beaucoup pour votre retour, je reste bien entendu à votre disposition pour échanger.&lt;br/&gt;
+Très bonne journée !&lt;br/&gt; 
+&lt;br/&gt;
+!%%FirstName%%! de la Team !%%Opportunity_Branding__c%%!&lt;br/&gt;
+!%%MobilePhone%%!&lt;br/&gt;</value>
+    </labels>
+    <labels>
+        <fullName>JingleTiimeEnvironment</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>JingleTiimeEnvironment</shortDescription>
+        <value>jingletiime_prod</value>
+    </labels>
+    <labels>
+        <fullName>LEAD_APPOINTMENT_SIGNATURE_MAIL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LEAD_APPOINTMENT_SIGNATURE_MAIL</shortDescription>
+        <value>L&#39;équipe</value>
+    </labels>
+    <labels>
+        <fullName>PHONE_STANDARD_SDR</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Téléphone du standard des SDR - Tiime</shortDescription>
+        <value>0644602570</value>
+    </labels>
+    <labels>
+        <fullName>SMS_CAB_OPP_RELANCE_1</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>SMS_CAB_OPP_RELANCE_1</shortDescription>
+        <value>Bonjour !%%Contact_FirstName%%!, 
+J&#39;espère que vous allez bien. Suite à notre entretien hier, je souhaitais m&#39;assurer que vous aviez bien reçu mon mail. Si besoin n&#39;hésitez pas à me contacter au !%%MobilePhone%%!.
+Très bonne journée,
+!%%FirstName%%! de la team !%%Opportunity_Branding__c%%!.</value>
+    </labels>
+    <labels>
+        <fullName>SMS_CAB_OPP_RELANCE_3</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>SMS_CAB_OPP_RELANCE_3</shortDescription>
+        <value>Bonjour !%%Contact_FirstName%%!,
+J&#39;essayais de vous joindre pour prendre de vos nouvelles après notre RDV de la semaine dernière.
+Je suis joignable au !%%MobilePhone%%! pour toute information complémentaire.
+Très bonne journée,
+
+!%%FirstName%%! de la team !%%Opportunity_Branding__c%%!.</value>
+    </labels>
+    <labels>
+        <fullName>SMS_CAB_OPP_RELANCE_3_REFLEXION</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>SMS_CAB_OPP_RELANCE_3_REFLEXION</shortDescription>
+        <value>Bonjour !%%Contact_FirstName%%!,
+J&#39;espère que vous allez bien. Je voulais prendre de vos nouvelles et voir où vous en étiez dans votre réflexion suite à notre proposition !%%Account_ContractSignLink__c%%!. Si besoin n&#39;hésitez pas à me contacter au !%%MobilePhone%%!.
+Très bonne journée,
+
+!%%FirstName%%! de la team !%%Opportunity_Branding__c%%!.</value>
+    </labels>
+    <labels>
+        <fullName>SMS_CAB_OPP_RELANCE_3_WILL_SIGN</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>SMS_CAB_OPP_RELANCE_3_WILL_SIGN</shortDescription>
+        <value>Bonjour !%%Contact_FirstName%%!,
+J&#39;espère que vous allez bien. Je voulais prendre de vos nouvelles suite à notre échange pour débuter notre accompagnement. Si besoin n&#39;hésitez pas à me contacter directement au !%%MobilePhone%%!.
+Très bonne journée,
+!%%FirstName%%! de la team !%%Opportunity_Branding__c%%!
+
+!%%Account_ContractSignLink__c%%!</value>
+    </labels>
+    <labels>
+        <fullName>SMS_CONFIRMATION_RDV_CAB</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>SMS_CONFIRMATION_RDV_CAB</shortDescription>
+        <value>Bonjour !%%Lead_FirstName%%!, 
+Nous avons RDV !%%jour%%! à !%%StartDateTime%%!. Notre adresse : 
+!%%BillingStreet%%!, !%%BillingPostalCode%%! !%%BillingCity%%! 
+!%%Floor__c%%!  
+
+!%%FirstName%%! de la team !%%Lead_Branding__c%%! 
+!%%Contact_MobilePhone%%!</value>
+    </labels>
+    <labels>
+        <fullName>SMS_CONFIRMATION_RDV_CAB_ONLINE</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>SMS_CONFIRMATION_RDV_CAB_ONLINE</shortDescription>
+        <value>Bonjour !%%Lead_FirstName%%!, 
+Nous avons RDV !%%jour%%! à !%%StartDateTime%%! au téléphone. 
+!%%FirstName%%! de la team !%%Lead_Branding__c%%! 
+!%%Contact_MobilePhone%%!</value>
+    </labels>
+    <labels>
+        <fullName>SMS_CONFIRMATION_START</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>SMS_CONFIRMATION_START</shortDescription>
+        <value>Bonjour, Je suis !%%FirstName%%! de Tiime, votre conseillère en création d&#39;entreprise. Je vous confirme notre prochain rendez-vous !%%jour%%! à !%%StartDateTime%%!. Merci et bonne journée,  !%%FirstName%%!.</value>
+    </labels>
+    <labels>
+        <fullName>SMS_LEGAL_Relance_2</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>SMS_LEGAL_Relance_2</shortDescription>
+        <value>Bonjour, Je suis !%%FirstName%%! de Tiime, votre conseillère en création d’entreprise. N&#39;hésitez pas à me recontacter lorsque vous serez disponible. Merci et bonne journée, !%%FirstName%%!.</value>
+    </labels>
+    <labels>
+        <fullName>SMS_SIGN_LINK</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>SMS_SIGN_LINK</shortDescription>
+        <value>Bonjour !%%Contact_FirstName%%!,
+Voici le lien pour visualiser et signer notre contrat pour la société !%%Account_Name%%! 
+!%%Account_ContractSignLink__c%%!
+Nous vous avons envoyé en parallèle l’ensemble des documents par mail.
+Merci pour votre retour.
+Bonne journée,
+!%%FirstName%%!</value>
+    </labels>
+    <labels>
+        <fullName>SURVEY_ID_Crea_suite_Kbis_J_3</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>SURVEY_ID_Crea_suite_Kbis_J_3</shortDescription>
+        <value>0120N000000sdviQAA</value>
+    </labels>
+    <labels>
+        <fullName>SURVEY_ID_J10AfterExternalTransfer</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>SURVEY_ID_J10AfterExternalTransfer</shortDescription>
+        <value>0121w0000005I3cAAE</value>
+    </labels>
+    <labels>
+        <fullName>SURVEY_ID_J5AfterInternalTransfer</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>SURVEY_ID_J5AfterInternalTransfer</shortDescription>
+        <value>0121w0000005I3dAAE</value>
+    </labels>
+    <labels>
+        <fullName>SURVEY_ID_Prise_de_contact</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>SURVEY_ID_Prise_de_contact</shortDescription>
+        <value>0120N000000sdvkQAA</value>
+    </labels>
+    <labels>
+        <fullName>Task_ID_TacheCabinets</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Task_ID_TacheCabinets</shortDescription>
+        <value>0121w0000005YfSAAU</value>
+    </labels>
+    <labels>
+        <fullName>Task_ID_TacheCabinetsLastCall</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Task_ID_TacheCabinetsLastCall</shortDescription>
+        <value>0121w0000005YfUAAU</value>
+    </labels>
+    <labels>
+        <fullName>Task_ID_TacheCabinetsMailAuto</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Task_ID_TacheCabinetsMailAuto</shortDescription>
+        <value>0121w0000005YfTAAU</value>
+    </labels>
+    <labels>
+        <fullName>errorDelMainContact</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Msg erreur suppression contact principal</shortDescription>
+        <value>Impossible de supprimer un contact qui est défini comme principal dans un stakeholder</value>
+    </labels>
+    <labels>
+        <fullName>errorDoublonLead</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Doublon à la conversion d&#39;une Lead</shortDescription>
+        <value>Un contact avec le même numéro de téléphone et/ou même adresse email existe déjà. Veuillez prendre le rendez-vous avec le contact existant.</value>
+    </labels>
+    <labels>
+        <fullName>errorShAlreadyexists</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Msg erreur =&gt; Sh existe déjà entre l&#39;entreprise et le contact pour ces dates</shortDescription>
+        <value>La relation entre cette entreprise et cette personne existe déjà sur la période renseignée</value>
+    </labels>
+</CustomLabels>

@@ -1,0 +1,12 @@
+<aura:component implements="flexipage:availableForRecordHome,force:lightningQuickActionWithoutHeader,force:hasRecordId" controller="LTC21_LeadBack">
+	<aura:attribute name="transferRecord" type="Transfert__c" />
+	
+	<force:recordData aura:id="transferRecord" 
+		recordId="{!v.recordId}"
+		fields="Lead__c" 
+		targetFields="{!v.transferRecord}"
+		recordUpdated="{!c.doInit}" 
+		mode="EDIT" />
+
+	<c:LT17_LeadBack type="castingError" recordId="{!v.transferRecord.Lead__c}" aura:id="leadBack" />
+</aura:component>

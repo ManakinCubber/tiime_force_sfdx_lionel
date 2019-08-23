@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Type_de_relance__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Type de relance</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ecrit Simple</fullName>
+                <default>false</default>
+                <label>Ecrit Simple</label>
+            </value>
+            <value>
+                <fullName>Ecrit RAR</fullName>
+                <default>false</default>
+                <label>Ecrit RAR</label>
+            </value>
+            <value>
+                <fullName>Mise en demeure RAR</fullName>
+                <default>false</default>
+                <label>Mise en demeure RAR</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

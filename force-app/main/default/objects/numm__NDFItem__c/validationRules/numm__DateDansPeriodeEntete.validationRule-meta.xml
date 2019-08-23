@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__DateDansPeriodeEntete</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR( numm__Date__c &lt; numm__NDF__r.numm__Date_Debut__c ,numm__Date__c &gt; numm__NDF__r.numm__Date_fin__c)</errorConditionFormula>
+    <errorDisplayField>numm__Date__c</errorDisplayField>
+    <errorMessage>La date n&#39;est pas comprise dans la période de la note de frais</errorMessage>
+</ValidationRule>

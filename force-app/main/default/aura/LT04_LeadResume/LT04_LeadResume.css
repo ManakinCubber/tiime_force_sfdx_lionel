@@ -1,0 +1,46 @@
+.THIS .slds-form-element__label {
+	font-size: larger;
+}
+
+.THIS .no-wrap {
+	white-space: nowrap;
+}
+
+.THIS .text-lg {
+	font-size: 1rem;
+	line-height: 2.1rem;
+}
+
+.THIS .slds-accordion__section {
+	padding-top: .25rem;
+}
+
+.THIS .self-center {
+	align-self: center;
+}
+
+.THIS .wrap-reverse {
+	flex-wrap: wrap-reverse;
+}
+
+.THIS .text-pre {
+	white-space: pre-line;
+	word-wrap: anywhere;
+}
+
+.THIS .mt-auto {
+    margin-top: auto;
+}
+
+.THIS .m-auto {
+    margin: auto;
+}
+
+.THIS .mx-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.THIS .p-0 {
+	padding: 0;
+}

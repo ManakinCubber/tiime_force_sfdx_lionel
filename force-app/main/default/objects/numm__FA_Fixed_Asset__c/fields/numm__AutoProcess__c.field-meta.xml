@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__AutoProcess__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Traitement automatique (cas de reprise, calcul des plans, initialisations...). Utiliser lors de l&#39;insertion (création)</description>
+    <externalId>false</externalId>
+    <label>AutoProcess</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

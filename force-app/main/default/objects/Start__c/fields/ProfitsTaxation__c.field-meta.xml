@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProfitsTaxation__c</fullName>
+    <externalId>false</externalId>
+    <label>Imposition des bénéfices</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>IS</fullName>
+                <default>false</default>
+                <label>IS</label>
+            </value>
+            <value>
+                <fullName>IR</fullName>
+                <default>false</default>
+                <label>IR</label>
+            </value>
+            <value>
+                <fullName>IR - BIC régime réel normal</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>IR - BIC régime réel normal</label>
+            </value>
+            <value>
+                <fullName>IR - BIC régime réel simplifié</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>IR - BIC régime réel simplifié</label>
+            </value>
+            <value>
+                <fullName>IR - BNC</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>IR - BNC</label>
+            </value>
+            <value>
+                <fullName>IS - régime réel simplifié</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>IS - régime réel simplifié</label>
+            </value>
+            <value>
+                <fullName>IS - régime réel normal</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>IS- régime réel normal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

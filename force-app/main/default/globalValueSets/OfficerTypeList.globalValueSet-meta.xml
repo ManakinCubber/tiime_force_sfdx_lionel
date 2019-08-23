@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>President</fullName>
+        <default>false</default>
+        <label>Président</label>
+    </customValue>
+    <customValue>
+        <fullName>Gerant</fullName>
+        <default>false</default>
+        <label>Gérant</label>
+    </customValue>
+    <customValue>
+        <fullName>Co-gerant</fullName>
+        <default>false</default>
+        <label>Co-gérant</label>
+    </customValue>
+    <customValue>
+        <fullName>DirecteurGeneral</fullName>
+        <default>false</default>
+        <label>Directeur Général</label>
+    </customValue>
+    <customValue>
+        <fullName>DirecteurGeneralDelegue</fullName>
+        <default>false</default>
+        <label>Directeur Général Délégué</label>
+    </customValue>
+    <masterLabel>Types de mandataire</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

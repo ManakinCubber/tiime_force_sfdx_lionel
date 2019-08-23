@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Piece_Banque__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Pièce Banque</label>
+    <referenceTo>numm__HeaderVoucher__c</referenceTo>
+    <relationshipLabel>Ecritures générales (Pièce Banque)</relationshipLabel>
+    <relationshipName>Ecritures_Lettree</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Analytic1__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Where IdAxis =1</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Sélectionner la valeur de analytique de l&#39;axe 1</inlineHelpText>
+    <label>Analytique 1</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>numm__CostAccountingValues__c.numm__IdAxis__r.numm__RelatedAnalytics__c</field>
+            <operation>equals</operation>
+            <value>Analytique 1</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>numm__CostAccountingValues__c</referenceTo>
+    <relationshipLabel>Ecritures Analytiques (Analytique 1)</relationshipLabel>
+    <relationshipName>Pi_ces_Analytiques</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

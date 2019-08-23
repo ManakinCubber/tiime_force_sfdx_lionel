@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partnership</fullName>
+    <active>true</active>
+    <label>Partenariat</label>
+    <picklistValues>
+        <picklist>IncomPerTranche__c</picklist>
+        <values>
+            <fullName>0 - 18 K%E2%82%AC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19 - 23 K%E2%82%AC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>24 - 27K%E2%82%AC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>28 - 35K%E2%82%AC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>36 - 56K%E2%82%AC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>57K%E2%82%AC ou plus</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>JobTitle__c</picklist>
+        <values>
+            <fullName>Associe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ceo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comanager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comptable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MarketingCom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operator</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Inconnu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recommandation Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recommandation Partenaire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renommée</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Name</picklist>
+        <values>
+            <fullName>madame</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>monsieur</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Networth__c</picklist>
+        <values>
+            <fullName>0 - 2K%E2%82%AC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>129 - 319K%E2%82%AC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>23 - 128K%E2%82%AC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - 22K%E2%82%AC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>420 - 464K%E2%82%AC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>465K%E2%82%AC et plus</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OS_Mobile__c</picklist>
+        <values>
+            <fullName>Android</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iOS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>numm__Type_de_contact__c</picklist>
+        <values>
+            <fullName>Commande</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facturation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

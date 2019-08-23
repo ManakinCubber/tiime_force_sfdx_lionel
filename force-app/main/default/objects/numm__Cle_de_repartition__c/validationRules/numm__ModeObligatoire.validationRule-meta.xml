@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__ModeObligatoire</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL( numm__Mode__c , &quot;&quot;)</errorConditionFormula>
+    <errorDisplayField>numm__Mode__c</errorDisplayField>
+    <errorMessage>Le mode de répartition est obligatoire</errorMessage>
+</ValidationRule>

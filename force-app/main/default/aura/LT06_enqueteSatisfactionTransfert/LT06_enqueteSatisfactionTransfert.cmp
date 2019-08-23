@@ -1,0 +1,119 @@
+<aura:component
+	implements="flexipage:availableForRecordHome,force:hasRecordId"
+	access="global" controller="AP07_SatisfactionSurvey">
+
+	<aura:attribute name="title" type="String" />
+	<aura:attribute name="simpleRecord" type="Object" />
+	<aura:attribute name="recordError" type="String" />
+	<aura:attribute name="labels" type="Object" />
+	<aura:attribute name="TypeNoteReact" type="List" />
+	<aura:attribute name="TypeNoteSkill" type="List" />
+	<aura:attribute name="TypeNotePropale" type="List" />
+	<aura:attribute name="TypeNoteGlobale" type="List" />
+
+	<force:recordData aura:id="TheRecord" recordId="{!v.recordId}"
+		targetError="{!v.recordError}" targetFields="{!v.simpleRecord}"
+		fields="NotePropale__c, RepresentativeReactivityNote__c, RepresentativeSkillsNotes__c, notedeSatisfactionGlobale__c, RecommandationPartenaireCheck__c, ComptaSigneeCheck__c, commentaireGlobal__c"
+		recordUpdated="{!c.doInit}" mode="EDIT" />
+
+	<!-- Display Lightning Data Service errors, if any -->
+	<aura:if isTrue="{!not(empty(v.recordError))}">
+		<div class="recordError">
+			<ui:message title="Error" severity="error" closable="true">
+                {!v.recordError}
+            </ui:message>
+		</div>
+	</aura:if>
+
+	<article class="slds-card">
+		<lightning:card
+			class="slds-page-header__title slds-col slds-align_absolute-center"
+			iconName="action:submit_for_approval" title="{!v.title}" />
+
+		<div class="slds-m-around_medium">
+
+
+			<lightning:recordEditForm aura:id="recordViewForm"
+				recordId="{!v.recordId}" objectApiName="enquetedeSatisfaction__c">
+
+				<div
+					class="slds-grid_vertical slds-grid_align-space slds-align_absolute-center">
+
+					<lightning:messages />
+
+					<!-- _____________________________________Réactivité_____________________________________ -->
+					<c:enquetedeSatisfactionUnique
+						note="{!v.simpleRecord.RepresentativeReactivityNote__c}"
+						title="{!v.labels.RepresentativeReactivityNote__c}"
+						numero="{!v.recordId + '-1'}" typeNote="{!v.TypeNoteReact}" />
+
+					<!-- _____________________________________Compétence_____________________________________ -->
+					<c:enquetedeSatisfactionUnique
+						note="{!v.simpleRecord.RepresentativeSkillsNotes__c}"
+						title="{!v.labels.RepresentativeSkillsNotes__c}"
+						numero="{!v.recordId + '-2'}" typeNote="{!v.TypeNoteSkill}" />
+					<!-- _____________________________________Note Proposition commerciale_____________________________________ -->
+					<c:enquetedeSatisfactionUnique
+						note="{!v.simpleRecord.NotePropale__c}"
+						title="{!v.labels.NotePropale__c}" numero="{!v.recordId + '-3'}"
+						typeNote="{!v.TypeNotePropale}" />
+					<!-- _____________________________________Note Globale_____________________________________ -->
+					<c:enquetedeSatisfactionUnique
+						note="{!v.simpleRecord.notedeSatisfactionGlobale__c}"
+						title="{!v.labels.notedeSatisfactionGlobale__c}"
+						numero="{!v.recordId + '-4'}" typeNote="{!v.TypeNoteGlobale}" />
+				</div>
+
+
+
+				<div class="slds-form slds-m-top_small" role="list">
+					<div class="slds-form__row">
+						<div class="slds-form__item slds-align_absolute-center"
+							role="listitem">
+							<div class="slds-form-element slds-is-editing">
+								<label class="slds-form-element__label slds-text-heading_small">{!v.labels.RecommandationPartenaireCheck__c}</label>
+								<div
+									class="slds-form-element__control slds-align_absolute-center slds-m-top_xx-small">
+									<!-- _____________________________________Recommandation du partenaire_____________________________________ -->
+									<lightning:input aura:id="checkB"
+										name="RecommandationPartenaireCheck__c" type="toggle"
+										onchange="{!c.switchValueCheckB}" messageToggleActive="Oui"
+										messageToggleInactive="Non" variant="label-hidden" />
+								</div>
+							</div>
+						</div>
+						<div class="slds-form__item slds-align_absolute-center"
+							role="listitem">
+							<div class="slds-form-element slds-is-editing">
+								<label class="slds-form-element__label slds-text-heading_small">{!v.labels.ComptaSigneeCheck__c}</label>
+								<div
+									class="slds-form-element__control slds-align_absolute-center slds-m-top_xx-small">
+									<!-- _____________________________________Comptabilité signée_____________________________________ -->
+									<lightning:input aura:id="checkB" name="ComptaSigneeCheck__c"
+										type="toggle" onchange="{!c.switchValueCheckB}"
+										messageToggleActive="Oui" messageToggleInactive="Non"
+										variant="label-hidden" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<lightning:inputfield fieldName="commentaireGlobal__c"
+					value="{!v.simpleRecord.commentaireGlobal__c}" />
+
+			</lightning:recordEditForm>
+
+		</div>
+		<div class="slds-align_absolute-center">
+			<button
+				class="slds-button slds-button_brand slds-m-around_small slds-size--1-of-5"
+				onclick="{!c.handleSaveRecord}">Enregister</button>
+		</div>
+
+
+	</article>
+
+
+</aura:component>

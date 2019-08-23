@@ -1,0 +1,144 @@
+<aura:component implements="flexipage:availableForRecordHome,lightning:actionOverride,force:hasRecordId,force:appHostable,force:lightningQuickActionWithoutHeader" access="global" controller="RdvController">
+
+    <aura:attribute name="lead" type="Object" />
+    <aura:attribute name="leadRecord" type="Object" />
+
+    <aura:attribute name="tomorrowDate" type="string" />
+    <aura:attribute name="ListeBU" type="string[]" />
+    <c:Picklist picklistValues="{!v.ListeBU}" fieldName="BUnew__c" sObjectName="Team__c"/>
+    <aura:attribute name="selectedBU" type="string" />
+    <aura:attribute name="Membres" type="User[]" />
+    <aura:attribute name="typeRdv" type="List" default="[{'label': 'Physique', 'value': 'physique'},{'label': 'Téléphonique', 'value': 'téléphonique'}]"/>
+    <aura:attribute name="ChoixRdv" type="String" default="physique"/>
+    <aura:attribute name="lieuRdv" type="List" default="[{'label': 'Au bureau', 'value': 'au bureau'},{'label': 'Chez le client', 'value': 'chez le client'}]"/>
+    <aura:attribute name="ChoixLieuRdv" type="String" default="au bureau"/>
+    <aura:attribute name="chosenDate" type="Date" default="false"/>
+    <aura:attribute name="RdvPannel" type="boolean" default="false" />
+    <aura:attribute name="selectedUser" type="User" />
+    <aura:attribute name="selectedDate" type="Date"/>
+    <aura:attribute name="newEvent" type="Event" default="{'Location':''}"/>
+    <aura:attribute name="popUpRdv" type="boolean" default="false" />
+    <aura:attribute name="selectedStartTime" type="DateTime" default=""/>
+    <aura:attribute name="selectedEndTime" type="DateTime" default=""/>
+    <aura:attribute name="userName" type="string" />
+    <aura:attribute name="userInfo" type="string" />
+    <aura:attribute name="adress" type="string" />
+    <aura:attribute name="formattedDate" type="string" />
+    <aura:attribute name="formattedTime" type="string" />
+    <aura:attribute name="TemplateTel" type="string" default="{!'Bonjour,\nSuite à notre conversation téléphonique, je vous confirme votre rendez-vous téléphonique avec '+ v.selectedUser.Name +' le '+ v.formattedDate +' à '+ v.formattedTime +'.\nVous pouvez joindre '+ v.selectedUser.Name +' au '+ v.selectedUser.MobilePhone +' \nJe me tiens à votre entière disposition pour davantage d\'informations.\nEn vous souhaitant une bonne rencontre.\n'+v.userInfo+'.'}" />
+    <aura:attribute name="TemplateClient" type="string" default="{!'Bonjour,\nSuite à notre conversation téléphonique, je vous confirme votre rendez-vous au '+ v.adress +' avec '+ v.selectedUser.Name +' le '+v.formattedDate+' à '+ v.formattedTime +'.\nVous pouvez joindre '+ v.selectedUser.Name +' au '+ v.selectedUser.MobilePhone +'\nJe me tiens à votre entière disposition pour davantage d\'informations.\nEn vous souhaitant une bonne rencontre.\n'+v.userInfo+'.'}"/> 
+	<aura:attribute name="TemplateBureau" type="string" default="{!'Bonjour,\nSuite à notre conversation téléphonique, je vous confirme votre rendez-vous chez '+ v.selectedBU + ' situé au ' + v.adress +' avec '+ v.selectedUser.Name +' le '+ v.formattedDate+' à '+ v.formattedTime +'.\nVous pouvez joindre '+ v.selectedUser.Name +' au '+ v.selectedUser.MobilePhone +'\nJe me tiens à votre entière disposition pour davantage d\'informations.\nEn vous souhaitant une bonne rencontre.\n'+v.userInfo+'.'}"/>
+   
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.selectedBU}" action="{!c.fillAddress}"/>
+    <aura:handler name="change" value="{!v.selectedUser}" action="{!c.fillAddressBU}"/>
+    <aura:handler name="change" value="{!v.selectedStartTime}" action="{!c.formatDate}"/>
+    <aura:handler name="change" value="{!v.chosenDate}" action="{!c.setDate}"/>
+     <force:recordData aura:id="forceRecordCmp"
+        recordId="{!v.recordId}"
+        fields="Name, Id, MobilePhone, City, Street, PostalCode, Email, Status"
+        mode="VIEW"
+        targetRecord="{!v.leadRecord}"
+        targetFields="{!v.lead}"
+	/>
+    
+    
+    
+    <div class="container" style="min-height:1200px">
+        <!--Calendar pannel -->
+        <div class="header slds-page-header" role="banner">
+            <h1 class="paddingTop slds-page-header__title slds-m-right_small slds-truncate slds-align-left ">
+                <lightning:icon iconName="standard:log_a_call"/>
+                Prendre rendez-vous avec {!v.lead.Name}
+            </h1>
+        </div>
+        <aura:if isTrue="{! v.RdvPannel == false}">
+            <div style="width:100%; height:30px"> </div>
+            <lightning:select name="Bu" value="{!v.selectedBU}" label="Choix B.U"  onchange="{!c.getMembers}" class="slds-size_1-of-1 slds-p-horizontal_x-small">
+                <option value=""></option>
+                <aura:iteration items="{!v.ListeBU}" var="item">
+                    <!--option value="{!item.Id}">{!item.Name}</option-->
+                    <option value="{!item}">{!item}</option>
+                </aura:iteration>
+            </lightning:select>
+            <div style="width:100%; height:30px"> </div>
+            <!--lightning:input type="date" label="Date" name="date" value="{!v.chosenDate}" /-->
+            <div aura:id="ProjetElement" class="slds-form-element">
+                   <label class="slds-form-element__label" for="ProjetId">Date</label>
+                   <div class="slds-form-element__control">
+                       <input aura:id="htmlDate" type="date" name="Date" onchange="{!c.HtmlHandleDate}" value="{!v.tomorrowDate}"/>
+                       </div>
+                   </div>
+            <div style="width:100%; height:30px"> </div>
+            <aura:if isTrue="{!and(v.chosenDate != null, v.selectedBU != '')}">
+				<c:fullcalendar aura:id="fullCalendar"  members="{!v.Membres}"  Day="{!v.chosenDate}" onDateSelected="{!c.handleDate}"/>
+            </aura:if>
+            
+            <!--RdvPannel-->
+            <aura:set attribute="else">
+                <div style="width:100%; height:30px"> </div>
+                <lightning:button variant="brand" label="Retour" onclick="{!c.back }" />
+                <div style="width:100%; height:30px"> </div>
+                <p style="font-size:16px"><b>Assigner un rendez-vous à {!v.userName}</b></p>
+                <div style="width:100%; height:30px"> </div>
+                <div style="width:45% !important; min-height:1000px; float:left;border-style:none" class="slds-box slds-theme_default" >
+                    <c:userCalendar selectedMember="{!v.selectedUser}" Day="{!v.chosenDate}" onTimeSelected="{!c.handleTime}"/>
+                </div>
+                <div style="float:left;width:55%; padding-left:30px;height:100%;border-style:none" class="slds-box slds-theme_default" >
+                    <lightning:radioGroup name="Choix du rendez-vous" label="Choix du rendez-vous" options="{!v.typeRdv}" value="{!v.ChoixRdv}" onchange="{!c.handleRdv}" type="button"/>
+                    <aura:if isTrue="{!v.ChoixRdv == 'physique'}">
+                        <div style="width:100%; height:30px"> </div>
+                        <lightning:radioGroup name="Lieu du rendez-vous" label="Lieu du rendez-vous" options="{!v.lieuRdv}" value="{!v.ChoixLieuRdv}" onchange="{!c.handleLieuRdv}" type="button"/>
+                        <div style="width:100%; height:30px"> </div>
+                        <aura:set attribute="else">
+                            <div style="width:100%; height:30px"> </div>
+                            <lightning:input label="{!'Numero de téléphone de '+ v.lead.Name}" value="{!v.lead.MobilePhone}"/>
+                            <div style="width:100%; height:30px"> </div>
+                            <lightning:input type="datetime-local" label="Horaire début" name="datetime" value="{!v.selectedStartTime}" />
+                            <div style="width:100%; height:30px"> </div>
+                            <lightning:input type="datetime-local" label="Horaire fin" name="datetime" value="{!v.selectedEndTime}" />
+                            <div style="width:100%; height:30px"> </div>
+                            <lightning:input type="text" label="Adresse mail" name="datetime" value="{!v.lead.Email}" />
+                            <div style="width:100%; height:30px"> </div>
+                            <lightning:textarea label="Corps du mail" value="{!v.newEvent.Description}" />
+                    		<div style="width:100%; height:30px"> </div>
+                            <ui:inputCheckbox aura:id="checkbox" label="Envoyer un sms" change="{!c.onCheck}" value="{!v.newEvent.SMS__c}"/>
+                            <div style="width:100%; height:30px"> </div>
+                        </aura:set>
+                        <aura:if isTrue="{!v.ChoixLieuRdv == 'au bureau'}">
+                            <lightning:input type="datetime" label="Horaire début" name="datetime" value="{!v.selectedStartTime}" />
+                            <div style="width:100%; height:30px"> </div>
+                            <lightning:input type="datetime" label="Horaire fin" name="datetime" value="{!v.selectedEndTime}" />
+                            <div style="width:100%; height:30px"> </div>
+                            <lightning:textarea aura:id="adresse" label="Adresse B.U" value="{!v.newEvent.Location}"/>
+                            <div style="width:100%; height:30px"> </div>
+                            <lightning:input type="text" label="Adresse mail" name="datetime" value="{!v.lead.Email}" />
+                            <div style="width:100%; height:30px"> </div>
+                            <lightning:textarea label="Corps du mail" value="{!v.newEvent.Description}" style="height:60px!important"/>
+                    		<div style="width:100%; height:30px"> </div>
+                            <ui:inputCheckbox aura:id="checkbox" label="Envoyer un sms" change="{!c.onCheck}" value="{!v.newEvent.SMS__c}"/>
+                            <div style="width:100%; height:30px"> </div>
+                            <aura:set attribute="else">
+                                <lightning:input type="datetime-local" label="Horaire début" name="datetime" value="{!v.selectedStartTime}" />
+                                <div style="width:100%; height:30px"> </div>
+                                <lightning:input type="datetime-local" label="Horaire fin" name="datetime" value="{!v.selectedEndTime}" />
+                                <div style="width:100%; height:30px"> </div>
+                                <lightning:textarea aura:id="adresse" label="Adresse du client" value="{!v.newEvent.Location}"/>
+                                <div style="width:100%; height:50px"> </div>
+                                <lightning:input type="text" label="Adresse mail" name="datetime" value="{!v.lead.Email}" />
+                               	<div style="width:100%; height:30px"> </div>
+                                <lightning:textarea label="Corps du mail" value="{!v.newEvent.Description}" />
+                    			<div style="width:100%; height:30px"> </div>
+                                <ui:inputCheckbox aura:id="checkbox" label="Envoyer un sms" change="{!c.onCheck}" value="{!v.newEvent.SMS__c}"/>
+                                <div style="width:100%; height:30px"> </div>
+                            </aura:set>
+                        </aura:if>
+                    </aura:if>
+                    <lightning:textarea label="Notes TMC" value="{!v.newEvent.NotesSales}"/>
+                    <div style="width:100%; height:30px"> </div>
+                    <lightning:button variant="success" aura:id="enregister" disabled="{!if(v.lead.Status=='Converti',true,false)}" label="Prendre rendez-vous" onclick="{!c.clickSave}" />
+                </div>
+            </aura:set>
+        </aura:if>
+    </div>
+</aura:component>

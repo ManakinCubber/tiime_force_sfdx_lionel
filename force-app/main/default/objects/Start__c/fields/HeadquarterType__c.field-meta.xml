@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HeadquarterType__c</fullName>
+    <externalId>false</externalId>
+    <label>Type de siège social</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Domicile du dirigeant - propriétaire</fullName>
+                <default>false</default>
+                <label>Domicile du dirigeant - propriétaire</label>
+            </value>
+            <value>
+                <fullName>Locataire</fullName>
+                <default>false</default>
+                <label>Domicile du dirigeant - locataire</label>
+            </value>
+            <value>
+                <fullName>Hébergé</fullName>
+                <default>false</default>
+                <label>Domicile du dirigeant - hébergé par un tiers</label>
+            </value>
+            <value>
+                <fullName>Bail commercial</fullName>
+                <default>false</default>
+                <label>Bail commercial</label>
+            </value>
+            <value>
+                <fullName>Contrat de domiciliation</fullName>
+                <default>false</default>
+                <label>Contrat de domiciliation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

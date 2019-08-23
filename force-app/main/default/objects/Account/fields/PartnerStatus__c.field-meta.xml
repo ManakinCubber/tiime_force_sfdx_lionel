@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PartnerStatus__c</fullName>
+    <externalId>false</externalId>
+    <label>Statut Partenaire</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Test</fullName>
+                <default>false</default>
+                <label>Test</label>
+            </value>
+            <value>
+                <fullName>Stage1</fullName>
+                <default>false</default>
+                <label>Etape 1</label>
+            </value>
+            <value>
+                <fullName>Stage2</fullName>
+                <default>false</default>
+                <label>Etape 2</label>
+            </value>
+            <value>
+                <fullName>Blacklist</fullName>
+                <default>false</default>
+                <label>Disqualifié</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

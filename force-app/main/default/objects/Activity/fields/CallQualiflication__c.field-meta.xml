@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CallQualiflication__c</fullName>
+    <externalId>false</externalId>
+    <label>Issue du call</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Non qualifié</fullName>
+                <default>false</default>
+                <label>Non qualifié</label>
+            </value>
+            <value>
+                <fullName>Rendez-Vous</fullName>
+                <default>false</default>
+                <label>Rendez-Vous</label>
+            </value>
+            <value>
+                <fullName>Pas de réponse</fullName>
+                <default>false</default>
+                <label>Pas de réponse</label>
+            </value>
+            <value>
+                <fullName>Rappel</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Rappel</label>
+            </value>
+            <value>
+                <fullName>Succès</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Succès</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

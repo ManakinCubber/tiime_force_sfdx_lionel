@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OpportunityBase</fullName>
+    <fields>Name</fields>
+    <fields>LeadFullName__c</fields>
+    <fields>MobilePhone__c</fields>
+    <fields>Amount</fields>
+    <fields>OwnerId</fields>
+    <fields>Activity__c</fields>
+    <fields>TypeOfNeed__c</fields>
+    <label>Opportunité - Base</label>
+</CompactLayout>

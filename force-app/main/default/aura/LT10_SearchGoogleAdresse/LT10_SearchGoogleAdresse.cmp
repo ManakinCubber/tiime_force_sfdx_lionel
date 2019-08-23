@@ -1,0 +1,53 @@
+<aura:component access="global" controller="LTC10_SearchGoogleAdresse">
+	
+	<aura:attribute name="location" type="string" default=""/>
+	<aura:attribute name="predictions" type="List" default="[]"/>
+	<aura:attribute name="city" type="Object"/>
+	<aura:attribute name="country" type="Object"/>
+	<aura:attribute name="postalCode" type="Object"/>
+	<aura:attribute name="street" type="Object"/>
+	<aura:attribute name="longitude" type="Object"/>
+	<aura:attribute name="latitude" type="Object"/>
+	<aura:attribute name="showAddress" type="Boolean" default="true"/>
+	<aura:attribute name="showIcon" type="Boolean" default="true"/>
+	
+	<aura:method name="doInit" action="{!c.doInit}"></aura:method>
+	<aura:handler name="change" value="{!v.country}" action="{!c.doInit}" />
+
+	<div class="slds-grid slds-grid_vertical-align-end">
+		<div class="slds-grow">
+			<lightning:input label="Adresse"
+				type="search"
+				name="location"
+				aura:id="location" 
+				value="{!v.location}"
+				onchange="{!c.getCities}" />
+		</div>
+		<aura:if isTrue="{!v.showIcon}">
+			<aura:if isTrue="{!and(not(empty(v.longitude)), not(empty(v.latitude))) }">
+				<span class="slds-text-color_success no-wrap">
+					<lightning:icon iconName="action:approval" alternativeText="OK" title="OK" size="xx-small" class="slds-m-left_x-small"/>
+					Adresse valide
+				</span>
+				<aura:set attribute="else">
+					<span class="slds-text-color_error no-wrap">
+						<lightning:icon iconName="action:priority" alternativeText="Adresse invalide" title="Adresse invalide" variant="warning" size="xx-small"  class="slds-m-left_x-small"/>
+						Adresse invalide
+					</span>
+				</aura:set>
+			</aura:if>
+		</aura:if>
+	</div>
+	<div class="slds-grid slds-m-top_x-small">
+		<aura:if isTrue="{!v.predictions.length > 0}">
+			<ul class="city_predictions slds-border">
+				<aura:iteration items="{!v.predictions}" var="prediction">
+					<li class="slds-listbox__item">
+						<a onclick="{!c.getCityDetails}" data-placeid="{!prediction.place_id}">{!prediction.description}</a>
+					</li>
+				</aura:iteration>
+			</ul>
+		</aura:if>
+	</div>
+
+</aura:component>

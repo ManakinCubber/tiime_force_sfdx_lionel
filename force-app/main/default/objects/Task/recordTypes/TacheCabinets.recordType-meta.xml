@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TacheCabinets</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>OpportunityRelanceCompactLayout</compactLayoutAssignment>
+    <label>Tâche Cabinets</label>
+    <picklistValues>
+        <picklist>CallQualiflication__c</picklist>
+        <values>
+            <fullName>Non qualifié</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pas de réponse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rendez-Vous</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Call__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>dernier appel</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IssueDeLaRelance__c</picklist>
+        <values>
+            <fullName>En réflexion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engagement Signature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pas de réponse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Perte Concurrence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Perte Trop en amont</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relance reportée</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Normal</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Relance__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Last Call</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Ouvert</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Terminé</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subject</picklist>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Letter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Quote</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Appel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Réunion</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

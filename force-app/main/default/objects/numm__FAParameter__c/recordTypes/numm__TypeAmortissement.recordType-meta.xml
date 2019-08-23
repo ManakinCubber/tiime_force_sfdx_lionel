@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__TypeAmortissement</fullName>
+    <active>true</active>
+    <description>Types d&#39;amortissement disponibles</description>
+    <label>Type d&#39;amortissement</label>
+    <picklistValues>
+        <picklist>numm__PlanType__c</picklist>
+        <values>
+            <fullName>COMPTA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FISCAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IFRS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>numm__TypeAmort__c</picklist>
+        <values>
+            <fullName>Aucun</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Croissant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dégressif</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Linéaire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Softy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UO</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

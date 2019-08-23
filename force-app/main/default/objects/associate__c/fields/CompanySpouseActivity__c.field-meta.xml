@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CompanySpouseActivity__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Si le conjoint n&#39;exerce pas d&#39;activité dans l&#39;entreprise, aucun des champs suivants n&#39;est à remplir.</inlineHelpText>
+    <label>Activité dans l&#39;entreprise ?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Non</fullName>
+                <default>false</default>
+                <label>Non</label>
+            </value>
+            <value>
+                <fullName>Oui en tant que Salarié</fullName>
+                <default>false</default>
+                <label>Oui en tant que Salarié</label>
+            </value>
+            <value>
+                <fullName>Oui en tant qu&#39;Associé</fullName>
+                <default>false</default>
+                <label>Oui en tant qu&#39;Associé</label>
+            </value>
+            <value>
+                <fullName>Oui en tant que Collaborateur</fullName>
+                <default>false</default>
+                <label>Oui en tant que Collaborateur</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

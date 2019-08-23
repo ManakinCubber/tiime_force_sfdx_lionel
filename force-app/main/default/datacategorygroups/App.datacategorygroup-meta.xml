@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Synchroniser mes comptes bancaires</label>
+                <name>Synchroniser_mes_comptes_bancaires</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Gérer mes justificatifs</label>
+                <name>G_rer_mes_justificatifs</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Découvrir Tiime Receipt</label>
+                <name>D_couvrir_Tiime_Receipt</name>
+            </dataCategory>
+            <label>Tiime Receipt</label>
+            <name>Tiime_Receipt</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Découvrir Tiime Invoice</label>
+                <name>D_couvrir_Tiime_Invoice</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Gérer mes factures</label>
+                <name>G_rer_mes_factures</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Gérer mes devis</label>
+                <name>G_rer_mes_devis</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Gérer mes clients</label>
+                <name>G_rer_mes_clients</name>
+            </dataCategory>
+            <label>Tiime Invoice</label>
+            <name>Tiime_Invoice</name>
+        </dataCategory>
+        <label>Tout</label>
+        <name>Tout</name>
+    </dataCategory>
+    <description>applications de Tiime</description>
+    <label>App</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

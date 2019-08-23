@@ -1,0 +1,17 @@
+.THIS .input-icon {
+	vertical-align: bottom;
+	padding-left: 20px;
+}
+
+.THIS .preview-button {
+	width: 100%;
+	vertical-align: bottom;
+}
+
+.THIS .slds-file-selector, .THIS .slds-file-selector__dropzone {
+	width: 100%;
+}
+
+.THIS .slds-file-selector__button {
+	white-space: nowrap;
+}

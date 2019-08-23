@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AccreConditions__c</fullName>
+    <externalId>false</externalId>
+    <label>Conditions ACCRE</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Demandeur d&#39;emploi indemnisé ou indemnisable</fullName>
+                <default>false</default>
+                <label>Demandeur d&#39;emploi indemnisé ou indemnisable</label>
+            </value>
+            <value>
+                <fullName>Demandeur d&#39;emploi non indemnisé inscrit à Pôle Emploi au cours des 18 derniers mois</fullName>
+                <default>false</default>
+                <label>Demandeur d&#39;emploi non indemnisé inscrit à Pôle Emploi au cours des 18 derniers mois</label>
+            </value>
+            <value>
+                <fullName>Personne de moins de 30 ans non indemnisée ou reconnue handicapée</fullName>
+                <default>false</default>
+                <label>Personne de moins de 30 ans non indemnisée ou reconnue handicapée</label>
+            </value>
+            <value>
+                <fullName>Jeune de 18 à 25 ans révolus</fullName>
+                <default>false</default>
+                <label>Jeune de 18 à 25 ans révolus</label>
+            </value>
+            <value>
+                <fullName>Bénéficiaire du RSA	Bénéficiaire du RSA</fullName>
+                <default>false</default>
+                <label>Bénéficiaire du RSA	Bénéficiaire du RSA</label>
+            </value>
+            <value>
+                <fullName>Bénéficiaire du RMI	Bénéficiaire du RMI</fullName>
+                <default>false</default>
+                <label>Bénéficiaire du RMI	Bénéficiaire du RMI</label>
+            </value>
+            <value>
+                <fullName>Bénéficiaire du ASS	Bénéficiaire du ASS</fullName>
+                <default>false</default>
+                <label>Bénéficiaire du ASS	Bénéficiaire du ASS</label>
+            </value>
+            <value>
+                <fullName>Bénéficiaire du ATT	Bénéficiaire du ATT</fullName>
+                <default>false</default>
+                <label>Bénéficiaire du ATT	Bénéficiaire du ATT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

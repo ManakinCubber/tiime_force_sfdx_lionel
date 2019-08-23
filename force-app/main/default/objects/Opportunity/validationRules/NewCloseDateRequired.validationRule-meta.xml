@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NewCloseDateRequired</fullName>
+    <active>true</active>
+    <description>Une nouvelle date de signature prévue doit être renseignée lors passage en étape &quot;proposition envoyée&quot;</description>
+    <errorConditionFormula>AND(
+$User.BypassValidationRules__c = false, 
+ISPICKVAL( StageName ,&quot;Proposition envoyée&quot;)  &amp;&amp; ( CloseDate =  TODAY() )
+)</errorConditionFormula>
+    <errorMessage>Merci de renseigner une nouvelle date signature prévue</errorMessage>
+</ValidationRule>

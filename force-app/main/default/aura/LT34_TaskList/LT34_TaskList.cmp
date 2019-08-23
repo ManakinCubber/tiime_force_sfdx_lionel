@@ -1,0 +1,50 @@
+<aura:component implements="flexipage:availableForRecordHome" access="global" controller="LTC32_TaskOfTheDay">
+    <aura:attribute name="isToDay" type="Boolean" Default="true" required="true"/>
+    <aura:attribute name="nbToDisplay" type="Integer" Default="3"/>
+    <aura:attribute name="Tasks" type="List"/>
+    <aura:attribute name="Titre" type="String"/>
+    <aura:attribute name="Labels" type="Map"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:card variant="Narrow" title="{!v.Titre}" iconName="standard:task">
+        <aura:set attribute="actions">
+            <lightning:buttonIcon iconName="utility:refresh"  alternativeText="Settings" class="slds-m-right_small" onclick="{!c.refresh}"/>
+            <lightning:button label="Toutes les tâches" onclick="{!c.goToAllTasks}"/>
+        </aura:set>
+        <div class="slds-p-horizontal_small">
+            <aura:iteration items="{!v.Tasks}" var="task">
+                <div id="{!task.WhatId}" class="slds-border_bottom hover slds-p-around_x-small" onclick="{!c.goToWhatId}">
+                    <p class="slds-text-heading_medium slds-m-bottom_small">{!task.What.Name}</p>
+                    <div clas="slds-grid slds-grid_vertical">
+                        <div class="slds-col slds-grid slds-m-around_xx-small">
+                            <p class="slds-text-title slds-size_1-of-2">{!v.Labels.Subject} :</p>
+                            <p> {!task.Subject}</p>
+                        </div>
+                        <div class="slds-col slds-grid slds-m-around_xx-small">
+                        	<p class="slds-text-title slds-size_1-of-2">{!v.Labels.ActivityDate} :</p>
+                            <p> {!task.ActivityDate}</p>
+                        </div>
+                        <div class="slds-col slds-grid slds-m-around_xx-small">
+                        	<p class="slds-text-title slds-size_1-of-2">{!v.Labels.LastModifiedById} :</p>
+                            <p> {!task.LastModifiedBy.Name}</p>
+                        </div>
+                        <div class="slds-col slds-grid slds-m-around_xx-small">
+                        	<p class="slds-text-title slds-size_1-of-2">{!v.Labels.LastModifiedDate} :</p>
+                            <p> {!task.LastModifiedDate}</p>
+                        </div>
+                        <div class="slds-col slds-grid slds-m-around_xx-small">
+                        	<p class="slds-text-title slds-size_1-of-2">{!v.Labels.Priority} :</p>
+                            <p> {!task.Priority}</p>
+                        </div>
+                        <div class="slds-col slds-grid slds-m-around_xx-small">
+                        	<p class="slds-text-title slds-size_1-of-2">{!v.Labels.Status} :</p>
+                            <p> {!task.Status}</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </aura:iteration>
+        </div>
+    </lightning:card>
+</aura:component>

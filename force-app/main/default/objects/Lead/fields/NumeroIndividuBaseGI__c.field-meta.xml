@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NumeroIndividuBaseGI__c</fullName>
+    <description>l&#39;identifiant BaseGI de l&#39;individu créé à partir de la Lead</description>
+    <externalId>false</externalId>
+    <label>Numero Individu BaseGI</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

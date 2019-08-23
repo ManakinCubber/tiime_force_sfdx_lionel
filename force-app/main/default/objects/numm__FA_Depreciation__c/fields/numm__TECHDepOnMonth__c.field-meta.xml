@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__TECHDepOnMonth__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF( TODAY()&gt;numm__StartDate1__c  &amp;&amp; TODAY()&lt; numm__EndDatePeriode__c ,( (numm__StartDate1__c  -IF(TODAY()&gt;numm__EndDate1__c,numm__EndDate1__c, TODAY()))/(numm__StartDate1__c -numm__EndDate1__c))* numm__Depreciation01__c  , 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TECHDepOnMonth</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

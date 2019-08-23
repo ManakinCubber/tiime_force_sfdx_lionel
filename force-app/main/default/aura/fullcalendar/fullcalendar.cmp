@@ -1,0 +1,42 @@
+<aura:component controller="RdvController">
+    <aura:attribute name="members" type="User[]" />
+    <aura:attribute name="selectedMember" type="User" default="{}"/>
+    <aura:attribute name="userName" type="string" />
+    <aura:attribute name="Day" type="Date" />
+    <aura:attribute name="Bu" type="string" />
+    <aura:attribute name="isLoad" type="boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:registerEvent name="onDateSelected" type="c:EventClickOnUserTime"/>
+    
+	<aura:handler name="change" value="{!v.Day}" action="{!c.update}"/>
+    <aura:handler name="change" value="{!v.members}" action="{!c.updateResources}" />
+
+    <ltng:require styles="{!join(',',
+                          $Resource.scheduler + '/lib/fullcalendar.min.css',
+                          $Resource.scheduler + '/scheduler.min.css'
+                          )}"
+                  
+                  scripts="{!join(',',
+                           $Resource.scheduler  + '/lib/jquery.min.js',
+                           $Resource.scheduler  + '/lib/moment.min.js',
+                           $Resource.scheduler  + '/lib/fullcalendar.min.js',
+                           $Resource.scheduler  + '/scheduler.min.js',
+                           $Resource.scheduler  + '/locale/fr.js'
+                           )}"
+          afterScriptsLoaded="{!c.afterScriptsLoaded}" />
+    <aura:attribute name="Resources" type="object[]" default="[
+        { id: 'a', title: 'Room A' },
+        { id: 'b', title: 'Room B', eventColor: 'green' },
+        { id: 'c', title: 'Room C', eventColor: 'orange' },
+        { id: 'd', title: 'Room D', eventColor: 'red' }
+      ]"/>
+    <aura:attribute name="Events" type="object[]" default="[
+        { id: '1', resourceId: 'a', start: '2018-04-06', end: '2018-04-08', title: 'event 1' },
+        { id: '2', resourceId: 'a', start: '2018-04-07T09:00:00', end: '2018-04-07T14:00:00', title: 'event 2' },
+        { id: '3', resourceId: 'b', start: '2018-04-07T12:00:00', end: '2018-04-08T06:00:00', title: 'event 3' },
+        { id: '4', resourceId: 'c', start: '2018-04-07T07:30:00', end: '2018-04-07T09:30:00', title: 'event 4' },
+        { id: '5', resourceId: 'd', start: '2018-04-07T10:00:00', end: '2018-04-07T15:00:00', title: 'event 5' }
+      ]"/>
+    <div id="calendar" ></div>
+</aura:component>

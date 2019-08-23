@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__LastAccountingDate__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Date de dernière comptabilisation</description>
+    <externalId>false</externalId>
+    <label>Dernière comptabilisation</label>
+    <summarizedField>numm__FA_Depreciation__c.numm__AccountingDate__c</summarizedField>
+    <summaryForeignKey>numm__FA_Depreciation__c.numm__FA_Fixed_Asset__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

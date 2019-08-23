@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PartnershipDirection__c</fullName>
+    <externalId>false</externalId>
+    <label>Sens du partenariat</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PartenaireEnvoieLeads</fullName>
+                <default>false</default>
+                <label>le partenaire envoie des leads</label>
+            </value>
+            <value>
+                <fullName>PartenaireRecoieLeads</fullName>
+                <default>false</default>
+                <label>le partenaire reçoit des leads</label>
+            </value>
+            <value>
+                <fullName>PartenaireEnvoieRecoieLeads</fullName>
+                <default>false</default>
+                <label>le partenaire reçoit et envoie des leads</label>
+            </value>
+            <value>
+                <fullName>Envoie et reçoit</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Envoie et reçoit</label>
+            </value>
+            <value>
+                <fullName>Envoie leads</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Envoie leads</label>
+            </value>
+            <value>
+                <fullName>Reçoit leads</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Reçoit leads</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

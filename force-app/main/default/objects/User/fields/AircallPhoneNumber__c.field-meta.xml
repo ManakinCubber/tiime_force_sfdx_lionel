@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AircallPhoneNumber__c</fullName>
+    <description>Numéro aircall ne pouvant émettre ou recevoir  de SMS</description>
+    <externalId>false</externalId>
+    <label>Téléphone Aircall</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Phone</type>
+</CustomField>

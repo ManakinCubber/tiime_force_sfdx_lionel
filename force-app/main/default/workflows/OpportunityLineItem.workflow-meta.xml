@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Periodicity</fullName>
+        <field>Periodicity__c</field>
+        <formula>text( PricebookEntry.Product2.Periodicity__c )</formula>
+        <name>Periodicity</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Periodicity</fullName>
+        <actions>
+            <name>Periodicity</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Compléter le champ système à partir du champ produit d&#39;opportunité</description>
+        <formula>true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Lead</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>Qualif Lead</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Une lead, c&amp;#39;est meilleur quand c&amp;#39;est frais : tu peux la rappeler dans les 2 min !&lt;/p&gt;&lt;p&gt;Si elle ne répond pas, tu peux laisser un message.&lt;/p&gt;</info>
+        <picklistValueName>Call 1</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Deuxième tentative de la journée (4h après le call 1),  si elle ne décroche toujours pas tu auras une tâche de rappel pour demain, et un SMS lui sera envoyé.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Call 2</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Le lendemain, nouveau départ : la lead sera peut être disponible pour être qualifiée.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Si elle ne répond pas, un mail lui sera envoyé.&lt;/p&gt;</info>
+        <picklistValueName>Call 3</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;2 jours après sa demande, toujours pas joignable.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Call 4</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;3 jours après sa demande. Accroche toi et la lead décrochera.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Call 5</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;On va laisser la lead rentrer de vacances. Le call 6, c&amp;#39;est 7 jours après sa demande.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Call 6</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Dernière tentative, 14 jours après sa demande, mais tout peut arriver.&lt;/p&gt;&lt;p&gt;Si tu n&amp;#39;arrives pas à la joindre, la lead est perdue (motif de perte injoignable). Un dernier mail lui rappelant tes tentatives d&amp;#39;appels lui sera envoyé&lt;/p&gt;</info>
+        <picklistValueName>Call 7</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Ne pas utiliser ce champs pour l&amp;#39;instant&lt;/p&gt;</info>
+        <picklistValueName>Converti</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>LeadClient</recordTypeName>
+</PathAssistant>

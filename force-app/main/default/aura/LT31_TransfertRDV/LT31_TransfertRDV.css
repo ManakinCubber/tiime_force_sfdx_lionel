@@ -1,0 +1,16 @@
+.THIS {
+}.THIS .spacing > *:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.THIS .m-t-15 {
+    margin-top: 15px;
+}
+
+.THIS .m-b-15 {
+    margin-bottom: 15px;
+}
+
+.THIS .slds-textarea {
+	min-height: 180px;
+}

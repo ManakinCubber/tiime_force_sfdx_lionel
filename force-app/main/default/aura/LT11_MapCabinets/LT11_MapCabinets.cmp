@@ -1,0 +1,21 @@
+<aura:component implements="flexipage:availableForRecordHome,flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="LTC11_MapCabinets">
+
+	<aura:attribute name="index" type="Integer" default="0"/>
+	<aura:attribute name="cabinets" type="List"/>	
+	<aura:attribute name="mapMarkers" type="object[]"/>
+	<aura:attribute name="zoomLevel" type="Integer" />
+	<aura:attribute name="center" type="Object" />
+	
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	
+	<lightning:card title="Carte des cabinets">
+		<lightning:button value="ajouter" onclick="{!c.addMarkers}" >ajouter 50</lightning:button>
+			<fieldset class="slds-grid slds-grid_vertical slds-swap">
+					<div class="slds-col slds-size_full slds-p-left_small slds-p-right_small">
+				<aura:if isTrue="{!v.mapMarkers.length > 0}" >
+			    	<lightning:map mapMarkers="{!v.mapMarkers}" zoomLevel="{!v.zoomLevel}"  center="{!v.center}"/>
+			    </aura:if>
+			</div>
+			</fieldset>
+	</lightning:card>
+</aura:component>

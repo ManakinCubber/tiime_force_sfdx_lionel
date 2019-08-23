@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ContactPartenariat__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Le contact qui a envoyé la Lead.
+C&#39;est un contact associé à l&#39;entreprise du champ référence &#39;Détail partenariat&#39;</description>
+    <externalId>false</externalId>
+    <label>Contact - Partenariat</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Contact.Account.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Partenariat</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Leads (Contact - Partenariat)</relationshipLabel>
+    <relationshipName>LeadsPartenariat</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DontCheckNewDrivingLicenceAlone</fullName>
+    <active>true</active>
+    <description>Le permis de conduire ne peut être coché si aucune autre pièce d&#39;identité n&#39;est cochée</description>
+    <errorConditionFormula>AND(
+$User.BypassValidationRules__c = false,
+IDCard__c  = false  , Passport__c = false,  NewDrivingLicence__c = true
+)</errorConditionFormula>
+    <errorDisplayField>NewDrivingLicence__c</errorDisplayField>
+    <errorMessage>Le Permis de conduire ne peut être la seule pièce d&#39;identité. Il doit obligatoirement venir en supplément d&#39;un passeport ou d&#39;une CNI.</errorMessage>
+</ValidationRule>

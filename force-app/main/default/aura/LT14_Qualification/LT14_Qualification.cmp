@@ -1,0 +1,86 @@
+<aura:component controller="AP15_ControllerLeadResume">
+	<aura:attribute name="simpleRecord" type="Lead" required="true"/>
+	<aura:attribute name="labels" type="Object"/>
+	<aura:attribute name="typeNotePriori" type="List"/>
+	<aura:attribute name="typeNoteBesoinCrea" type="List"/>
+	<aura:attribute name="typeNoteBesoin" type="List"/>
+	<aura:attribute name="typeNoteEmployes" type="List"/>
+	<aura:attribute name="typeNoteJuridique" type="List"/>
+	
+	<aura:method name="doInit" action="{!c.doInit}"></aura:method>
+	<aura:handler event="lightning:tabRefreshed" action="{!c.doInit}"/>
+
+	<div class="slds-grid slds-wrap slds-grid_align-center">
+		<div class="slds-col slds-size_1-of-1">
+			<div class="slds-grid slds-wrap slds-gutters slds-grid_align-center">
+				<div class="slds-col field">
+					<c:enquetedeSatisfactionUnique typeNote="{!v.typeNoteBesoin}"
+												note="{!v.simpleRecord.TypeOfNeed__c}" 
+												title="{!v.labels.TypeOfNeed__c}"
+												numero="{!globalId + '-1'}"
+												showAucun="true"
+												showLeft="true"
+												/>
+				</div>
+				<div class="slds-col slds-p-left_medium field">
+					<c:enquetedeSatisfactionUnique typeNote="{!v.typeNoteBesoinCrea}"
+												note="{!v.simpleRecord.Echeance_de_besoin_de_creation__c}" 
+												title="{!v.labels.Echeance_de_besoin_de_creation__c}"
+												numero="{!globalId + '-2'}"
+												showAucun="true"
+												showLeft="true"
+												/>
+				</div>
+				<div class="slds-col slds-p-around_none">
+					<div class="slds-grid">
+						<div class="slds-col slds-p-right_none slds-m-top_medium">
+							<lightning:inputField fieldName="Activity__c" value="{!v.simpleRecord.Activity__c}"/>
+						</div>
+						<div class="slds-col slds-p-left_none">
+							<c:enquetedeSatisfactionUnique typeNote="{!v.typeNoteEmployes}"
+															note="{!v.simpleRecord.WillHaveEmployes__c}" 
+															title="{!v.labels.WillHaveEmployes__c}"
+															numero="{!globalId + '-3'}"
+															showAucun="true"
+															/>
+						</div>
+					</div>
+				</div>
+				<div class="slds-col slds-p-left_xx-large field">
+					<c:enquetedeSatisfactionUnique typeNote="{!v.typeNoteJuridique}"
+												note="{!v.simpleRecord.LegalStatus__c}" 
+												title="{!v.labels.LegalStatus__c}"
+												numero="{!globalId + '-4'}"
+												showAucun="true"
+												showLeft="true"
+												/>
+				</div>
+			</div>
+			<div class="slds-grid slds-wrap slds-gutters slds-grid_align-center">
+				<div class="slds-col slds-m-top_medium activity-details-container">
+					<lightning:inputField fieldName="ActivityDetails__c" value="{!v.simpleRecord.ActivityDetails__c}" class="detaillActivityClass"/>
+				</div>
+				<div class="slds-col slds-m-top_medium address-container">
+					<c:LT10_SearchGoogleAdresse aura:id="AddressByGoogle"
+												city="{!v.simpleRecord.City}" 
+												country="{!v.simpleRecord.Country}" 
+												street="{!v.simpleRecord.Street}" 
+												postalCode="{!v.simpleRecord.PostalCode}" 
+												longitude="{!v.simpleRecord.Longitude}" 
+												latitude="{!v.simpleRecord.Latitude}"/>
+				</div>								
+			</div>
+			<div class="slds-grid slds-wrap slds-gutters slds-grid_align-center">
+				<lightning:inputField fieldName="HowDoYouKnowUs__c" value="{!v.simpleRecord.HowDoYouKnowUs__c}" class="howKnowUsClass slds-m-top_medium slds-col"/>
+				<div class="slds-col">
+					<c:enquetedeSatisfactionUnique typeNote="{!v.typeNotePriori}"
+													note="{!v.simpleRecord.Evaluation_a_priori__c}" 
+													title="{!v.labels.Evaluation_a_priori__c}"
+													numero="{!globalId + '-5'}"
+													showAucun="true"
+													/>
+				</div>
+			</div>
+		</div>
+	</div>
+</aura:component>

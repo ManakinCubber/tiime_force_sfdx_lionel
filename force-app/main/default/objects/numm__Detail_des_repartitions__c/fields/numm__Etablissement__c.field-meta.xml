@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Etablissement__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Etablissement</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>numm__Establishment__c.numm__TypeEtablissement__c</field>
+            <operation>contains</operation>
+            <value>Appartement, Parking, Proprietaire, Non réparti</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>numm__Establishment__c</referenceTo>
+    <relationshipLabel>Détails des répartitions</relationshipLabel>
+    <relationshipName>Details_des_repartitions</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

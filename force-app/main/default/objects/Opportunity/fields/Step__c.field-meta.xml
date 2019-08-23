@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Step__c</fullName>
+    <externalId>false</externalId>
+    <label>Step</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Proposition envoyée</fullName>
+                <default>true</default>
+                <label>Proposition envoyée</label>
+            </value>
+            <value>
+                <fullName>Relance</fullName>
+                <default>false</default>
+                <label>Relance</label>
+            </value>
+            <value>
+                <fullName>Nurtering</fullName>
+                <default>false</default>
+                <label>Nurtering</label>
+            </value>
+            <value>
+                <fullName>Signée</fullName>
+                <default>false</default>
+                <label>Signée</label>
+            </value>
+            <value>
+                <fullName>Perdue</fullName>
+                <default>false</default>
+                <label>Perdue</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

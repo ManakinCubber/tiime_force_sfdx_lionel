@@ -1,0 +1,12 @@
+.THIS .validation-content {
+    max-height:583px;
+}
+
+.THIS .slds-modal__header {
+	padding-top: 0px;
+}
+
+.THIS .slds-spinner_container, .THIS .slds-modal__footer, .THIS .slds-modal__header, .THIS .validation-content {
+	margin-right: -2rem;
+	margin-left: -2rem;
+}

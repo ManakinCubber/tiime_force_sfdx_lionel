@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Entreprise</fullName>
+    <active>true</active>
+    <description>Si votre Tiers est une Entreprise</description>
+    <label>Entreprise</label>
+    <picklistValues>
+        <picklist>numm__Civilite__c</picklist>
+        <values>
+            <fullName>Madame</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monsieur</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

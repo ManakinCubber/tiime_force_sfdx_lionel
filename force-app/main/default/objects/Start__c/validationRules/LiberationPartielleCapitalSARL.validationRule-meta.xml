@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LiberationPartielleCapitalSARL</fullName>
+    <active>true</active>
+    <description>La libération partielle du capital doit être d&#39;au moins 20% en SARL</description>
+    <errorConditionFormula>AND(
+$User.BypassValidationRules__c = false, 
+OR(
+    ISPICKVAL(LegalStatus__c ,&quot;EURL&quot;),
+    ISPICKVAL(LegalStatus__c ,&quot;SARL&quot;)
+),
+PartCashStake__c &lt; ( ShareCapital__c  / 5 )
+)</errorConditionFormula>
+    <errorDisplayField>PartCashStake__c</errorDisplayField>
+    <errorMessage>Doit être au moins égale à 20% du capital social</errorMessage>
+</ValidationRule>

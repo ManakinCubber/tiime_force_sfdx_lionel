@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Tiime</fullName>
+        <default>false</default>
+        <label>Tiime</label>
+    </customValue>
+    <customValue>
+        <fullName>TiimeForce</fullName>
+        <default>false</default>
+        <label>TiimeForce</label>
+    </customValue>
+    <customValue>
+        <fullName>Invoice</fullName>
+        <default>false</default>
+        <label>Invoice</label>
+    </customValue>
+    <customValue>
+        <fullName>Wallet</fullName>
+        <default>false</default>
+        <label>Wallet</label>
+    </customValue>
+    <customValue>
+        <fullName>Regex</fullName>
+        <default>false</default>
+        <label>Regex</label>
+    </customValue>
+    <customValue>
+        <fullName>Made in Data</fullName>
+        <default>false</default>
+        <label>Made in Data</label>
+    </customValue>
+    <customValue>
+        <fullName>Start</fullName>
+        <default>false</default>
+        <label>Start</label>
+    </customValue>
+    <customValue>
+        <fullName>Tiime actuel</fullName>
+        <default>false</default>
+        <label>Tiime actuel</label>
+    </customValue>
+    <customValue>
+        <fullName>Machine Learning</fullName>
+        <default>false</default>
+        <label>Machine Learning</label>
+    </customValue>
+    <customValue>
+        <fullName>Architecture</fullName>
+        <default>false</default>
+        <label>Architecture</label>
+    </customValue>
+    <customValue>
+        <fullName>Receipt</fullName>
+        <default>false</default>
+        <label>Receipt</label>
+    </customValue>
+    <customValue>
+        <fullName>TVA</fullName>
+        <default>false</default>
+        <label>TVA</label>
+    </customValue>
+    <customValue>
+        <fullName>Site Tiime.fr</fullName>
+        <default>false</default>
+        <label>Site Tiime.fr</label>
+    </customValue>
+    <customValue>
+        <fullName>SIte LEC.com</fullName>
+        <default>false</default>
+        <label>SIte LEC.com</label>
+    </customValue>
+    <masterLabel>Liste des Projets</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>F11DriveId__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <description>Hash du team drive non visible par le client</description>
+    <externalId>false</externalId>
+    <label>F11DriveId</label>
+    <length>40</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

@@ -1,0 +1,57 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName" access="global" controller="ChronosCtrl" >
+	<aura:attribute name="TypeFile" type="string"/>
+    <aura:attribute name="Filename" type="string"/>
+    <aura:attribute name="FileId" type="string"/>
+    <aura:attribute name="sObjectName" type="String"/>
+    <aura:attribute name="MAX_FILE_SIZE" type="Integer" default="8 200 000" /> 
+    <aura:attribute name="CHUNK_SIZE" type="Integer" default="950 000" /> <!-- Use a multiple of 4 -->
+
+    <aura:attribute name="recordError" type="string"/>
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="accountRecord" type="Object"/>
+    <force:recordData aura:id="record"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      fields="ChronosId__c"
+                      targetError="{!v.recordError}"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.accountRecord}"
+                      mode="VIEW"/>
+
+    <aura:attribute name="optionsAcc" type="List" default="[
+                                                    {'label': 'Statuts', 'value': 'company_status'},
+                                                    {'label': 'Kbis', 'value': 'kbis'},
+                                                    {'label': 'Bail commercial', 'value': 'domiciliation_contract'},
+                                                    ]"/>
+    <aura:attribute name="optionsCon" type="List" default="[
+                                                    {'label': 'Pièce d\'identité', 'value': 'id_certificate'},
+                                                    {'label': 'Justificatif de domicile', 'value': 'address_proof'},
+                                                    ]"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <lightning:card title="Chronos Upload" iconName="utility:open_folder">
+        <aura:set attribute="footer">
+            <lightning:button label="Annuler" iconName="utility:close" onclick="{!c.onCancel}" />
+            <lightning:button variant="brand" iconName="utility:upload" label="importer" disabled="{!or(empty(v.FileId),empty(v.TypeFile))}" onclick="{!c.onSave}"/>
+        </aura:set>
+        <aura:if isTrue="{!not(empty(v.recordError))}">
+            <p class="slds-p-horizontal_small">
+                <ui:message title="Error" severity="error" closable="true">
+                    {!v.recordError}
+                </ui:message>
+            </p>
+        </aura:if>
+        <lightning:spinner aura:id="spinner" class="slds-hide"/>
+        <p class="slds-p-horizontal_small">
+            <lightning:combobox name="progress" label="Type de fichier" value="{!v.TypeFile}" placeholder="Choisir le type de fichier" options="{!if(v.sObjectName =='Account', v.optionsAcc, v.optionsCon)}"/>
+        </p>
+        <p class="slds-p-horizontal_small">
+           <!-- <lightning:input name="file" type="file" label="Fichier à importer dans Chronos" onchange="{!c.handleFilesChange}"/> -->
+           <lightning:fileUpload name="add file"
+           						label="Taille max : 7,9 Mo"
+                                multiple="false"
+                                recordId="{!v.recordId}"
+                                onuploadfinished="{!c.handleFilesChange}"/>
+        </p>
+    </lightning:card>
+</aura:component>

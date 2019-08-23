@@ -1,0 +1,66 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="LTC27_ReminderEndingOnOpp">
+	
+	
+	
+	<aura:attribute name="simpleRecord" type="Opportunity" />
+    <aura:attribute name="oppRecord" type="Object" description="Objet Opportunity avec tous les champs utiles" />
+	<force:recordData aura:id="TheRecord" recordId="{!v.recordId}" 
+    	fields="AEComments__c" targetRecord="{!v.oppRecord}"
+        targetFields="{!v.simpleRecord}" mode="VIEW"
+    />
+    
+    <aura:attribute name="previousTaskRecord" type="Task"/>
+	<aura:attribute name="taskRecord" type="Task"/>
+	<aura:attribute name="issues" type="String[]" />
+	<aura:attribute name="displayDelayDate" type="boolean" />
+	<aura:attribute name="displaySubmitButton" type="boolean" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <div class="slds-grid slds-wrap slds-grid_align-center">										
+	    <lightning:card variant="Narrow" title="Informations de l'opportunité" iconName="standard:opportunity" class="slds-col slds-card slds-size_1-of-2">
+	        <div class="slds-card">
+	        	<lightning:recordViewForm recordId="{! v.recordId }" objectApiName="Opportunity">
+		        		<lightning:outputfield fieldName="AEComments__c" value="{!v.AEComments__c}" class="slds-m-top_medium slds-col"/>
+	        	</lightning:recordViewForm>
+	        </div>
+		    <div class="slds-card">
+		    	 Commentaire de la tâche précédente :<br/>
+	       		<ui:outputText value="{!v.previousTaskRecord.AECommentsTask__c}" class="slds-m-top_medium slds-col"/>
+		    </div>
+	    </lightning:card>
+	    
+	    <lightning:card variant="Narrow" title="{! 'Issue de ' + v.taskRecord.Subject }" iconName="standard:task2" class="slds-col slds-size_1-of-2">
+	    	<div class="slds-card">
+	    		<div class="slds-grid slds-wrap slds-gutters slds-grid_align-center">
+                   	<div class="slds-col slds-size_1-of-1">
+                   		<ui:inputTextArea aura:id="aeComments" label="Commentaire de la tâche"  value="{!v.taskRecord.AECommentsTask__c}" rows="5" class="slds-m-top_medium slds-col"/>
+                   	</div>
+                </div>
+	    		<div class="slds-grid slds-wrap slds-gutters slds-grid_align-center">
+                   	<div class="slds-col slds-size_1-of-1">
+                       	<lightning:select aura:id="selectIssue" name="selectIssue" label="Issue de la relance" onchange="{! c.onIssueChange }" value="{! v.taskRecord.IssueDeLaRelance__c }">
+			    			<aura:iteration items="{!v.issues}" var="issue">
+		               			<option text="{!issue.label}" value="{!issue.value}" selected="{!issue.selected}"/>
+		           			</aura:iteration>
+			    		</lightning:select>
+                       </div>
+                </div>
+                <aura:if isTrue="{! v.displayDelayDate }">
+                   	<div class="slds-grid slds-wrap slds-gutters slds-grid_align-center" >
+	                   	<div class="slds-col slds-size_1-of-1">
+	                   		<lightning:input type="datetime" name="callbackDate" label="Date de rappel souahité" value="{! v.taskRecord.CallBackDate__c }" onchange="{! c.callbackDateChangeHandler }"/>
+	                   	</div>
+	                   </div>
+                </aura:if>
+                <aura:if isTrue="{! v.displaySubmitButton }">
+	               	<div class="slds-grid slds-wrap slds-align_absolute-center">
+						<div class="slds-col slds-align_absolute-center">
+				       		<lightning:button type="submit" label="Valider" class="slds-m-top_medium" variant="brand" onclick="{! c.saveTask }"/>
+				       	</div>
+				    </div>
+	            </aura:if>
+	    	</div>
+	    </lightning:card>
+	</div>
+</aura:component>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PersonalStatus__c</fullName>
+    <externalId>false</externalId>
+    <label>Situation personnelle</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Salarié</fullName>
+                <default>false</default>
+                <label>Salarié</label>
+            </value>
+            <value>
+                <fullName>Etudiant</fullName>
+                <default>false</default>
+                <label>Etudiant</label>
+            </value>
+            <value>
+                <fullName>Pôle emploi inscrit</fullName>
+                <default>false</default>
+                <label>Pôle emploi inscrit</label>
+            </value>
+            <value>
+                <fullName>Pôle emploi à venir</fullName>
+                <default>false</default>
+                <label>Pôle emploi à venir</label>
+            </value>
+            <value>
+                <fullName>Indépendant</fullName>
+                <default>false</default>
+                <label>Indépendant</label>
+            </value>
+            <value>
+                <fullName>Auto-Entrepreneur</fullName>
+                <default>false</default>
+                <label>Auto-Entrepreneur</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

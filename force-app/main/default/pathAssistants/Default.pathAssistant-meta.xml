@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <entityName>Lead</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>Default</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Une lead, c&amp;#39;est meilleur quand c&amp;#39;est frais : tu peux la rappeler dans les 2 min !&lt;/p&gt;&lt;p&gt;Si elle ne répond pas, tu peux laisser un message, &lt;/p&gt;&lt;p&gt;Un sms lui sera également envoyé pour lui notifier ton appel&lt;/p&gt;</info>
+        <picklistValueName>Call 1</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Deuxième tentative de la journée, si elle ne décroche toujours pas tu auras une tâche de rappel pour demain&lt;/p&gt;</info>
+        <picklistValueName>Call 2</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Le lendemain, nouveau départ : la lead sera peut être disponible pour être qualifiée&lt;/p&gt;</info>
+        <picklistValueName>Call 3</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;2 jours après sa demande, toujours pas joignable.&lt;/p&gt;&lt;p&gt;Un mail lui notifiant tes tentatives d&amp;#39;appel lui sera envoyé&lt;/p&gt;</info>
+        <picklistValueName>Call 4</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;3 jours après sa demande. Accroche toi et la lead décrochera.&lt;/p&gt;</info>
+        <picklistValueName>Call 5</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;On va laisser la lead rentrer de vacances. Le call 6, c&amp;#39;est 7 jours après sa demande&lt;/p&gt;</info>
+        <picklistValueName>Call 6</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Dernière tentative, 14 jours après sa demande, mais tout peut arriver.&lt;/p&gt;&lt;p&gt;Si tu n&amp;#39;arrives pas à la joindre, la lead est perdu (motif de perte injoignable). Un dernier mail lui rappelant tes tentatives d&amp;#39;appels lui sera envoyé&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Call 7</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p class=&quot;p1&quot;&gt;&lt;strong&gt;Félicitations !&lt;/strong&gt; Il est désormais temps de transformer la piste en opportunité. Poursuivez ensuite le processus de qualification avec votre nouveau contact.&lt;/p&gt;</info>
+        <picklistValueName>Converti</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Step__c</fieldNames>
+        <picklistValueName>Perdu</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Front WEB</fullName>
+        <default>false</default>
+        <label>Front WEB</label>
+    </customValue>
+    <customValue>
+        <fullName>Conception des besoins métiers (métiers + PO)</fullName>
+        <default>false</default>
+        <label>Conception des besoins métiers (métiers + PO)</label>
+    </customValue>
+    <customValue>
+        <fullName>Design</fullName>
+        <default>false</default>
+        <label>Design</label>
+    </customValue>
+    <customValue>
+        <fullName>Rédaction</fullName>
+        <default>false</default>
+        <label>Rédaction</label>
+    </customValue>
+    <customValue>
+        <fullName>IOS</fullName>
+        <default>false</default>
+        <label>IOS</label>
+    </customValue>
+    <customValue>
+        <fullName>Back-end</fullName>
+        <default>false</default>
+        <label>Back-end</label>
+    </customValue>
+    <customValue>
+        <fullName>Tests métiers</fullName>
+        <default>false</default>
+        <label>Tests métiers</label>
+    </customValue>
+    <customValue>
+        <fullName>Documentation API</fullName>
+        <default>false</default>
+        <label>Documentation API</label>
+    </customValue>
+    <customValue>
+        <fullName>Android</fullName>
+        <default>false</default>
+        <label>Android</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing</fullName>
+        <default>false</default>
+        <label>Marketing</label>
+    </customValue>
+    <customValue>
+        <fullName>Database</fullName>
+        <default>false</default>
+        <label>Database</label>
+    </customValue>
+    <masterLabel>Liste d&#39;activités projet</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

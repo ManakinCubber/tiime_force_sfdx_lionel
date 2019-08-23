@@ -1,0 +1,23 @@
+.THIS .text-lg {
+	font-size: 1rem;
+	line-height: 2.1rem;
+}
+
+.THIS .lead-field-container.lead-field-required .slds-form-element__label::before {
+	content: '*';
+	color: rgb(194, 57, 52);
+	margin: 0 .125rem;
+}
+
+.THIS .slds-has-error .slds-input {
+	background-color: rgb(255, 255, 255) !important;
+	border-color: rgb(194, 57, 52) !important;
+}
+
+.THIS .m-top_large {
+	margin-top: 1.75rem;
+}
+
+.THIS .specific-size-picklist .slds-listbox_vertical {
+	max-height: 2000%;
+}

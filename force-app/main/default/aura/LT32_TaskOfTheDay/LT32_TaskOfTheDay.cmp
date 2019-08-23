@@ -1,0 +1,3 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome" access="global" controller="LTC32_TaskOfTheDay">
+	<c:LT34_TaskList isToDay="true"/>
+</aura:component>

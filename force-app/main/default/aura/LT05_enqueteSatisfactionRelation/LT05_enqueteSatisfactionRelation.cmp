@@ -1,0 +1,94 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="AP07_SatisfactionSurvey">
+
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+    <aura:attribute name="labels" type="Object"/>
+    <aura:attribute name="showErrorClosing" type="Boolean" default="false"/>
+    <aura:attribute name="typeNoteSatisfPriseContact" type="List"/>
+    <aura:attribute name="typeNoteEvalPoster" type="List"/>
+
+
+
+   	<force:recordData aura:id="TheRecord"
+                    recordId="{!v.recordId}"
+                    targetError="{!v.recordError}"
+                    targetFields="{!v.simpleRecord}"
+                    fields="Evaluation_a_posteriori__c, notedeSatisfactionPrisecontact__c, commentaireGlobal__c"
+                    recordUpdated="{!c.doInit}"
+                    mode="EDIT"/>
+                    
+    <!-- Display Lightning Data Service errors, if any -->
+    <aura:if isTrue="{!not(empty(v.recordError))}">
+        <div class="recordError">
+            <ui:message title="Error" severity="error" closable="true">
+                {!v.recordError}
+            </ui:message>
+        </div>
+    </aura:if>
+    
+    <article class="slds-card slds-m-around_small">
+        <lightning:card class="slds-page-header__title slds-col slds-align_absolute-center slds-m-bottom_x-small" iconName="action:submit_for_approval" title="Notes - Premier contact"/>
+        
+        <div class="">
+            
+            	
+               	<lightning:recordEditForm aura:id="recordViewForm"
+                                    			recordId="{!v.recordId}"
+                                     			objectApiName="enquetedeSatisfaction__c">
+                                     			
+                    <div class="slds-grid slds-grid_vertical slds-grid_align-space"><!-- 1 -->  			
+         					
+	    				<lightning:messages />
+
+						
+						<div class="slds-form" role="list">
+							<c:enquetedeSatisfactionUnique note="{!v.simpleRecord.notedeSatisfactionPrisecontact__c}" 
+															title="{!v.labels.notedeSatisfactionPrisecontact__c}"
+															numero="{!v.recordId + '-2'}"
+															typeNote="{!v.typeNoteSatisfPriseContact}"
+															/> 
+							<br/>
+							<c:enquetedeSatisfactionUnique typeNote="{!v.typeNoteEvalPoster}"
+															note="{!v.simpleRecord.Evaluation_a_posteriori__c}" 
+															title="{!v.labels.Evaluation_a_posteriori__c}"
+															numero="{!v.recordId + '-1'}"
+															/>
+
+										
+						      <!-- <div class="slds-grid slds-grid_align-center">
+						      	<div class="slds-col slds-m-right_x-small slds-m-top_x-large">
+						        	<label class="slds-text-heading_smallslds-box" for="checkB">{!v.labels.notedeSatisfactionPrisecontactcheck__c}</label>
+						        </div>
+						        <div class="slds-col slds-m-left_x-small slds-m-top_x-large">
+							       	<lightning:input aura:id="checkB"
+												name="{!v.labels.notedeSatisfactionPrisecontactcheck__c}" 
+												type="toggle" 
+												onchange="{!c.switchValueCheckB}"
+												messageToggleActive="Oui"
+		                 						messageToggleInactive="Non"
+		                 						variant="label-hidden"
+												/>
+						     	</div>	
+					     	</div> -->
+
+							<lightning:inputfield fieldName="commentaireGlobal__c" value="{!v.simpleRecord.commentaireGlobal__c}"/>	
+			
+						 </div>		
+					</div>
+					
+               		
+             		
+       			</lightning:recordEditForm>
+                                                         
+        </div>
+        <div class="slds-align_absolute-center">
+            <button class="slds-button slds-button_brand slds-m-around_small slds-size--1-of-5" onclick="{!c.handleSaveRecord}">
+            Enregister
+        	</button>
+        </div>
+        
+     
+    </article>
+ 
+        
+</aura:component>

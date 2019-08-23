@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Lot_entites__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>La valeur analytique est attribuée a un ensemble d&#39;entité</inlineHelpText>
+    <label>Lot entités</label>
+    <referenceTo>numm__Lot_entite__c</referenceTo>
+    <relationshipLabel>Valeurs Analytiques</relationshipLabel>
+    <relationshipName>Valeurs_Analytiques</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,10 @@
+<aura:component	controller="LTC17_LeadBackController" access="global">
+	<aura:attribute name="type" type="String" default="ongoing" required="true"/>
+	<aura:attribute name="recordId" type="Id" required="true"/>
+	<aura:method name="doInit" action="{!c.doInit}"></aura:method>
+	<aura:if isTrue="{! v.type != 'horsCible'}">
+	<div class="slds-grid slds-is-relative">
+		<lightning:spinner variant="brand" alternativeText="Renvoi en cours..." size="small" />
+	</div>
+    </aura:if>
+</aura:component>

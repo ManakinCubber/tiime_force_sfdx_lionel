@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__EquilibreGeneraleAnalytique__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>if( ISNULL(numm__Debit__c) = false &amp;&amp; numm__Debit__c = numm__DebitAnalytique__c ,true,if( ISNULL(numm__Credit__c) = false &amp;&amp; numm__Credit__c = numm__CreditAnalytique__c ,true,false))</formula>
+    <label>Equilibre générale analytique</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

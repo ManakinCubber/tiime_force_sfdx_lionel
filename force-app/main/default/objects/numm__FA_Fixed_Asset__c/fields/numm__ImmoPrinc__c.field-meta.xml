@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__ImmoPrinc__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Immobilisation principale</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>L&#39;immobilisation principale doit être du même établissement et de même catégorie, non cédée</errorMessage>
+        <filterItems>
+            <field>$Source.numm__Category__c</field>
+            <operation>equals</operation>
+            <valueField>numm__FA_Fixed_Asset__c.numm__Category__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Source.numm__Entity__c</field>
+            <operation>equals</operation>
+            <valueField>numm__FA_Fixed_Asset__c.numm__Entity__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Source.numm__Establishment__c</field>
+            <operation>equals</operation>
+            <valueField>numm__FA_Fixed_Asset__c.numm__Establishment__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>numm__FA_Fixed_Asset__c.numm__HasPrinc__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>numm__FA_Fixed_Asset__c</referenceTo>
+    <relationshipLabel>Fiches associées</relationshipLabel>
+    <relationshipName>ImmosSecondaires</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

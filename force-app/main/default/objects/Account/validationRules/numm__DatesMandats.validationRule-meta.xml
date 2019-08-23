@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__DatesMandats</fullName>
+    <active>true</active>
+    <description>date &quot;Mandat du&quot; inférieure ou égale à la date &quot;Mandat au&quot;</description>
+    <errorConditionFormula>numm__MandatDu__c &gt;  numm__MandatAu__c</errorConditionFormula>
+    <errorMessage>Dates du mandat incorrectes</errorMessage>
+</ValidationRule>

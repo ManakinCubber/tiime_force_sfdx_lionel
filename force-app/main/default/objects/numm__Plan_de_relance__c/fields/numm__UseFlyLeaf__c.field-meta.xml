@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__UseFlyLeaf__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>- UseFlyLeaf : ajout d’une page porte adresse Cette option permet l’ajout d’une première page blanche au pli si l’emplacement pour l’adresse destinataire ou expéditeur n’a pas été prévu dans le document. Dans le cas où cette option n’a pas été choisie, il est nécessaire de laisser sur la première page du document des zones vierges, correspondantes à la position des fenêtres de l’enveloppe (voir Annexe). Dans le cas d’une enveloppe C4, une page porte adresse est obligatoirement ajoutée quelle que soit la valeur de cette option.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>- UseFlyLeaf : ajout d’une page porte adresse Cette option permet l’ajout d’une première page blanche au pli si l’emplacement pour l’adresse destinataire ou expéditeur n’a pas été prévu dans le document. Dans le cas où cette option n’a pas été choisie, il</inlineHelpText>
+    <label>ZNUUseFlyLeaf</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Entite__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Entite</label>
+    <referenceTo>numm__Entity__c</referenceTo>
+    <relationshipLabel>Details Facturation</relationshipLabel>
+    <relationshipName>Details_Facturation</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

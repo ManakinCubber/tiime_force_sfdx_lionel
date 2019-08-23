@@ -1,0 +1,48 @@
+.THIS table.horaire td{
+    border:1px solid #c0c0c0;
+    text-align:center;
+    padding-top:10px;
+    padding-bottom:10px;
+    height:60px;
+}
+
+.THIS a.dispo {
+    color:white;
+}
+
+.THIS a.dispo:hover {
+    color:blue;
+}
+
+.THIS table.horaire {
+    width:90px;
+    height:60px;
+}
+
+.THIS table.rdv td{
+    border:1px solid #c0c0c0;
+    text-align:center;
+    width:100%;
+    min-width:91px;
+    min-height:60px;
+}
+
+.THIS .invisibleButton:hover{
+    width:80px;
+    height:50px;
+    background-color:white;
+    border:none;
+}
+
+.THIS .invisibleButton{
+    width:80px;
+    height:50px;
+    background-color:white;
+    border:none;
+}
+
+.THIS table.rdv {
+    width:100%;
+    min-width:91px;
+    min-height:60px;
+}

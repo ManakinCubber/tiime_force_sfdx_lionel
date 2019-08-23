@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Statut__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL(numm__Status__c, &#39;Fail&#39;), IMAGE(&quot;/resource/1433851751000/numm__progressbar_60&quot;, &quot;Chargement du document&quot;,10,100),
+IF( ISPICKVAL(numm__Status__c, &#39;Completed&#39;), IMAGE(&quot;/resource/1433852763000/numm__progressbar_100&quot;, &quot;Chargement du document&quot;,10,100),
+IMAGE(&#39;/resource/1433850533000/numm__progressbar_20&#39;, &#39;Test&#39;, 10, ( IF(  ISPICKVAL(numm__Status__c,  &#39;Server Request&#39;),0,IF( ISPICKVAL(numm__Status__c, &#39;Process Data&#39;),0.25 , IF( ISPICKVAL(numm__Status__c, &#39;Document Creation&#39;),0.5 ,IF( ISPICKVAL(numm__Status__c, &#39;Save Document&#39;),0.75,IF( ISPICKVAL(numm__Status__c, &#39;Completed&#39;),1,0))))) * 100 )) &amp;
+IMAGE(&#39;/resource/1433850553000/numm__progressbar_40&#39;, &#39;Test&#39;, 10, (100 - IF(  ISPICKVAL(numm__Status__c,  &#39;Server Request&#39;),0,IF( ISPICKVAL(numm__Status__c, &#39;Process Data&#39;),0.25 , IF( ISPICKVAL(numm__Status__c, &#39;Document Creation&#39;),0.5 ,IF( ISPICKVAL(numm__Status__c, &#39;Save Document&#39;),0.75,IF( ISPICKVAL(numm__Status__c, &#39;Completed&#39;),1,0))))) * 100 )))) &amp;
+&#39; &#39; &amp;
+TEXT (IF(  ISPICKVAL(numm__Status__c,  &#39;Server Request&#39;),0,IF( ISPICKVAL(numm__Status__c, &#39;Process Data&#39;),0.25 , IF( ISPICKVAL(numm__Status__c, &#39;Document Creation&#39;),0.5 ,IF( ISPICKVAL(numm__Status__c, &#39;Save Document&#39;),0.75,IF( ISPICKVAL(numm__Status__c, &#39;Completed&#39;),1,0))))) * 100) &amp;
+&#39;%&#39;+BR()+IF(  ISPICKVAL(numm__Status__c,  &#39;Server Request&#39;),&quot;Demande d&#39;édition en cours&quot;,IF( ISPICKVAL(numm__Status__c, &#39;Process Data&#39;),&#39;Extraction des données en cours&#39; , IF( ISPICKVAL(numm__Status__c, &#39;Document Creation&#39;),&#39;Génération du document en cours&#39; ,IF( ISPICKVAL(numm__Status__c, &#39;Save Document&#39;),&#39;Téléchargement en cours&#39;,IF( ISPICKVAL(numm__Status__c, &#39;Completed&#39;),&#39;Téléchargement terminé&#39;,&#39;Erreur&#39;)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Actualiser la page pour voir les progrès.</inlineHelpText>
+    <label>Statut</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

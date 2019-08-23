@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Les_enquetes_realiser_Tiime_Crea</fullName>
+    <columns>NAME</columns>
+    <columns>Lead__c</columns>
+    <columns>Statut__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>CompletionDate__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>enquetedeSatisfaction__c.Crea_suite_Kbis_J_3</value>
+    </filters>
+    <filters>
+        <field>Statut__c</field>
+        <operation>notEqual</operation>
+        <value>Done,Failed,DoNotCall</value>
+    </filters>
+    <label>Les enquêtes à réaliser Tiime Créa</label>
+</ListView>

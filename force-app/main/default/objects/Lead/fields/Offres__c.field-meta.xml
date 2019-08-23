@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Offres__c</fullName>
+    <description>Les offres disponibles pour les propositions comerciales des Account Executive. La disponibilité de ces offres dépend du cabinet partenaire</description>
+    <externalId>false</externalId>
+    <label>Offres</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Branding__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1</fullName>
+                <default>false</default>
+                <label>Offre Novaa</label>
+            </value>
+            <value>
+                <fullName>2</fullName>
+                <default>false</default>
+                <label>Offre Supernovaa</label>
+            </value>
+            <value>
+                <fullName>3</fullName>
+                <default>false</default>
+                <label>Offre BNC</label>
+            </value>
+            <value>
+                <fullName>4</fullName>
+                <default>false</default>
+                <label>Visa fiscal</label>
+            </value>
+            <value>
+                <fullName>5</fullName>
+                <default>false</default>
+                <label>Offre social mandataire</label>
+            </value>
+            <value>
+                <fullName>6</fullName>
+                <default>false</default>
+                <label>Offre Création</label>
+            </value>
+            <value>
+                <fullName>7</fullName>
+                <default>false</default>
+                <label>Offre LEC</label>
+            </value>
+            <value>
+                <fullName>8</fullName>
+                <default>false</default>
+                <label>Offre Auto-entrepreneur</label>
+            </value>
+            <value>
+                <fullName>9</fullName>
+                <default>false</default>
+                <label>Offre Cible</label>
+            </value>
+            <value>
+                <fullName>10</fullName>
+                <default>false</default>
+                <label>Offre hors cible</label>
+            </value>
+            <value>
+                <fullName>11</fullName>
+                <default>false</default>
+                <label>Offre Social</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Novaa</controllingFieldValue>
+            <valueName>1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Novaa</controllingFieldValue>
+            <valueName>2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Novaa</controllingFieldValue>
+            <controllingFieldValue>Incityz</controllingFieldValue>
+            <controllingFieldValue>Condillac</controllingFieldValue>
+            <controllingFieldValue>L-Expert-Comptable.com</controllingFieldValue>
+            <valueName>3</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Novaa</controllingFieldValue>
+            <controllingFieldValue>Incityz</controllingFieldValue>
+            <controllingFieldValue>Condillac</controllingFieldValue>
+            <controllingFieldValue>L-Expert-Comptable.com</controllingFieldValue>
+            <valueName>4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Novaa</controllingFieldValue>
+            <controllingFieldValue>L-Expert-Comptable.com</controllingFieldValue>
+            <valueName>5</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Novaa</controllingFieldValue>
+            <controllingFieldValue>Incityz</controllingFieldValue>
+            <controllingFieldValue>Condillac</controllingFieldValue>
+            <controllingFieldValue>L-Expert-Comptable.com</controllingFieldValue>
+            <valueName>6</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Incityz</controllingFieldValue>
+            <controllingFieldValue>Condillac</controllingFieldValue>
+            <valueName>9</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Incityz</controllingFieldValue>
+            <controllingFieldValue>Condillac</controllingFieldValue>
+            <valueName>10</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Incityz</controllingFieldValue>
+            <controllingFieldValue>Condillac</controllingFieldValue>
+            <valueName>11</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>L-Expert-Comptable.com</controllingFieldValue>
+            <valueName>7</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>L-Expert-Comptable.com</controllingFieldValue>
+            <valueName>8</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

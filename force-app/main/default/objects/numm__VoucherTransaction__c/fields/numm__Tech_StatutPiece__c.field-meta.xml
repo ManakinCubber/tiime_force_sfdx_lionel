@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Tech_StatutPiece__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Tech_StatutPiece</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>En cours</fullName>
+                <default>false</default>
+                <label>En cours</label>
+            </value>
+            <value>
+                <fullName>Validé</fullName>
+                <default>false</default>
+                <label>Validé</label>
+            </value>
+            <value>
+                <fullName>Supprimé</fullName>
+                <default>false</default>
+                <label>Supprimé</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

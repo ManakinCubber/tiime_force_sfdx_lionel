@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Ecriture_detail__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Ecriture Détail</label>
+    <referenceTo>numm__l_cfonb__c</referenceTo>
+    <relationshipLabel>Lignes CFONB (Ecriture Détail)</relationshipLabel>
+    <relationshipName>Lignes_CFONB1</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

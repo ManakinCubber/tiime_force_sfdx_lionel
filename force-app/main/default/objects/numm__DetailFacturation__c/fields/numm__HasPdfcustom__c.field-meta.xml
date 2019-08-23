@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__HasPdfcustom__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>Dans le cas d&#39;une page personnalisée, générer dans le cas  d&#39;une facture standard, le pdf personnalisé sera pri en compte.</inlineHelpText>
+    <label>PDF Personnalisé</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Taux_repartition__c</fullName>
+    <defaultValue>1</defaultValue>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>Indiquer le taux de répartition sur les comptes HT pour le montant HT.
+Pour les comptes TTC et TVA laisser par défaut 100.00%
+Si un seul compte HT laisser 100.00%
+Si plusieurs compte HT mettre 0.00% si vous ne connaissez pas la répartition à reprendre</inlineHelpText>
+    <label>Taux de répartition</label>
+    <precision>18</precision>
+    <required>true</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

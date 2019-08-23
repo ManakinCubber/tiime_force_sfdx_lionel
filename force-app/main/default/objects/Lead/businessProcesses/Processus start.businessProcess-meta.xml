@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Processus start</fullName>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Call 1</fullName>
+        <default>true</default>
+    </values>
+    <values>
+        <fullName>Call 2</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Call 3</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Call 4</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Call 5</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Call 6</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Call 7</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Converti</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>EC à Trouver</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Perdu</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Transfert</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

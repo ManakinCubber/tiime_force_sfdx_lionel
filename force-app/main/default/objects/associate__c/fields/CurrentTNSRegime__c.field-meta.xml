@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CurrentTNSRegime__c</fullName>
+    <externalId>false</externalId>
+    <label>Régime TNS actuel</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Régime général</fullName>
+                <default>false</default>
+                <label>Régime général</label>
+            </value>
+            <value>
+                <fullName>Agricole</fullName>
+                <default>false</default>
+                <label>Agricole</label>
+            </value>
+            <value>
+                <fullName>Non salarié non agricole</fullName>
+                <default>false</default>
+                <label>Non salarié non agricole</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

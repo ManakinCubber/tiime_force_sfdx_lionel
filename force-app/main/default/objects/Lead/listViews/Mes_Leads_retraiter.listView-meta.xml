@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mes_Leads_retraiter</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>LEAD.LAST_UPDATE</field>
+        <operation>lessOrEqual</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Call 1,Call 2,Call 3,Call 4,Call 5,Call 6,Call 7</value>
+    </filters>
+    <filters>
+        <field>CallBackDate__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>ContactSourceSPE__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Mes Leads à retraiter en fin de session</label>
+</ListView>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Moins de 30k€</fullName>
+        <default>false</default>
+        <label>Moins de 30 000 €</label>
+    </customValue>
+    <customValue>
+        <fullName>De 30 à 100k€</fullName>
+        <default>false</default>
+        <label>Entre 30 000 et 100 000 €</label>
+    </customValue>
+    <customValue>
+        <fullName>De 100 à 150k€</fullName>
+        <default>false</default>
+        <label>Entre 100 000 et 300 000 €</label>
+    </customValue>
+    <customValue>
+        <fullName>entre_300_et_1_m</fullName>
+        <default>false</default>
+        <label>Entre 300 000 et 1 Million €</label>
+    </customValue>
+    <customValue>
+        <fullName>Plus d&#39;un million €</fullName>
+        <default>false</default>
+        <label>Plus d&#39;un million €</label>
+    </customValue>
+    <customValue>
+        <fullName>Ne sait pas</fullName>
+        <default>false</default>
+        <label>Ne sait pas</label>
+    </customValue>
+    <masterLabel>Tranches de CA</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

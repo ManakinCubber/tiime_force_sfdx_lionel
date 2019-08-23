@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Show</fullName>
+    <columns>NAME</columns>
+    <columns>Crea__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NurturingScenario__c</field>
+        <operation>equals</operation>
+        <value>No Show</value>
+    </filters>
+    <label>No Show</label>
+</ListView>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__Statut_Maileva__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Statut Maileva</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>A envoyer</fullName>
+                <default>false</default>
+                <label>A envoyer</label>
+            </value>
+            <value>
+                <fullName>En attante d&#39;envoie</fullName>
+                <default>false</default>
+                <label>En attante d&#39;envoie</label>
+            </value>
+            <value>
+                <fullName>Envoie en cours</fullName>
+                <default>false</default>
+                <label>Envoie en cours</label>
+            </value>
+            <value>
+                <fullName>Envoyé</fullName>
+                <default>false</default>
+                <label>Envoyé</label>
+            </value>
+            <value>
+                <fullName>Erreur</fullName>
+                <default>false</default>
+                <label>Erreur</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

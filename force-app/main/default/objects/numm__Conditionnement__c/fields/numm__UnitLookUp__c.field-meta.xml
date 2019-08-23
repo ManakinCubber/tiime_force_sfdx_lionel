@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__UnitLookUp__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>Unité est utilisée pour le calcul de valorisation des stocks, ainsi que le calcul de la tare du conditionnement et la contenance brute</inlineHelpText>
+    <label>Unité</label>
+    <referenceTo>numm__Unit__c</referenceTo>
+    <relationshipLabel>Conditionnements</relationshipLabel>
+    <relationshipName>Conditionnements</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

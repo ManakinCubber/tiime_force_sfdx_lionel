@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>SimplifiedRegimen</fullName>
+        <default>false</default>
+        <label>Régime simplifié</label>
+    </customValue>
+    <customValue>
+        <fullName>NormalRegimen</fullName>
+        <default>false</default>
+        <label>Régime normal</label>
+    </customValue>
+    <customValue>
+        <fullName>ControlledDeclarationReceivablesDebt</fullName>
+        <default>false</default>
+        <label>Déclaration contrôlée Créances/dettes</label>
+    </customValue>
+    <customValue>
+        <fullName>ControlledDeclarationSalesExpenses</fullName>
+        <default>false</default>
+        <label>Déclaration contrôlée Recettes/dépenses</label>
+    </customValue>
+    <customValue>
+        <fullName>MicroRegimen</fullName>
+        <default>false</default>
+        <label>Régime micro</label>
+    </customValue>
+    <masterLabel>Régimes fiscaux</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

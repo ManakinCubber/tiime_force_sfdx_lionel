@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Branding__c</fullName>
+    <externalId>false</externalId>
+    <label>Branding de sortie</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>L-Expert-Comptable.com</fullName>
+                <default>false</default>
+                <label>L-Expert-Comptable.com</label>
+            </value>
+            <value>
+                <fullName>Tiime</fullName>
+                <default>false</default>
+                <label>Tiime</label>
+            </value>
+            <value>
+                <fullName>Trouver-mon-comptable.com</fullName>
+                <default>false</default>
+                <label>Trouver-mon-comptable.com</label>
+            </value>
+            <value>
+                <fullName>Novaa</fullName>
+                <default>false</default>
+                <label>Novaa</label>
+            </value>
+            <value>
+                <fullName>Incityz</fullName>
+                <default>false</default>
+                <label>Incityz</label>
+            </value>
+            <value>
+                <fullName>Condillac</fullName>
+                <default>false</default>
+                <label>Condillac</label>
+            </value>
+            <value>
+                <fullName>Goneo</fullName>
+                <default>false</default>
+                <label>Goneo</label>
+            </value>
+            <value>
+                <fullName>Ola Compta</fullName>
+                <default>false</default>
+                <label>Ola Compta</label>
+            </value>
+            <value>
+                <fullName>Le Net Expert Comptable</fullName>
+                <default>false</default>
+                <label>Le Net Expert Comptable</label>
+            </value>
+            <value>
+                <fullName>Onlicorn</fullName>
+                <default>false</default>
+                <label>Onlicorn</label>
+            </value>
+            <value>
+                <fullName>Pepit</fullName>
+                <default>false</default>
+                <label>Pepit</label>
+            </value>
+            <value>
+                <fullName>L-Expert-Comptable Lille</fullName>
+                <default>false</default>
+                <label>L-Expert-Comptable Lille</label>
+            </value>
+            <value>
+                <fullName>Evocompta</fullName>
+                <default>false</default>
+                <label>Evocompta</label>
+            </value>
+            <value>
+                <fullName>Auficom</fullName>
+                <default>false</default>
+                <label>Auficom</label>
+            </value>
+            <value>
+                <fullName>Proxi Compta</fullName>
+                <default>false</default>
+                <label>Proxi Compta</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

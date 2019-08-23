@@ -1,0 +1,222 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome,lightning:actionOverride,force:hasRecordId,force:appHostable" controller="ContactsValidationCtrl">	
+
+	  <aura:attribute type="Stakeholder__c[]"  name="allContacts"/>
+    <aura:attribute type="Stakeholder__c"    name="currentContact"/>
+    <aura:attribute type="String"            name="errorMsg"/>
+    <aura:attribute type="String"           name="dateValidationErrorMsg"/>
+
+	<lightning:notificationsLibrary aura:id="notifLib"/>
+
+    <!-- <aura:attribute type="Boolean"           name="validateBtnDisabled" default="false"/> -->
+    <aura:attribute type="Boolean"           name="showErrorMsg"/>
+    <aura:attribute type="Boolean"           name="nextBtnDisabled" default="true"/>
+    <aura:attribute type="Boolean"           name="validAccount" default="true"/>
+    <aura:attribute type="Boolean"           name="dateValidationError" default="false"/>
+    <aura:attribute type="Boolean"           name="enableSaveAll" default="false"/>
+    <aura:attribute type="Boolean"           name="showErrorAPE" default="false"/>
+
+    <aura:attribute type="list"  name="IncomOptions" />
+    <aura:attribute type="list"  name="NetworthOptions" />
+    <aura:attribute type="list"  name="contactTypes" />
+    <aura:attribute name="turnovers" type="Object"/>
+    <aura:attribute name="employees" type="Object"/>
+    <aura:attribute name="incomes" type="Object"/>
+    <aura:attribute name="legalForms" type="Object"/>
+    <aura:attribute name="contactSalutation" type="Object"/>
+
+    <aura:attribute type="Integer"      name="pageNumber" 		default="1" />
+    <aura:attribute type="Integer"      name="maxPage" 			default="1" />
+
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="companyObject" type="Account"/>
+    <aura:attribute name="recordError" type="String"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change"     value="{!v.pageNumber}" action="{!c.renderPage}"/>
+    <aura:handler name="lockValidateBtn" event="c:evtLockValidButton" action="{!c.handlerevtLockValidateBtn}"/>
+
+    <force:recordData aura:id="recordLoader"
+                      recordId="{!v.recordId}"
+                      fields="Name,BillingStreet,BillingCity,BillingCountry,BillingState,BillingPostalCode,Siren__c,Siret__c,ApeCode__c,IntracomVatNumber__c,RegistrationDate__c,ShareCapital__c,AnnualTurnover__c,NumberOfEmployees__c,MainPhoneNumber__c,LastNetIncome__c, LegalStatus__c, MainEmail__c"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.companyObject}"
+                      targetError="{!v.recordError}"
+                      recordUpdated="{!c.handleRecordUpdated}"
+                      mode="EDIT"
+                      />
+
+
+
+    <div class="slds-grid slds-grid_vertical slds-is-relative">
+      <lightning:spinner aura:id="spjSpinner" class="slds-hide"/>
+    
+      <aura:if isTrue="{!v.pageNumber == 1}">
+        <div class="modal-header slds-modal__header slds-text-heading--medium slds-text-align_center">
+          Validation de l'entreprise
+        </div>
+        <div class="slds-scrollable_y validation-content">
+          <div class="slds-p-around--medium">
+            <lightning:input aura:id="companyField" label="Nom" type="text" required="true" value="{!v.companyObject.Name}"/>
+            <div class="slds-grid">
+              <div class="slds-col slds-size_1-of-2 slds-p-left--xx-small">
+                <lightning:input aura:id="companyField" class="slds-col sl" label="Siret" type="text" required="true" value="{!v.companyObject.Siret__c}" onblur="{!c.checkIfValid}"/>
+              </div>
+              <div class="slds-col slds-size_1-of-2 slds-p-left--xx-small">
+                <lightning:input aura:id="companyField" class="slds-col sl" label="Siren" type="text" disabled="true" value="{!v.companyObject.Siren__c}"/>
+              </div>
+            </div>
+            <lightning:inputAddress
+              aura:id="companyField"
+              addressLabel="Adresse"
+              streetLabel="Rue"
+              cityLabel="Ville"
+              countryLabel="Pays"
+              provinceLabel="Région"
+              postalCodeLabel="Code postal"
+              street="{!v.companyObject.BillingStreet}"
+              city="{!v.companyObject.BillingCity}"
+              country="{!v.companyObject.BillingCountry}"
+              province="{!v.companyObject.BillingState}"
+              postalCode="{!v.companyObject.BillingPostalCode}"
+              required="true"
+              />
+            <lightning:input aura:id="companyField" label="N° de TVA intracom." type="text" required="true" disabled="true" value="{!v.companyObject.IntracomVatNumber__c}"/>
+            <lightning:input aura:id="companyField" label="Date d'immatriculation" type="date" required="true" value="{!v.companyObject.RegistrationDate__c}"/>
+            <lightning:input type="number" aura:id="companyField" label="Capital social" value="{!v.companyObject.ShareCapital__c}" formatter="currency" step="0.01"/>
+            <div class="slds-grid">
+              <div class="slds-col slds-size_1-of-2 slds-p-right--xx-small">
+                <lightning:select aura:id="companyFieldLastNetIncome" label="Dernier résultat en K€" required="true" value="{!v.companyObject.LastNetIncome__c}">
+                  <option text="- Aucun -" value=""></option>
+                  <aura:iteration items="{!v.incomes}" var="income">
+                    <option text="{!income.label}" value="{!income.value}" selected="{!income.value == v.companyObject.LastNetIncome__c}"></option>
+                  </aura:iteration>
+                </lightning:select>
+              </div>
+              <div class="slds-col slds-size_1-of-2 slds-p-right--xx-small">
+                <lightning:select aura:id="companyFieldAnnualTurnover" label="Chiffre d'affaires annuel" required="true" value="{!v.companyObject.AnnualTurnover__c}">
+                  <option text="- Aucun -" value=""></option>
+                  <aura:iteration items="{!v.turnovers}" var="turnover">
+                    <option text="{!turnover.label}" value="{!turnover.value}" selected="{!turnover.value == v.companyObject.AnnualTurnover__c}"></option>
+                  </aura:iteration>
+                </lightning:select>
+              </div>
+            </div>
+
+            <lightning:select aura:id="companyFieldNumberOfEmployees" label="Nombre d'employés" required="true" value="{!v.companyObject.NumberOfEmployees__c}">
+              <option text="- Aucun -" value=""></option>
+              <aura:iteration items="{!v.employees}" var="employee">
+                <option text="{!employee.label}" value="{!employee.value}" selected="{!employee.value == v.companyObject.NumberOfEmployees__c}"></option>
+              </aura:iteration>
+            </lightning:select>
+              
+            <lightning:select aura:id="companyFieldLegalStatus" label="Forme juridique" required="true" value="{!v.companyObject.LegalStatus__c}">
+              <aura:iteration items="{!v.legalForms}" var="legalForm">
+                <option text="{!legalForm.label}" value="{!legalForm.value}" selected="{!legalForm.value == v.companyObject.LegalStatus__c}"></option>
+              </aura:iteration>
+            </lightning:select>
+            
+            <lightning:recordEditForm aura:id="recordViewForm" recordId="{!v.recordId}" objectApiName="Account">
+	            	<lightning:messages />
+	            	<aura:if isTrue="{!v.showErrorAPE}">
+		            	<div class="slds-form-element slds-has-error">
+	    					<div class="slds-form-element__control">
+	    						<lightning:inputField aura:id="companyApeField" fieldName="ApeCode__c" value="{!v.companyObject.ApeCode__c}"/>
+	    					</div>
+	    					<div class="slds-form-element__help" id="error-message-unique-id">Remplissez ce champ.</div>
+		            	</div>
+		            	<aura:set attribute="else">
+		            		<lightning:inputField aura:id="companyApeField" fieldName="ApeCode__c" value="{!v.companyObject.ApeCode__c}" required="true"/>
+		            	</aura:set>
+	            	</aura:if>	   
+          	</lightning:recordEditForm>   
+          	
+			<lightning:input type="tel" label="Téléphone Principal" aura:id="companyField" value="{!v.companyObject.MainPhoneNumber__c}" required="true"/>		
+			
+			<lightning:input type="email" label="Email Principal" aura:id="companyField" value="{!v.companyObject.MainEmail__c}" required="true"/>
+			
+          </div>      
+        </div>
+        <aura:set attribute="else">
+          <div class="modal-header slds-modal__header slds-text-heading--medium slds-text-align_center">
+            Validation des contacts
+          </div>
+          <div class="slds-scrollable_y validation-content">
+            <div class="slds-p-around--medium">
+              
+              <lightning:select aura:id="contactFieldContactSalutation" label="Civilité" required="true" value="{!v.currentContact.Contact__r.Salutation}">
+	              <aura:iteration items="{!v.contactSalutation}" var="salutationOption">
+	                <option text="{!salutationOption.label}" value="{!salutationOption.value}" selected="{!salutationOption.value == v.currentContact.Contact__r.Salutation}"></option>
+	              </aura:iteration>
+	            </lightning:select>
+              
+              <lightning:input aura:id="contactField" label="Nom" type="text" required="true" value="{!v.currentContact.Contact__r.LastName}"/>
+              <lightning:input aura:id="contactField" label="Prénom" type="text" required="true" value="{!v.currentContact.Contact__r.FirstName}"/>
+              <ui:inputDate required="true" aura:id="birthDateField" value="{!v.currentContact.Contact__r.Birthdate}" displayDatePicker="true" format="dd/MM/yyyy" label="Date de Naissance"/>
+
+              <!-- <lightning:input aura:id="contactField" label="Date de Naissance" type="date" required="true" value="{!v.currentContact.Contact__r.Birthdate}" class="{! v.dateValidationError ? 'slds-has-error' : ''}" onchange="{!c.dateUpdated}"/> -->
+              <!-- <ui:inputDate aura:id="contactField" required="true" value="{!v.currentContact.Contact__r.BirthDate}" displayDatePicker="true" label="Date de Naissance" format="MM/dd/yyyy"/> -->
+              <aura:if isTrue="{!v.dateValidationError}">
+                <div class="slds-text-color_error">
+                    {!v.dateValidationErrorMsg}
+                </div>
+              </aura:if>  
+              <lightning:input aura:id="contactField" label="Lieu de Naissance" type="text" required="true" value="{!v.currentContact.Contact__r.BirthPlace__c}"/>
+              <lightning:input aura:id="contactField" label="Pays de Naissance" type="text" required="true" value="{!v.currentContact.Contact__r.NativeCountry__c}"/>
+              <lightning:input aura:id="contactField" label="Nationalité" type="text" required="true" value="{!v.currentContact.Contact__r.Nationality__c}"/>
+              <lightning:input aura:id="contactField" label="Email" type="email" required="true" value="{!v.currentContact.Contact__r.Email}"/>
+              <lightning:input aura:id="contactField" label="Téléphone" type="tel" required="true" value="{!v.currentContact.Contact__r.MobilePhone}"/>
+              <lightning:select aura:id="contactFieldIncomPerTranche" label="Revenus par tranche" required="true" value="{!v.currentContact.Contact__r.IncomPerTranche__c}">
+                  <option text="- Aucun -" value=""></option>
+                  <aura:iteration items="{!v.IncomOptions}" var="opt">
+                      <option value="{!opt.value}">{!opt.label}</option>
+                  </aura:iteration>
+              </lightning:select> 
+
+              <lightning:select aura:id="contactFieldNetworth" label="Patrimoine" required="true" value="{!v.currentContact.Contact__r.Networth__c}">
+                  <option text="- Aucun -" value=""></option>
+                  <aura:iteration items="{!v.NetworthOptions}" var="opt">
+                      <option value="{!opt.value}">{!opt.label}</option>
+                  </aura:iteration>
+              </lightning:select>
+                  <lightning:input aura:id="contactField" label="Fonction" type="text" required="true" value="{!v.currentContact.JobTitleBank__c}"/>
+
+              <lightning:select aura:id="contactFieldContactType" label="Type de Personne" required="true" value="{!v.currentContact.Contact__r.ContactType__c}">
+                  <option text="- Aucun -" value=""></option>
+                  <aura:iteration items="{!v.contactTypes}" var="opt">
+                      <option value="{!opt.value}">{!opt.label}</option>
+                  </aura:iteration>
+              </lightning:select>
+            </div>
+          </div>
+        </aura:set>
+      </aura:if>
+      <div class="modal-footer slds-modal__footer">
+        <div class="slds-grid">
+          <div>
+              <c:Pagination aura:id="nextPage" currentPageNumber="{!v.pageNumber}" maxPageNumber="{!v.maxPage}" nextBtnDisabled="{!v.nextBtnDisabled}"/>
+          </div>
+          <div class="slds-col">
+	          <aura:if isTrue="{!v.showErrorMsg}">
+	       		<p class="slds-text-color_error ">
+	           		{!v.errorMsg}
+	    		</p>
+	   	  	  </aura:if>
+   	  	  </div>
+          <div class="slds-col slds-grow"></div>
+          <div>
+            <span>
+              <div class="slds-button-group slds-float_right" role="group">
+                <!-- <lightning:button class="slds-button slds-button_neutral" disabled="{!v.validateBtnDisabled}" onclick="{!c.clickValidate}">Valider</lightning:button> -->
+                <!-- <lightning:button class="{!if(or(v.nextBtnDisabled == false, v.validAccount == false), 'slds-button slds-button_success','slds-button slds-button_neutral')}" onclick="{!c.clickValidate}">Valider</lightning:button> -->
+                <lightning:button onclick="{!c.clickClose}">Annuler</lightning:button>
+                <lightning:button variant="brand" onclick="{!c.clickValidate}" class="slds-m-left_none">Valider</lightning:button>
+                <!-- <aura:if isTrue="{!if(v.maxPage == v.pageNumber, true, false)}">
+                  <lightning:button label="Save Button" disabled="{!v.validAccount}" onclick="{!c.clickValidateAccount}">Valider l'entreprise</lightning:button>
+                </aura:if> -->
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+</aura:component>

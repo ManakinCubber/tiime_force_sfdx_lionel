@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__FARule1__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Règle /durée comptable</label>
+    <referenceTo>numm__FARule__c</referenceTo>
+    <relationshipLabel>Historiques entêtes plans (Règle /durée comptable)</relationshipLabel>
+    <relationshipName>FAHeaderDeprHis1</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

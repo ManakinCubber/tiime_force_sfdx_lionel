@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Oui</fullName>
+        <default>false</default>
+        <label>Oui</label>
+    </customValue>
+    <customValue>
+        <fullName>Non</fullName>
+        <default>false</default>
+        <label>Non</label>
+    </customValue>
+    <masterLabel>Faux Booléen</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>numm__DateFinSupDateDeb</fullName>
+    <active>true</active>
+    <errorConditionFormula>numm__Date_Debut__c &gt; numm__Date_fin__c</errorConditionFormula>
+    <errorDisplayField>numm__Date_fin__c</errorDisplayField>
+    <errorMessage>La date de fin doit être supérieure à la date de début</errorMessage>
+</ValidationRule>
