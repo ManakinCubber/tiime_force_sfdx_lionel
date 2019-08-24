@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamicChoiceSets>
+        <name>NotedeComptenceintrapreneur</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>RepresentativeSkillsNotes__c</picklistField>
+        <picklistObject>enquetedeSatisfaction__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>Notedelareactivitedelintrapreneur</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>RepresentativeReactivityNote__c</picklistField>
+        <picklistObject>enquetedeSatisfaction__c</picklistObject>
+        <sortOrder>Desc</sortOrder>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>NotedelareactiviteIntrapreneur</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>RepresentativeReactivityNote__c</picklistField>
+        <picklistObject>enquetedeSatisfaction__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>notedeMADdesoutils</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>noteOutilsMisDisposition__c</picklistField>
+        <picklistObject>enquetedeSatisfaction__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>Notedereactivitedelintrapreneur</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>RepresentativeReactivityNote__c</picklistField>
+        <picklistObject>enquetedeSatisfaction__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>notedeSatisfactionGlobale</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>notedeSatisfactionGlobale__c</picklistField>
+        <picklistObject>enquetedeSatisfaction__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>Typedenquete</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>typedenquete__c</picklistField>
+        <picklistObject>enquetedeSatisfaction__c</picklistObject>
+    </dynamicChoiceSets>
+    <interviewLabel>Enquête de Satisfaction {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Enquête de Satisfaction V5</label>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>creeruneEnquetedeSatisfaction</name>
+        <label>Créer une Enquête de Satisfaction</label>
+        <locationX>472</locationX>
+        <locationY>453</locationY>
+        <connector>
+            <targetReference>thankCustomer</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Contact__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RepresentativeReactivityNote__c</field>
+            <value>
+                <elementReference>Notedelareactivitedelintrapreneur</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RepresentativeSkillsNotes__c</field>
+            <value>
+                <elementReference>NotedeComptenceintrapreneur</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>commentaireGlobal__c</field>
+            <value>
+                <elementReference>commentaireGlobale</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>noteOutilsMisDisposition__c</field>
+            <value>
+                <elementReference>notedeMADdesoutils</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>notedeSatisfactionGlobale__c</field>
+            <value>
+                <elementReference>notedeSatisfactionGlobale</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>suggestionssurlaMADdesoutils__c</field>
+            <value>
+                <elementReference>suggestions</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>typedenquete__c</field>
+            <value>
+                <elementReference>Typedenquete</elementReference>
+            </value>
+        </inputAssignments>
+        <object>enquetedeSatisfaction__c</object>
+    </recordCreates>
+    <screens>
+        <name>creationduneEnquete</name>
+        <label>Création d&#39;une Enquête</label>
+        <locationX>472</locationX>
+        <locationY>567</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>creeruneEnquetedeSatisfaction</targetReference>
+        </connector>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>NoteCompetencesdelIntrapreneur</name>
+        <label>Note Compétences de l&#39;Intrapreneur</label>
+        <locationX>276</locationX>
+        <locationY>325</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>notesurlesOutilsMisDisposition</targetReference>
+        </connector>
+        <fields>
+            <name>NoteCompetencedelintrapreneur</name>
+            <fieldText>Comment noteriez-vous les compétences de votre Intrapreneur ?</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>notecompetencedelintrapreneurs</name>
+            <choiceReferences>NotedeComptenceintrapreneur</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Note Compétence de l&#39;Intrapreneur</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>NoteReactivitedelIntrapreneur</name>
+        <label>Note Réactivité de l&#39;Intrapreneur</label>
+        <locationX>277</locationX>
+        <locationY>198</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>NoteCompetencesdelIntrapreneur</targetReference>
+        </connector>
+        <fields>
+            <name>noteReactivitecampagne</name>
+            <fieldText>Comment noteriez-vous la réactivité de votre Intrapreneur ?</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>noteReactiviteIntrapreneur</name>
+            <choiceReferences>NotedelareactiviteIntrapreneur</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Note Réactivité Intrapreneur</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>noteSatisfactionGlobale</name>
+        <label>Note Satisfaction Globale</label>
+        <locationX>276</locationX>
+        <locationY>565</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>creationduneEnquete</targetReference>
+        </connector>
+        <fields>
+            <name>notedeStaisfactionGlobale</name>
+            <choiceReferences>notedeSatisfactionGlobale</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Note de Staisfaction Globale</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>commentaireGlobale</name>
+            <fieldText>Commentaire Globale</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <pausedText>&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Comment noteriez-vous votre satifaction globale ?&lt;/FONT&gt;&lt;/DIV&gt;</pausedText>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>notesurlesOutilsMisDisposition</name>
+        <label>Note sur les Outils Mis à Disposition</label>
+        <locationX>277</locationX>
+        <locationY>452</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>noteSatisfactionGlobale</targetReference>
+        </connector>
+        <fields>
+            <name>Notesurlamaddesoutils</name>
+            <fieldText>Comment noteriez-vous la mise à disposition des Outils ?</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>notedeMADdesOutil</name>
+            <choiceReferences>notedeMADdesoutils</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Note de Mise à Disposition des Outils</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>SuggestionsurMADoutils</name>
+            <fieldText>Avez-vous des Suggestions sur la mise à disposition des outils ?</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>suggestions</name>
+            <fieldText>Suggestions</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>QuelleTypedenquete</name>
+        <label>Quelle Type d&#39;enquête</label>
+        <locationX>278</locationX>
+        <locationY>71</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>NoteReactivitedelIntrapreneur</targetReference>
+        </connector>
+        <fields>
+            <name>typedenquetes</name>
+            <choiceReferences>Typedenquete</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Type d&#39;enquête</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <pausedText>&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;1&quot;&gt;Vous vous apprêtez à faire une enquête de satisfaction. Tout d&amp;apos;abord, veuillez sélectionner le type d&amp;apos;enquête.&lt;/FONT&gt;&lt;/DIV&gt;</pausedText>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>thankCustomer</name>
+        <label>Thank Customer</label>
+        <locationX>679</locationX>
+        <locationY>451</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Fin</name>
+            <fieldText>L&#39;enquête de satisfaction est maintenant terminée.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>QuelleTypedenquete</startElementReference>
+    <status>Draft</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>
