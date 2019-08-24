@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: Install Dependencies
-          command: sudo npm install -global sfdx-cli
+          command: sudo npm install sfdx-cli --global
       - run:
           name: SFDX version
           command: |

@@ -1,0 +1,10 @@
+{
+  "orgName": "Tiime SFDX Company",
+  "edition": "Enterprise",
+  "features": [],
+  "settings": {
+    "orgPreferenceSettings": {
+      "s1DesktopEnabled": true
+    }
+  }
+}
