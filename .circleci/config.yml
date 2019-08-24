@@ -18,7 +18,7 @@ jobs:
           command: |
             mkdir keys
             echo "Generate Key"
-            openssl enc -nosalt -aes-256-cbc -in keys/server.key -out server.key.enc -base64 -K $SFDC_SERVER_KEY -iv $SFDC_SERVER_IV
+            openssl enc -nosalt -aes-256-cbc -in config/server.key -out server.key.enc -base64 -K $SFDC_SERVER_KEY -iv $SFDC_SERVER_IV
             echo "Authenticating..."
             sfdx force:auth:jwt:grant --clientid $SFDC_CONSUMER_KEY --jwtkeyfile keys/server.key --username $SFDC_USER --setdefaultdevhubusername -a DevHub --instanceurl https://login.salesforce.com
             echo "Creating the Scratch Org..."
