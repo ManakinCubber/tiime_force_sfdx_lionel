@@ -14,7 +14,7 @@ jobs:
               sfdx --version
               sfdx plugins --core
       - run:
-          name: Create Scratch Org
+          name: Create Scratch Org and Connexion Web
           command: |
             mkdir keys
             echo "Generate Key"
@@ -32,6 +32,33 @@ jobs:
                                   --wait $DEPLOY_TIMEOUT
             sfdx force:org:open --targetusername circle_build_$CIRCLE_BUILD_NUM \
                                 --urlonly
+      - run:
+            name: Deploy to salesforce
+            command: |
+              sfdx force:source:push --targetusername circle_build_$CIRCLE_BUILD_NUM
+      - run:
+            name: Run Apex Tests
+            command: |
+              sfdx force:apex:test:run --testlevel RunLocalTests \
+                                      --resultformat junit \
+                                      --outputdir /tmp/test-results \
+                                      --targetusername circle_build_$CIRCLE_BUILD_NUM \
+                                      --wait $DEPLOY_TIMEOUT \
+                                      --codecoverage
+              sfdx force:data:soql:query --usetoolingapi \
+                                        --query "SELECT PercentCovered FROM ApexOrgWideCoverage" \
+                                        --targetusername circle_build_$CIRCLE_BUILD_NUM \
+                                        --json > /tmp/test-results/orgCoverage.json
+              sfdx force:data:soql:query --usetoolingapi \
+                                        --query "SELECT ApexClassorTrigger.Name, NumLinesCovered,NumLinesUncovered \
+                                                    FROM ApexCodeCoverageAggregate \
+                                                  WHERE NOT(ApexClassorTrigger.Name LIKE '%Test') \
+                                                ORDER BY ApexClassorTrigger.Name" \
+                                        --targetusername circle_build_$CIRCLE_BUILD_NUM \
+                                        --json > /tmp/test-results/classCoverage.json
+              ORG_COVERAGE=$(jq .result.records[0].PercentCovered /tmp/test-results/orgCoverage.json)
+              printf "%s%% code coverage" "$ORG_COVERAGE"
+              if [[ $ORG_COVERAGE -lt 80 ]]; then false; fi
       - run:
             name: Delete Scratch
             command: |
