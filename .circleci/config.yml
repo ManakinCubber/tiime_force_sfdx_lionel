@@ -26,7 +26,6 @@ jobs:
                                       --setdefaultdevhubusername -a DevHub \
                                       --instanceurl https://login.salesforce.com
             echo "Creating the Scratch Org..."
-            sfdx force:org:create -f config/project-scratch-def.json -a circle_build_$CIRCLE_BUILD_NUM -s
             sfdx force:org:create --definitionfile config/project-scratch-def.json \
                                   --targetdevhubusername DevHubTiime \
                                   --setalias circle_build_$CIRCLE_BUILD_NUM \
