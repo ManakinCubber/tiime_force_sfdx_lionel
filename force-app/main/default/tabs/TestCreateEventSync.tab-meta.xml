@@ -2,5 +2,6 @@
 <CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
     <auraComponent>testCreateEventSync</auraComponent>
     <label>TestCreateEventSync</label>
+    <mobileReady>false</mobileReady>
     <motif>Custom54: Boat</motif>
 </CustomTab>

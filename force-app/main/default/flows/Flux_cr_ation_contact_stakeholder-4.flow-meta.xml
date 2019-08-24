@@ -1,0 +1,999 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <choices>
+        <name>RecordTypeSH</name>
+        <choiceText>RecordTypeSH</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>Stakeholder.RecordTypeId</elementReference>
+        </value>
+    </choices>
+    <choices>
+        <name>Type_de_Stakeholder</name>
+        <choiceText>Type de Stakeholder</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>Stakeholder.RecordTypeId</elementReference>
+        </value>
+    </choices>
+    <decisions>
+        <name>Quel_type_de_contact</name>
+        <label>Quel type de contact</label>
+        <locationX>359</locationX>
+        <locationY>142</locationY>
+        <defaultConnectorLabel>[Résultat par défaut]</defaultConnectorLabel>
+        <rules>
+            <name>MandataireetAssocie</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Mandataire2</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Associe2</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Creation_Contact_SH</targetReference>
+            </connector>
+            <label>Mandataire et Associé</label>
+        </rules>
+        <rules>
+            <name>Mandataire</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Mandataire2</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CreationContactSHMandataire</targetReference>
+            </connector>
+            <label>Mandataire</label>
+        </rules>
+        <rules>
+            <name>Associee</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Associe2</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CreationContactSHAssocie</targetReference>
+            </connector>
+            <label>Associe</label>
+        </rules>
+    </decisions>
+    <dynamicChoiceSets>
+        <name>Civilite2</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Salutation</picklistField>
+        <picklistObject>Contact</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>RecordTypeStakeholder</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>ContactType__c</picklistField>
+        <picklistObject>Stakeholder__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>TypedeMandataire</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OfficerType__c</picklistField>
+        <picklistObject>Stakeholder__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>TypeMandataire</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OfficerType__c</picklistField>
+        <picklistObject>Stakeholder__c</picklistObject>
+    </dynamicChoiceSets>
+    <formulas>
+        <name>NomAssocie</name>
+        <dataType>String</dataType>
+        <expression>{!recordId} &amp;&quot; &quot;&amp; {!Contact.Name}</expression>
+    </formulas>
+    <formulas>
+        <name>NomContactSH</name>
+        <dataType>String</dataType>
+        <expression>{!Type_de_Mandataire} &amp;&quot; &quot;&amp; {!varSEntreprise.Name} &amp;&quot; &quot;&amp; {!Contact.Name}</expression>
+    </formulas>
+    <formulas>
+        <name>nomMandataire</name>
+        <dataType>String</dataType>
+        <expression>{!TypedeMandataireM} &amp;&quot; &quot;&amp; {!varSEntreprise.Name} &amp;&quot; &quot;&amp; {!Contact.Name}</expression>
+    </formulas>
+    <interviewLabel>Flux création contact:stakeholder {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Flux création contact/stakeholder</label>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Creation_d_un_contact</name>
+        <label>Création d&#39;un contact</label>
+        <locationX>202</locationX>
+        <locationY>388</locationY>
+        <assignRecordIdToReference>VariableContact</assignRecordIdToReference>
+        <connector>
+            <targetReference>Creation_Stakeholder</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Email</field>
+            <value>
+                <elementReference>Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>FirstName</field>
+            <value>
+                <elementReference>Prenom</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>FromApp__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LastName</field>
+            <value>
+                <elementReference>Nom</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MailingCity</field>
+            <value>
+                <elementReference>Ville</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MailingCountry</field>
+            <value>
+                <elementReference>Pays</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MailingPostalCode</field>
+            <value>
+                <elementReference>CodePostalMA</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MailingStreet</field>
+            <value>
+                <elementReference>Rue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MobilePhone</field>
+            <value>
+                <elementReference>Telephoneprincipal</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Salutation</field>
+            <value>
+                <elementReference>Civilite3</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordCreates>
+    <recordCreates>
+        <name>Creation_Stakeholder</name>
+        <label>Création Stakeholder</label>
+        <locationX>203</locationX>
+        <locationY>502</locationY>
+        <assignRecordIdToReference>varStakeholder</assignRecordIdToReference>
+        <inputAssignments>
+            <field>Associate__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Company__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Contact__c</field>
+            <value>
+                <elementReference>VariableContact</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>1</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>NbShares__c</field>
+            <value>
+                <elementReference>Nombredeparts</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OfficerType__c</field>
+            <value>
+                <elementReference>Type_de_Mandataire</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Officer__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StartDate__c</field>
+            <value>
+                <elementReference>Date_de_Debut</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Stakeholder__c</object>
+    </recordCreates>
+    <recordCreates>
+        <name>CreationContactAssocie</name>
+        <label>Création Contact Associe</label>
+        <locationX>511</locationX>
+        <locationY>390</locationY>
+        <assignRecordIdToReference>varContactA</assignRecordIdToReference>
+        <connector>
+            <targetReference>CreationSHAssocie</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Email</field>
+            <value>
+                <elementReference>EmailA</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>FirstName</field>
+            <value>
+                <elementReference>PrenomA</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>FromApp__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LastName</field>
+            <value>
+                <elementReference>NomA</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MailingCity</field>
+            <value>
+                <elementReference>VilleA</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MailingCountry</field>
+            <value>
+                <elementReference>PaysA</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MailingPostalCode</field>
+            <value>
+                <elementReference>CodePostalAA</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MailingStreet</field>
+            <value>
+                <elementReference>RueAA</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MobilePhone</field>
+            <value>
+                <elementReference>TelephonePrincipalA</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Salutation</field>
+            <value>
+                <elementReference>CiviliteA</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordCreates>
+    <recordCreates>
+        <name>CreationContactMandataire</name>
+        <label>Création Contact mandataire</label>
+        <locationX>363</locationX>
+        <locationY>388</locationY>
+        <assignRecordIdToReference>varContactM</assignRecordIdToReference>
+        <connector>
+            <targetReference>CreationStakeholderMandataire</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Email</field>
+            <value>
+                <elementReference>EmailM</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>FirstName</field>
+            <value>
+                <elementReference>PrenomM</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>FromApp__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LastName</field>
+            <value>
+                <elementReference>NomM</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MailingCity</field>
+            <value>
+                <elementReference>VilleM</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MailingCountry</field>
+            <value>
+                <elementReference>PaysM</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MailingPostalCode</field>
+            <value>
+                <elementReference>CodePostalM</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MailingState</field>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MailingStreet</field>
+            <value>
+                <elementReference>RueM</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MobilePhone</field>
+            <value>
+                <elementReference>TelephonePrincipalM</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Salutation</field>
+            <value>
+                <elementReference>CiviliteM</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordCreates>
+    <recordCreates>
+        <name>CreationSHAssocie</name>
+        <label>Création SH Associé</label>
+        <locationX>512</locationX>
+        <locationY>499</locationY>
+        <inputAssignments>
+            <field>Associate__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Company__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Contact__c</field>
+            <value>
+                <elementReference>varContactA</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>1</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>NbShares__c</field>
+            <value>
+                <elementReference>NombredePartsA</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StartDate__c</field>
+            <value>
+                <elementReference>DatedeDebutA</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Stakeholder__c</object>
+    </recordCreates>
+    <recordCreates>
+        <name>CreationStakeholderMandataire</name>
+        <label>Création Stakeholder Mandataire</label>
+        <locationX>365</locationX>
+        <locationY>500</locationY>
+        <assignRecordIdToReference>varStakeholderMandataire</assignRecordIdToReference>
+        <inputAssignments>
+            <field>Company__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Contact__c</field>
+            <value>
+                <elementReference>varContactM</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>1</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OfficerType__c</field>
+            <value>
+                <elementReference>TypedeMandataireM</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Officer__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StartDate__c</field>
+            <value>
+                <elementReference>DatedeDebutM</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Stakeholder__c</object>
+    </recordCreates>
+    <recordLookups>
+        <name>varEntreprise</name>
+        <label>varEntreprise</label>
+        <locationX>126</locationX>
+        <locationY>125</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Quel_type_de_contact</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputAssignments>
+            <assignToReference>FormeJuridique</assignToReference>
+            <field>LegalStatus__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <screens>
+        <name>Creation_Contact_SH</name>
+        <label>Création Contact/SH</label>
+        <locationX>197</locationX>
+        <locationY>263</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Creation_d_un_contact</targetReference>
+        </connector>
+        <fields>
+            <name>Civilite3</name>
+            <choiceReferences>Civilite2</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Civilité</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Prenom</name>
+            <dataType>String</dataType>
+            <fieldText>Prénom</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <validationRule>
+                <errorMessage>La valeur que vous avez saisie ne remplit pas les critères de validation de ce champ d&#39;entrée.</errorMessage>
+                <formulaExpression>(NOT({!FormeJuridique} = &quot;SARL&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Président&quot;)) &amp;&amp; 
+(NOT({!FormeJuridique} = &quot;SARL&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Directeur Général&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;SARL&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Exploitant&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;SAS&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Gérant&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;SAS&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Co-Gérant&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;SAS&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Exploitant&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;SASU&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Gérant&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;SASU&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Co-Gérant&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;SASU&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Directeur Général&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;SASU&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Exploitant&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;IND&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Gérant&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;IND&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Co-Gérant&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;IND&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Président&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;IND&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Directeur Général&quot;))</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>Nom</name>
+            <dataType>String</dataType>
+            <fieldText>Nom</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <validationRule>
+                <errorMessage>N&#39;oubliez pas de saisir un téléphone au format correct ou une adresse email</errorMessage>
+                <formulaExpression>Len({!Email})&gt;0   ||   (Len({!Telephoneprincipal})&gt;0
+&amp;&amp; (REGEX(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE({!Telephoneprincipal},&quot;(0)&quot;,&quot;&quot;),&quot; &quot;,&quot;&quot;),&quot;.&quot;,&quot;&quot;),&quot;(0|\\+33)[1-9]( *[0-9]{2}){4}&quot;)))</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>Telephoneprincipal</name>
+            <dataType>String</dataType>
+            <fieldText>Téléphone principal</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Email</name>
+            <dataType>String</dataType>
+            <fieldText>Email</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Rue</name>
+            <fieldText>Rue</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>CodePostalMA</name>
+            <dataType>String</dataType>
+            <fieldText>Code Postal</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Ville</name>
+            <dataType>String</dataType>
+            <fieldText>Ville</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Pays</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <stringValue>France</stringValue>
+            </defaultValue>
+            <fieldText>Pays</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Type_de_Mandataire</name>
+            <choiceReferences>TypeMandataire</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Type de Mandataire</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Nombredeparts</name>
+            <dataType>Number</dataType>
+            <fieldText>Nombre de parts</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <scale>0</scale>
+        </fields>
+        <fields>
+            <name>Date_de_Debut</name>
+            <dataType>Date</dataType>
+            <fieldText>Date de Début</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>CreationContactSHAssocie</name>
+        <label>Création Contact / SH Associé</label>
+        <locationX>504</locationX>
+        <locationY>275</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>CreationContactAssocie</targetReference>
+        </connector>
+        <fields>
+            <name>CiviliteA</name>
+            <choiceReferences>Civilite2</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Civilité</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>PrenomA</name>
+            <dataType>String</dataType>
+            <fieldText>Prénom</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>NomA</name>
+            <dataType>String</dataType>
+            <fieldText>Nom</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <validationRule>
+                <errorMessage>N&#39;oubliez pas de saisir un téléphone au format correct ou une adresse email</errorMessage>
+                <formulaExpression>Len({!EmailA})&gt;0   ||   (Len({!TelephonePrincipalA})&gt;0
+&amp;&amp; (REGEX(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE({!TelephonePrincipalA},&quot;(0)&quot;,&quot;&quot;),&quot; &quot;,&quot;&quot;),&quot;.&quot;,&quot;&quot;),&quot;(0|\\+33)[1-9]( *[0-9]{2}){4}&quot;)))</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>TelephonePrincipalA</name>
+            <dataType>String</dataType>
+            <fieldText>Téléphone Principal</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>EmailA</name>
+            <dataType>String</dataType>
+            <fieldText>Email</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>RueAA</name>
+            <fieldText>Rue</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>CodePostalAA</name>
+            <dataType>String</dataType>
+            <fieldText>Code Postal</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>VilleA</name>
+            <dataType>String</dataType>
+            <fieldText>Ville</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>PaysA</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <stringValue>France</stringValue>
+            </defaultValue>
+            <fieldText>Pays</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>NombredePartsA</name>
+            <dataType>Number</dataType>
+            <fieldText>Nombre de Parts</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <scale>0</scale>
+        </fields>
+        <fields>
+            <name>DatedeDebutA</name>
+            <dataType>Date</dataType>
+            <fieldText>Date de Début</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>CreationContactSHMandataire</name>
+        <label>Création Contact/SH Mandataire</label>
+        <locationX>365</locationX>
+        <locationY>297</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>CreationContactMandataire</targetReference>
+        </connector>
+        <fields>
+            <name>CiviliteM</name>
+            <choiceReferences>Civilite2</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Civilité</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>PrenomM</name>
+            <dataType>String</dataType>
+            <fieldText>Prénom</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <validationRule>
+                <errorMessage>La valeur que vous avez saisie ne remplit pas les critères de validation de ce champ d&#39;entrée.</errorMessage>
+                <formulaExpression>(NOT({!FormeJuridique} = &quot;SARL&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Président&quot;)) &amp;&amp; 
+(NOT({!FormeJuridique} = &quot;SARL&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Directeur Général&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;SARL&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Exploitant&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;SAS&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Gérant&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;SAS&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Co-Gérant&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;SAS&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Exploitant&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;SASU&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Gérant&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;SASU&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Co-Gérant&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;SASU&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Directeur Général&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;SASU&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Exploitant&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;IND&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Gérant&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;IND&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Co-Gérant&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;IND&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Président&quot;)) &amp;&amp;
+(NOT({!FormeJuridique} = &quot;IND&quot; &amp;&amp;
+{!Type_de_Mandataire} = &quot;Directeur Général&quot;))</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>NomM</name>
+            <dataType>String</dataType>
+            <fieldText>Nom</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <validationRule>
+                <errorMessage>N&#39;oubliez pas de saisir un téléphone au format correct ou une adresse email</errorMessage>
+                <formulaExpression>Len({!EmailM})&gt;0   ||   (Len({!TelephonePrincipalM})&gt;0
+&amp;&amp; (REGEX(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE({!TelephonePrincipalM},&quot;(0)&quot;,&quot;&quot;),&quot; &quot;,&quot;&quot;),&quot;.&quot;,&quot;&quot;),&quot;(0|\\+33)[1-9]( *[0-9]{2}){4}&quot;)))</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>TelephonePrincipalM</name>
+            <dataType>String</dataType>
+            <fieldText>Téléphone Principal</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>EmailM</name>
+            <dataType>String</dataType>
+            <fieldText>Email</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>RueM</name>
+            <fieldText>Rue</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>VilleM</name>
+            <dataType>String</dataType>
+            <fieldText>Ville</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>CodePostalM</name>
+            <dataType>String</dataType>
+            <fieldText>Code Postal</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>PaysM</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <stringValue>France</stringValue>
+            </defaultValue>
+            <fieldText>Pays</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>TypedeMandataireM</name>
+            <choiceReferences>TypedeMandataire</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Type de Mandataire</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>DatedeDebutM</name>
+            <dataType>Date</dataType>
+            <fieldText>Date de Début</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Queltypedecontactsouhaitezvouscreer</name>
+        <label>Quel type de contact souhaitez-vous créer ?</label>
+        <locationX>360</locationX>
+        <locationY>31</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>varEntreprise</targetReference>
+        </connector>
+        <fields>
+            <name>Mandataire2</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Mandataire</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Associe2</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Associé</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Queltypedecontactsouhaitezvouscreer</startElementReference>
+    <variables>
+        <name>Contact</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <name>FormeJuridique</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Stakeholder</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Stakeholder__c</objectType>
+    </variables>
+    <variables>
+        <name>varContactA</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varContactM</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>VariableContact</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varSEntreprise</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>varStakeholder</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varStakeholderMandataire</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>
