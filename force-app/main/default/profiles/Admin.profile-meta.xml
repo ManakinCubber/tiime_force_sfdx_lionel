@@ -13815,13 +13815,6 @@
         <apexPage>VFP_PopFicheContact</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
-    <profileActionOverrides>
-        <actionName>Tab</actionName>
-        <content>Page_d_accueil_Consultant</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>standard-home</pageOrSobjectType>
-        <type>Flexipage</type>
-    </profileActionOverrides>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.AccountantPartner</recordType>
