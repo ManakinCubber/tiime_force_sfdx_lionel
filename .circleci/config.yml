@@ -39,6 +39,8 @@ jobs:
             sfdx force:package:install --package "numm"
             echo "Install Aircall CTI"
             sfdx force:package:install --package "Aircall CTI"
+            echo "LightningSharing"
+            sfdx force:package:install --package "LightningSharing"
       - run:
             name: Deploy to salesforce
             command: |
