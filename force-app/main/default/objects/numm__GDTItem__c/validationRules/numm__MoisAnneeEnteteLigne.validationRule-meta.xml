@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>numm__MoisAnneeEnteteLigne</fullName>
-    <active>true</active>
-    <description>Le mois et l&#39;année de la ligne doit être le même que celui de l&#39;entête</description>
-    <errorConditionFormula>OR (TEXT(Year(numm__Date__c)) !=  numm__GDTHeader__r.numm__Annee__c , Month(numm__Date__c)!= numm__GDTHeader__r.numm__Mois__c )</errorConditionFormula>
-    <errorDisplayField>numm__Date__c</errorDisplayField>
-    <errorMessage>Le mois et l&#39;année de la ligne doit être le même que celui de l&#39;entête</errorMessage>
-</ValidationRule>

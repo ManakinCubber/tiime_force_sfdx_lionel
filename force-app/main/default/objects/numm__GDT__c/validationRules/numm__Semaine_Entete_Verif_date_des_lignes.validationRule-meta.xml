@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>numm__Semaine_Entete_Verif_date_des_lignes</fullName>
-    <active>true</active>
-    <errorConditionFormula>AND ( numm__DateDeb__c !=null, OR( numm__DateDeb__c &gt; numm__TechMinDate__c , numm__DateFin__c &lt; numm__TechMaxDate__c ))</errorConditionFormula>
-    <errorMessage>Les dates de l&#39;entête doivent être supérieures aux dates des lignes</errorMessage>
-</ValidationRule>

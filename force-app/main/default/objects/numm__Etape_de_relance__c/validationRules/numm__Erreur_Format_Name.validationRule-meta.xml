@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>numm__Erreur_Format_Name</fullName>
-    <active>true</active>
-    <description>Le numéro de relance (Name) doit être un numéro</description>
-    <errorConditionFormula>NOT ISNUMBER(Name)</errorConditionFormula>
-    <errorMessage>Le numéro de l&#39;étape doit être un numéro</errorMessage>
-</ValidationRule>

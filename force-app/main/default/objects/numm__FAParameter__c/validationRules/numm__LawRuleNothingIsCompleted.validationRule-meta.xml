@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>numm__LawRuleNothingIsCompleted</fullName>
-    <active>true</active>
-    <errorConditionFormula>AND(RecordType.DeveloperName =&quot;Law&quot;  , numm__RegleType__c = false ,numm__RegleAxeRubrique__c = null, $User.numm__BypassRegles__c = false)</errorConditionFormula>
-    <errorMessage>Veuillez sélectionner soit &quot;Type d&#39;immobilisation&quot;, soit une rubrique.</errorMessage>
-</ValidationRule>

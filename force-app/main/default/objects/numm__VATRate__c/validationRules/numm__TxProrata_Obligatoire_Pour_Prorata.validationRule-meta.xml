@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>numm__TxProrata_Obligatoire_Pour_Prorata</fullName>
-    <active>true</active>
-    <description>Le taux prorata déductible est obligatoire pour un taux de TVA de type prorata</description>
-    <errorConditionFormula>AND(numm__Prorata__c=true, ISNULL(numm__LessRate__c) )</errorConditionFormula>
-    <errorMessage>Le taux prorata déductible est obligatoire pour un taux de TVA de type prorata</errorMessage>
-</ValidationRule>

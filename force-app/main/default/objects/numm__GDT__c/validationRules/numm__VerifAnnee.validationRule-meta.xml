@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>numm__VerifAnnee</fullName>
-    <active>true</active>
-    <errorConditionFormula>IF( NOT ISNUMBER(numm__Annee__c), True, IF(OR(Value(numm__Annee__c)&lt;2000,Value(numm__Annee__c)&gt;2060),True, false))</errorConditionFormula>
-    <errorDisplayField>numm__Annee__c</errorDisplayField>
-    <errorMessage>Année incorrecte</errorMessage>
-</ValidationRule>

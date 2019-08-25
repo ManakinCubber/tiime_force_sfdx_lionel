@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>numm__Semaine_Entete_date_des_lignes</fullName>
-    <active>true</active>
-    <errorConditionFormula>OR(numm__Date__c &lt; numm__GDTHeader__r.numm__DateDeb__c,numm__Date__c &gt; numm__GDTHeader__r.numm__DateFin__c)</errorConditionFormula>
-    <errorDisplayField>numm__Date__c</errorDisplayField>
-    <errorMessage>La date doit être comprise dans les dates de l&#39;entête</errorMessage>
-</ValidationRule>

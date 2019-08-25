@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>numm__BlocageTypeSiVente</fullName>
-    <active>true</active>
-    <errorConditionFormula>NOT($User.numm__BypassRegles__c) &amp;&amp;  TEXT(numm__Categorie_de_journal__c) = &#39;Vente&#39; 
-&amp;&amp;  (ISBLANK( TEXT(numm__Type__c) ) = false  &amp;&amp;  ISNULL( TEXT(numm__Type__c))  = false)</errorConditionFormula>
-    <errorDisplayField>numm__Type__c</errorDisplayField>
-    <errorMessage>Pour la catégorie Vente, le type doit être nulle.</errorMessage>
-</ValidationRule>

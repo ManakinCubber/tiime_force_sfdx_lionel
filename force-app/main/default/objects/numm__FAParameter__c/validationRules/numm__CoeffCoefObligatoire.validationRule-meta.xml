@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>numm__CoeffCoefObligatoire</fullName>
-    <active>true</active>
-    <errorConditionFormula>AND(RecordType.DeveloperName =&quot;Coefficients_fiscaux&quot;  ,   numm__CoefValue__c &lt;= 0, $User.numm__BypassRegles__c = false)</errorConditionFormula>
-    <errorMessage>Le coefficient doit être renseigné.</errorMessage>
-</ValidationRule>

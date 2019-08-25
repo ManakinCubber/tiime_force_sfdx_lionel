@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>numm__qtt_de_conditionnement_non_null</fullName>
-    <active>true</active>
-    <errorConditionFormula>numm__Conditionnement__r.numm__Contenance_brute__c  &lt; 0</errorConditionFormula>
-    <errorMessage>Le conditionnement n&#39;a pas de contenance brute.</errorMessage>
-</ValidationRule>

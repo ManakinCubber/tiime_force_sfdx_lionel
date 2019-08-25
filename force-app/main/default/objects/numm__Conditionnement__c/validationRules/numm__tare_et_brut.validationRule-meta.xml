@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>numm__tare_et_brut</fullName>
-    <active>true</active>
-    <errorConditionFormula>numm__Tare_du_contenant__c &gt;  numm__Contenance_brute__c</errorConditionFormula>
-    <errorDisplayField>numm__Tare_du_contenant__c</errorDisplayField>
-    <errorMessage>La tare ne peut pas être supérieure a la contenance totale.</errorMessage>
-</ValidationRule>

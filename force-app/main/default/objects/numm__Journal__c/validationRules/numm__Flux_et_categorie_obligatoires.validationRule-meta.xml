@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>numm__Flux_et_categorie_obligatoires</fullName>
-    <active>true</active>
-    <description>Le flux et la catégorie du journal sont obligatoires</description>
-    <errorConditionFormula>OR(ISPICKVAL(numm__CategorieJournal__c, &quot;&quot;) ,ISPICKVAL(numm__Flux__c, &quot;&quot;))</errorConditionFormula>
-    <errorMessage>Le flux et la catégorie du journal sont obligatoires</errorMessage>
-</ValidationRule>

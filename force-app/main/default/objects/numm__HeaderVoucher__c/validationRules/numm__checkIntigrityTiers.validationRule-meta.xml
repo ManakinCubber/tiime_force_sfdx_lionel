@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>numm__checkIntigrityTiers</fullName>
-    <active>true</active>
-    <errorConditionFormula>IF( ISBLANK( numm__Tech_Banque__c) == false &amp;&amp;  ISBLANK(  numm__Tech_Client__c) == false ,true,  IF( ISBLANK( numm__Tech_Banque__c) == false &amp;&amp;  ISBLANK(  numm__Tech_Fournisseur__c) == false,true,  IF(ISBLANK(  numm__Tech_Client__c) == false &amp;&amp;  ISBLANK(  numm__Tech_Fournisseur__c) == false , true,  IF(ISBLANK(  numm__Tech_Client__c) == false &amp;&amp;  ISBLANK(  numm__Tech_Fournisseur__c) == false &amp;&amp;  ISBLANK(  numm__Tech_Banque__c) == false, true, false) ) ) )</errorConditionFormula>
-    <errorMessage>Plusieurs champs tiers ont été renseignés sur l’entête(Banque,Client, Fournisseur). Un seul champ tiers doit être renseigné.</errorMessage>
-</ValidationRule>

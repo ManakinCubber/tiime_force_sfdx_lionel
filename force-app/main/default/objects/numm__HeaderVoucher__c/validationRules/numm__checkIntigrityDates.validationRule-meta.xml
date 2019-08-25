@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>numm__checkIntigrityDates</fullName>
-    <active>true</active>
-    <description>La date de pièce ne peut pas être supérieure à la date d&#39;échéance.</description>
-    <errorConditionFormula>ISPICKVAL(numm__IdJournal__r.numm__Flux__c, &#39;Réel&#39;) &amp;&amp; numm__AccountingDate__c &gt; numm__DueDate__c</errorConditionFormula>
-    <errorMessage>La date de pièce ne peut pas être supérieure à la date d&#39;échéance.</errorMessage>
-</ValidationRule>

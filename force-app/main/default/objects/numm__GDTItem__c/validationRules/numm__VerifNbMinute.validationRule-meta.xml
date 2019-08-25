@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>numm__VerifNbMinute</fullName>
-    <active>true</active>
-    <errorConditionFormula>numm__NbMinutes__c &gt;59</errorConditionFormula>
-    <errorDisplayField>numm__NbMinutes__c</errorDisplayField>
-    <errorMessage>Rappel : 1 heure  = 60 minutes ...</errorMessage>
-</ValidationRule>

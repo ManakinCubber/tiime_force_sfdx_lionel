@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>numm__TypeAxeRubriqueEtPosition_Obligatoire</fullName>
-    <active>true</active>
-    <errorConditionFormula>OR (ISBLANK(Text(numm__Type__c)),ISBLANK(Text(numm__NumSection__c) ))</errorConditionFormula>
-    <errorMessage>Type d&#39;axe et position obligatoires</errorMessage>
-</ValidationRule>

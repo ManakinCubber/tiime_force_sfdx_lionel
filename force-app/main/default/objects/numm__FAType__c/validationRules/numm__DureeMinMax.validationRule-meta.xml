@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>numm__DureeMinMax</fullName>
-    <active>true</active>
-    <description>La durée minimale doit être inférieure à la durée maximale</description>
-    <errorConditionFormula>numm__MonthMax__c &lt; numm__MonthMin__c</errorConditionFormula>
-    <errorMessage>La durée minimale doit être inférieure à la durée maximale.</errorMessage>
-</ValidationRule>
