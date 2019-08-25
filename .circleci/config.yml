@@ -45,7 +45,7 @@ jobs:
             name: Deploy to salesforce
             command: |
               #sfdx force:source:push --targetusername circle_build_$CIRCLE_BUILD_NUM
-              sfdx force:source:deploy --sourcepath force-app --json --loglevel fatal
+              sfdx force:source:deploy --sourcepath force-app --targetusername $SFDC_USER --json --loglevel fatal
       #- run:
       #      name: Run Apex Tests
       #      command: |
