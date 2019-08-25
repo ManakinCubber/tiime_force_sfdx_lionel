@@ -14,7 +14,7 @@ jobs:
               sfdx --version
               sfdx plugins --core
       - run:
-          name: Create Scratch Org and Connexion Web
+          name: Authentification on sdbx
           command: |
             mkdir keys
             echo "Generate Key"
