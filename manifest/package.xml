@@ -85,7 +85,7 @@
     <members>AccountBrand</members>
     <members>AccountContactRole</members>
     <members>Activity</members>
-    <members>AgentWork</members>
+    <!-- <members>AgentWork</members> -->
     <members>ApeCode__c</members>
     <members>Asset</members>
     <members>AssetRelationship</members>
@@ -138,6 +138,7 @@
     <members>MacroInstruction</members>
 	<members>MandatSEPA__c</members>
     <members>NetworkMember</members>
+    <!--
     <members>numm__AccountingCode__c</members>
     <members>numm__AccountingPeriod__c</members>
     <members>numm__AffectationEtablissement__c</members>
@@ -232,6 +233,7 @@
     <members>numm__VATAllocation__c</members>
     <members>numm__VATRate__c</members>
     <members>numm__VoucherTransaction__c</members>
+    -->
     <members>Opportunity</members>
     <members>OpportunityCompetitor</members>
     <members>OpportunityContactRole</members>
