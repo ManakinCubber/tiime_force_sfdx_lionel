@@ -33,6 +33,13 @@ jobs:
             sfdx force:org:open --targetusername circle_build_$CIRCLE_BUILD_NUM \
                                 --urlonly
       - run:
+          name: Install package on Scratch Org
+          command: |
+            echo "Install numm"
+            sfdx force:package:install --package "numm"
+            echo "Install Aircall CTI"
+            sfdx force:package:install --package "Aircall CTI"
+      - run:
             name: Deploy to salesforce
             command: |
               sfdx force:source:push --targetusername circle_build_$CIRCLE_BUILD_NUM
