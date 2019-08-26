@@ -2670,26 +2670,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Knowledge__kav.Answer__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Knowledge__kav.Content__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Knowledge__kav.Introduction__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Knowledge__kav.Question__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>Lead.AEComments__c</field>
         <readable>false</readable>
@@ -3547,36 +3527,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>MandatSEPA__c.RUM__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Mission__c.Account__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Mission__c.BasicPrice__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Mission__c.Comment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Mission__c.IsMonthly__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Mission__c.Opportunity__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Mission__c.Transfert__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6389,11 +6339,6 @@
         <field>enquetedeSatisfaction__c.typedenquete__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>numm__Establishment__c.ZSaveEtaMaitre__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Entreprise - Base</layout>
     </layoutAssignments>
@@ -6530,10 +6475,6 @@
         <layout>Knowledge__kav-Knowledge Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Knowledge__kav-Lightning Knowledge FAQ Layout</layout>
-        <recordType>Knowledge__kav.FAQ</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Lead-Lead - Client</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -6547,12 +6488,6 @@
     <layoutAssignments>
         <layout>Lead-Lead - Partenaire EC</layout>
         <recordType>Lead.LeadPartenaireEC</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>LiveChatTranscriptActive-Présentation Transcription Live Chat %28en cours%29</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>LiveChatTranscriptWaiting-Présentation Transcription Live Chat %28en attente%29</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>LogError__c-Présentation Log d%27erreur</layout>
@@ -7203,11 +7138,6 @@
         <default>false</default>
         <recordType>Idea.InternalIdeasIdeaRecordType</recordType>
         <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>Knowledge__kav.FAQ</recordType>
-        <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
