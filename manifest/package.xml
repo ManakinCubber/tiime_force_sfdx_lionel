@@ -16,10 +16,12 @@
     <members>*</members>
     <name>ApexTrigger</name>
   </types>
+  <!--
   <types>
     <members>*</members>
     <name>AssignmentRule</name>
   </types>
+  -->
   <types>
     <members>*</members>
     <name>AssignmentRules</name>
@@ -436,10 +438,12 @@
     <members>*</members>
     <name>WorkflowFieldUpdate</name>
   </types>
+  <!--
   <types>
     <members>*</members>
     <name>WorkflowRule</name>
   </types>
+  -->
   <types>
     <members>*</members>
     <name>WorkflowTask</name>
