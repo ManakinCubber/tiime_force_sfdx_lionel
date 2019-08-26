@@ -334,10 +334,12 @@
     <members>LeadConvertSettings</members>
     <name>LeadConvertSettings</name>
   </types>
+  <!--
   <types>
     <members>*</members>
     <name>ListView</name>
   </types>
+  -->
   <types>
     <members>*</members>
     <name>MatchingRule</name>
