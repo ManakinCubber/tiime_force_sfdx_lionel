@@ -23,7 +23,7 @@
         </quickActionLayoutColumns>
         <quickActionLayoutColumns/>
     </quickActionLayout>
-    <standardLabel>New Community Case</standardLabel>
+    <standardLabel>New</standardLabel>
     <targetObject>Case</targetObject>
     <type>Create</type>
 </QuickAction>
