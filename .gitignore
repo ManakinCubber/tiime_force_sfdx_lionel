@@ -4,6 +4,7 @@
 
 # Salesforce cache
 .sfdx/
+.vscode
 
 # Logs
 logs
@@ -26,3 +27,55 @@ Thumbs.db
 ehthumbs.db
 [Dd]esktop.ini
 $RECYCLE.BIN/
+force-app/main/default/lwc/jsconfig.json
+force-app/main/default/cleanDataServices/DataCloudCompanyMatch.cleanDataService-meta.xml
+force-app/main/default/cleanDataServices/DataCloudLeadAppend.cleanDataService-meta.xml
+force-app/main/default/flowDefinitions/Temp_convert_project_from_lead.flowDefinition-meta.xml
+force-app/main/default/flowDefinitions/Temp_convert_project_from_opportunity.flowDefinition-meta.xml
+force-app/main/default/flows/ChgtStatutConsignerunappel-1.flow-meta.xml
+force-app/main/default/flows/ChgtStatutConsignerunappel-2.flow-meta.xml
+force-app/main/default/flows/ChgtStatutConsignerunappel-3.flow-meta.xml
+force-app/main/default/flows/ChgtStatutConsignerunappel-4.flow-meta.xml
+force-app/main/default/flows/ChgtStatutConsignerunappel-5.flow-meta.xml
+force-app/main/default/flows/ChgtStatutConsignerunappel-6.flow-meta.xml
+force-app/main/default/flows/ChgtStatutConsignerunappel-7.flow-meta.xml
+force-app/main/default/flows/ChgtStatutConsignerunappel-8.flow-meta.xml
+force-app/main/default/flows/Temp_convert_project_from_lead-1.flow-meta.xml
+force-app/main/default/flows/Temp_convert_project_from_opportunity-1.flow-meta.xml
+force-app/main/default/flows/Temp_convert_project_from_opportunity-2.flow-meta.xml
+force-app/main/default/profileSessionSettings/Consultant_profileSessionSetting1531229108839.profileSessionSetting-meta.xml
+force-app/main/default/profileSessionSettings/Consultant2_profileSessionSetting1533048506014.profileSessionSetting-meta.xml
+force-app/main/default/profileSessionSettings/Leader_profileSessionSetting1531230636343.profileSessionSetting-meta.xml
+force-app/main/default/profileSessionSettings/null_profileSessionSetting1550317369520.profileSessionSetting-meta.xml
+force-app/main/default/profileSessionSettings/Production_profileSessionSetting1533049803669.profileSessionSetting-meta.xml
+force-app/main/default/profileSessionSettings/Production_profileSessionSetting1537805963346.profileSessionSetting-meta.xml
+force-app/main/default/profileSessionSettings/TMC_profileSessionSetting1533050132040.profileSessionSetting-meta.xml
+force-app/main/default/appMenus/AppSwitcher.appMenu-meta.xml
+force-app/main/default/quickActions/Contact.creerEnquete.quickAction-meta.xml
+force-app/main/default/flowDefinitions/EnquetedeSatisfaction.flowDefinition-meta.xml
+force-app/main/default/flows/EnquetedeSatisfaction-1.flow-meta.xml
+force-app/main/default/settings/Activities.settings-meta.xml
+force-app/main/default/settings/Account.settings-meta.xml
+force-app/main/default/settings/Address.settings-meta.xml
+force-app/main/default/settings/BusinessHours.settings-meta.xml
+force-app/main/default/settings/Case.settings-meta.xml
+force-app/main/default/settings/Company.settings-meta.xml
+force-app/main/default/settings/Contract.settings-meta.xml
+force-app/main/default/settings/Entitlement.settings-meta.xml
+force-app/main/default/settings/FileUploadAndDownloadSecurity.settings-meta.xml
+force-app/main/default/settings/Forecasting.settings-meta.xml
+force-app/main/default/settings/Ideas.settings-meta.xml
+force-app/main/default/settings/Knowledge.settings-meta.xml
+force-app/main/default/settings/LiveAgent.settings-meta.xml
+force-app/main/default/settings/Macro.settings-meta.xml
+force-app/main/default/settings/Mobile.settings-meta.xml
+force-app/main/default/settings/Name.settings-meta.xml
+force-app/main/default/settings/Opportunity.settings-meta.xml
+force-app/main/default/settings/Order.settings-meta.xml
+force-app/main/default/settings/OrgPreference.settings-meta.xml
+force-app/main/default/settings/PathAssistant.settings-meta.xml
+force-app/main/default/settings/Product.settings-meta.xml
+force-app/main/default/settings/Quote.settings-meta.xml
+force-app/main/default/settings/Search.settings-meta.xml
+force-app/main/default/settings/Security.settings-meta.xml
+force-app/main/default/lwc/jsconfig.json

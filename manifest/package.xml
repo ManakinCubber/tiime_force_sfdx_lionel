@@ -16,12 +16,14 @@
     <members>*</members>
     <name>ApexTrigger</name>
   </types>
-  <!--
+  <types>
+    <members>Salesforce1</members>
+    <name>AppMenu</name>
+  </types>
   <types>
     <members>*</members>
     <name>AssignmentRule</name>
   </types>
-  -->
   <types>
     <members>*</members>
     <name>AssignmentRules</name>
@@ -59,6 +61,10 @@
     <name>CompactLayout</name>
   </types>
   <types>
+    <members>BGI</members>
+    <name>ConnectedApp</name>
+  </types>
+  <types>
     <members>*</members>
     <name>CustomApplication</name>
   </types>
@@ -79,15 +85,11 @@
     <name>CustomMetadata</name>
   </types>
   <types>
-    <members>*</members>
-    <name>EmailTemplate</name>
-  </types>
-  <types>
     <members>Account</members>
     <members>AccountBrand</members>
     <members>AccountContactRole</members>
     <members>Activity</members>
-    <!-- <members>AgentWork</members> -->
+    <members>AgentWork</members>
     <members>ApeCode__c</members>
     <members>Asset</members>
     <members>AssetRelationship</members>
@@ -100,7 +102,7 @@
     <members>CampaignMember</members>
     <members>Case</members>
     <members>CaseContactRole</members>
-    <members>Challenge__c</members>
+	  <members>Challenge__c</members>
     <members>ChannelProgram</members>
     <members>ChannelProgramLevel</members>
     <members>ChannelProgramMember</members>
@@ -117,7 +119,7 @@
     <members>EmailMessage</members>
     <members>enquetedeSatisfaction__c</members>
     <members>Event</members>
-    <members>Event__c</members>
+	  <members>Event__c</members>
     <members>ExchangeUserMapping</members>
     <members>FeedItem</members>
     <members>ForecastingAdjustment</members>
@@ -130,6 +132,7 @@
     <members>HubSpot_Inc__HubSpot_Intelligence__c</members>
     <members>Idea</members>
     <members>Image</members>
+    <members>Knowledge__kav</members>
     <members>Lead</members>
     <members>LinkedArticle</members>
     <members>LogError__c</members>
@@ -139,8 +142,8 @@
     <members>MacroAction</members>
     <members>MacroInstruction</members>
 	<members>MandatSEPA__c</members>
+	<members>Mission__c</members>
     <members>NetworkMember</members>
-    <!--
     <members>numm__AccountingCode__c</members>
     <members>numm__AccountingPeriod__c</members>
     <members>numm__AffectationEtablissement__c</members>
@@ -235,7 +238,6 @@
     <members>numm__VATAllocation__c</members>
     <members>numm__VATRate__c</members>
     <members>numm__VoucherTransaction__c</members>
-    -->
     <members>Opportunity</members>
     <members>OpportunityCompetitor</members>
     <members>OpportunityContactRole</members>
@@ -284,6 +286,10 @@
     <name>CustomObject</name>
   </types>
   <types>
+    <members>Tiime</members>
+    <name>CustomSite</name>
+  </types>
+  <types>
     <members>*</members>
     <name>CustomTab</name>
   </types>
@@ -313,8 +319,11 @@
     <name>FlexiPage</name>
   </types>
   <types>
-    <members>*</members>
     <name>Flow</name>
+  </types>
+  <types>
+    <members>*</members>
+    <name>FlowDefinition</name>
   </types>
   <types>
     <members>*</members>
@@ -336,12 +345,15 @@
     <members>LeadConvertSettings</members>
     <name>LeadConvertSettings</name>
   </types>
-  <!--
   <types>
     <members>*</members>
     <name>ListView</name>
   </types>
-  -->
+  <types>
+    <members>Tiime</members>
+    <members>Tiime</members>
+    <name>ManagedTopics</name>
+  </types>
   <types>
     <members>*</members>
     <name>MatchingRule</name>
@@ -355,12 +367,12 @@
     <name>ModerationRule</name>
   </types>
   <types>
-    <members>Tiime</members>
-    <name>Network</name>
+    <members>*</members>
+    <name>NamedCredential</name>
   </types>
   <types>
-    <members>cbTiime</members>
-    <name>NetworkBranding</name>
+    <members>Tiime</members>
+    <name>Network</name>
   </types>
   <types>
     <members>*</members>
@@ -380,15 +392,19 @@
   </types>
   <types>
     <members>*</members>
+    <name>ProfileSessionSetting</name>
+  </types>
+  <types>
+    <members>*</members>
     <name>Queue</name>
   </types>
   <types>
     <members>*</members>
-    <name>QuickAction</name>
+    <name>RecordType</name>
   </types>
   <types>
     <members>*</members>
-    <name>RecordType</name>
+    <name>RemoteSiteSetting</name>
   </types>
   <types>
     <members>*</members>
@@ -405,6 +421,10 @@
   <types>
     <members>*</members>
     <name>SharingRules</name>
+  </types>
+  <types>
+    <members>Tiime1</members>
+    <name>SiteDotCom</name>
   </types>
   <types>
     <members>*</members>
@@ -438,15 +458,13 @@
     <members>*</members>
     <name>WorkflowFieldUpdate</name>
   </types>
-  <!--
   <types>
     <members>*</members>
     <name>WorkflowRule</name>
   </types>
-  -->
   <types>
     <members>*</members>
     <name>WorkflowTask</name>
   </types>
-  <version>45.0</version>
+  <version>43.0</version>
 </Package>
