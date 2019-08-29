@@ -25,26 +25,9 @@ jobs:
                                       --username $SFDC_USER \
                                       --setdefaultdevhubusername -a DevHubTiime \
                                       --instanceurl $SFDC_URL
-            #echo "Creating the Scratch Org..."
-            #sfdx force:org:create -s -f config/project-scratch-def.json \
-            #                      --targetdevhubusername DevHubTiime \
-            #                      --setalias circle_build_$CIRCLE_BUILD_NUM \
-            #                      --wait $DEPLOY_TIMEOUT
-            #sfdx force:org:open --targetusername circle_build_$CIRCLE_BUILD_NUM \
-            #                    --urlonly
-      #- run:
-      #    name: Install package on Scratch Org
-      #    command: |
-      #     echo "Install numm"
-      #     sfdx force:package:install --package "numm"
-      #     echo "Install Aircall CTI"
-      #     sfdx force:package:install --package "Aircall CTI"
-      #     echo "LightningSharing"
-      #     sfdx force:package:install --package "LightningSharing"
       - run:
             name: Deploy to salesforce
             command: |
-              #sfdx force:source:push --targetusername circle_build_$CIRCLE_BUILD_NUM
               sfdx force:source:deploy --sourcepath force-app --targetusername $SFDC_USER --json --loglevel fatal
       #- run:
       #      name: Run Apex Tests
@@ -69,7 +52,3 @@ jobs:
       #        ORG_COVERAGE=$(jq .result.records[0].PercentCovered /tmp/test-results/orgCoverage.json)
       #        printf "%s%% code coverage" "$ORG_COVERAGE"
       #        if [[ $ORG_COVERAGE -lt 80 ]]; then false; fi
-      #- run:
-      #      name: Delete Scratch
-      #      command: |
-      #        sfdx force:org:delete -u circle_build_$CIRCLE_BUILD_NUM -p
